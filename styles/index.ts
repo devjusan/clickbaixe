@@ -29,8 +29,9 @@ export const { styled, getCssText, globalCss } = createStitches({
     fonts: {
       default: 'New York Medium',
       title: 'New York Extra Large',
-      substitle: 'SF Mono',
+      subtitle: 'SF Mono',
       articleTitle: 'SF Pro Display',
+      logo: 'GTF Chapter',
     },
   },
   utils: {
