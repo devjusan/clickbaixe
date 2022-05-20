@@ -20,48 +20,45 @@ export const globalStyles = globalCss({
 });
 
 export const Title = styled('h1', {
-  fontFamily: '$title',
-  fontWeight: '700',
-  fontSize: '$52',
-  lineHeight: '$52',
   textAlign: 'center',
 
   variants: {
-    fonts: {
+    type: {
       title: {
         fontFamily: '$title',
         fontWeight: '700',
+        fontSize: '$space$52',
+        lineHeight: '$space$52',
       },
       logo: {
         fontFamily: '$logo',
         fontWeight: '400',
+        fontSize: '$space$105',
+        lineHeight: '$space$105',
       },
     },
   },
 
   defaultVariants: {
-    fonts: 'title',
+    type: 'title',
   },
 });
 
 export const Subtitle = styled('h2', {
-  fontSize: '$24',
+  fontSize: '$space$24',
   textAlign: 'center',
-  fontFamily: '$subtitle',
-  fontWeight: '400',
-  lineHeight: '$32',
 
   variants: {
     fonts: {
       subtitle: {
         fontFamily: '$subtitle',
         fontWeight: '400',
-        lineHeight: '$32',
+        lineHeight: '$space$32',
       },
       articleTitle: {
         fontFamily: '$articleTitle',
         fontWeight: '500',
-        lineHeight: '$25',
+        lineHeight: '$space$24',
       },
     },
   },
