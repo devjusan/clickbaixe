@@ -3,8 +3,8 @@ import { createStitches, ScaleValue } from '@stitches/react';
 export const { styled, getCssText, globalCss } = createStitches({
   theme: {
     colors: {
-      white: '#000000',
-      black: '#ffffff',
+      black: '#000000',
+      white: '#ffffff',
       background: '#ffffff',
       backgroundYellow: '#ffd900',
     },
