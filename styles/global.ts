@@ -27,13 +27,13 @@ export const Title = styled('h1', {
       title: {
         fontFamily: '$title',
         fontWeight: '700',
-        fontSize: '$space$52',
+        fontSize: '$52',
         lineHeight: '$space$52',
       },
       logo: {
         fontFamily: '$logo',
         fontWeight: '400',
-        fontSize: '$space$105',
+        fontSize: '$105',
         lineHeight: '$space$105',
       },
     },
@@ -45,7 +45,7 @@ export const Title = styled('h1', {
 });
 
 export const Subtitle = styled('h2', {
-  fontSize: '$space$24',
+  fontSize: '$24',
   textAlign: 'center',
 
   variants: {
