@@ -11,18 +11,32 @@ const StyledHeader = styled('header', {
   boxShadow: '0px 1px 0px rgba(0, 0, 0, 0.22);',
 });
 
-const StyledUl = styled('ul', {
+const StyledNav = styled('nav', {
   display: 'flex',
   alignContent: 'center',
   gap: '$28',
   filter: 'drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))',
+  'a.active': {
+    color: '$black',
+    fontWeight: 'bold',
+  },
+  'a.active::after': {
+    content: '',
+    height: '1px',
+    borderRadius: '2px',
+    width: '4rem',
+    position: 'absolute',
+    top: '5.5rem',
+    left: '0',
+    background: 'rgba(0, 0, 0, 0.9)',
+  },
 });
 
-const StyledLi = styled('li', {
+const StyledA = styled('a', {
   fontSize: '$24',
   fontFamily: 'Benne',
   fontWeight: '300',
   listStyle: 'none',
 });
 
-export { StyledHeader, StyledUl, StyledLi };
+export { StyledHeader, StyledNav, StyledA };

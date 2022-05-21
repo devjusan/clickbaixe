@@ -15,7 +15,7 @@ export const globalStyles = globalCss({
   'h1, h2, h3, h4': {
     color: '$black',
   },
-  'button, li': {
+  'button, a, li': {
     cursor: 'pointer',
   },
 });
@@ -24,7 +24,7 @@ export const StyledMain = styled('main', {
   display: 'flex',
   justifyContent: 'center',
   maxWidth: '$1120',
-  minHeight: '100vh',
+  minHeight: 'calc(100vh - 400px)',
 });
 
 export const StyleTitle = styled('h1', {
