@@ -1,6 +1,7 @@
 import type { NextPage } from 'next';
+import { StyledMain } from '../styles/global';
 import Head from 'next/head';
-import { Title } from '../styles/global';
+import Header from '../components/core/header';
 
 const Home: NextPage = () => {
   return (
@@ -11,7 +12,8 @@ const Home: NextPage = () => {
         <meta name="description" content="Site para download de conteúdos" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Title type="logo">NORDIC ROSE</Title>
+      <Header />
+      <StyledMain></StyledMain>
     </>
   );
 };

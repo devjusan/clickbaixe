@@ -46,9 +46,9 @@ export const { styled, getCssText, globalCss } = createStitches({
     fonts: {
       default: 'New York Medium',
       title: 'New York Extra Large',
-      subtitle: 'SF Mono',
+      subtitle: 'Benne',
       articleTitle: 'SF Pro Display',
-      logo: 'GTF Chapter',
+      logo: 'Montserrat',
     },
     zIndices: {
       default: 1,

@@ -15,7 +15,6 @@
     "@prismicio/react": "^2.3.0",
     "@prismicio/slice-simulator-react": "^0.2.2",
     "@stitches/react": "^1.2.8",
-    "@types/styled-components": "^5.1.25",
     "next": "12.1.6",
     "react": "18.1.0",
     "react-dom": "18.1.0"

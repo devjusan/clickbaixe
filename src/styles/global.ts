@@ -19,7 +19,14 @@ export const globalStyles = globalCss({
   },
 });
 
-export const Title = styled('h1', {
+export const StyledMain = styled('main', {
+  display: 'flex',
+  justifyContent: 'center',
+  maxWidth: '$1120',
+  minHeight: '100vh',
+});
+
+export const StyleTitle = styled('h1', {
   textAlign: 'center',
 
   variants: {
@@ -33,7 +40,7 @@ export const Title = styled('h1', {
       logo: {
         fontFamily: '$logo',
         fontWeight: '400',
-        fontSize: '$105',
+        fontSize: '$44',
         lineHeight: '$space$105',
       },
     },
@@ -44,7 +51,7 @@ export const Title = styled('h1', {
   },
 });
 
-export const Subtitle = styled('h2', {
+export const StyledSubtitle = styled('h2', {
   fontSize: '$24',
   textAlign: 'center',
 
