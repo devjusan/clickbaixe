@@ -4,6 +4,7 @@ import Head from 'next/head';
 import Header from '../components/core/header';
 import Footer from '../components/core/footer';
 import Post from '../components/ui/post';
+import ArticleList from '../components/ui/articles-list';
 
 const Home: NextPage = () => {
   return (
@@ -16,6 +17,7 @@ const Home: NextPage = () => {
       <Header />
       <StyledMain>
         <Post />
+        <ArticleList />
       </StyledMain>
       <Footer />
     </>

@@ -26,7 +26,8 @@ export const globalStyles = globalCss({
 
 export const StyledMain = styled('main', {
   display: 'flex',
-  justifyContent: 'center',
+  alignItems: 'center',
+  flexFlow: 'column nowrap',
   minHeight: 'calc(100vh - 400px)',
 });
 
