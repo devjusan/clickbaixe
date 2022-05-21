@@ -7,15 +7,16 @@ export const globalStyles = globalCss({
     border: 'none',
     boxSizing: 'border-box',
   },
-  'body, button': {
-    fontFamily: '$default',
-  },
   body: {
     background: '$background',
     color: '$black',
+    fontFamily: '$default',
   },
   'h1, h2, h3, h4': {
     color: '$black',
+  },
+  'button, li': {
+    cursor: 'pointer',
   },
 });
 

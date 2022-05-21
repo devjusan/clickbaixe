@@ -6,8 +6,9 @@ const StyledHeader = styled('header', {
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
+
   px: '$52',
-  boxShadow: '0px 1px 0px rgba(0, 0, 0, 0.16);',
+  boxShadow: '0px 1px 0px rgba(0, 0, 0, 0.22);',
 });
 
 const StyledUl = styled('ul', {
