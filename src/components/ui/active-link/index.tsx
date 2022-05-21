@@ -9,7 +9,6 @@ interface IActiveLink extends LinkProps {
 
 const ActiveLink = ({ children, activeClassName, ...props }: IActiveLink) => {
   const { asPath } = useRouter();
-  console.log(asPath);
 
   const className = asPath === props.href ? activeClassName : '';
 

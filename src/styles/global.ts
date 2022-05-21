@@ -18,17 +18,22 @@ export const globalStyles = globalCss({
   'button, a, li': {
     cursor: 'pointer',
   },
+  article: {
+    maxWidth: '$1120',
+    py: '$72',
+  },
 });
 
 export const StyledMain = styled('main', {
   display: 'flex',
   justifyContent: 'center',
-  maxWidth: '$1120',
   minHeight: 'calc(100vh - 400px)',
 });
 
 export const StyleTitle = styled('h1', {
   textAlign: 'center',
+  maxWidth: '650px',
+  px: '$20',
 
   variants: {
     type: {
@@ -44,6 +49,10 @@ export const StyleTitle = styled('h1', {
         fontSize: '$44',
         lineHeight: '$space$105',
       },
+      mobile: {
+        fontSize: '$32',
+        lineHeight: '$space$44',
+      },
     },
   },
 
@@ -55,23 +64,24 @@ export const StyleTitle = styled('h1', {
 export const StyledSubtitle = styled('h2', {
   fontSize: '$24',
   textAlign: 'center',
-
+  px: '$20',
+  maxWidth: '400px',
+  lineHeight: '$space$32',
+  position: 'relative',
   variants: {
-    fonts: {
+    type: {
       subtitle: {
         fontFamily: '$subtitle',
         fontWeight: '400',
-        lineHeight: '$space$32',
       },
       articleTitle: {
         fontFamily: '$articleTitle',
         fontWeight: '500',
-        lineHeight: '$space$24',
       },
     },
   },
 
   defaultVariants: {
-    fonts: 'articleTitle',
+    type: 'articleTitle',
   },
 });
