@@ -8,6 +8,8 @@ const StyledArticle = styled('article', {
   gap: '$44',
   borderBottom: '2px solid $color$black',
   borderRadius: '$default',
+
+  cursor: 'pointer',
 });
 
 const StyledLine = styled('div', {

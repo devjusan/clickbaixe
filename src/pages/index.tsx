@@ -1,8 +1,9 @@
 import { GetStaticProps } from 'next';
 import { StyledMain } from '../styles/global';
-import ArticleList from '../components/ui/articles-list';
 import { createClient } from 'prismic.config';
+import { formatPrismicPosts } from '../utils/prismic.utils';
 import { RichText } from 'prismic-dom';
+import ArticleList from '../components/ui/articles-list';
 import Head from 'next/head';
 import Post from '../components/ui/post';
 
@@ -15,9 +16,17 @@ interface IPost {
       url: string;
     };
   };
+  posts: {
+    title: string;
+    subtitle: string;
+    slug: string;
+    image: {
+      url: string;
+    };
+  }[];
 }
 
-const Home = ({ post }: IPost) => {
+const Home = ({ post, posts }: IPost) => {
   return (
     <>
       <Head>
@@ -30,7 +39,7 @@ const Home = ({ post }: IPost) => {
       </Head>
       <StyledMain>
         <Post post={post} />
-        <ArticleList />
+        <ArticleList posts={posts} />
       </StyledMain>
     </>
   );
@@ -43,6 +52,9 @@ export const getStaticProps: GetStaticProps = async ({ previewData }) => {
   const manualSlug = 'coreldraw-2022-completo';
   const prismiClient = createClient({ previewData });
   const prismicData = await prismiClient.getByUID('posts', manualSlug);
+  const posts = await prismiClient.getAllByType('posts', { limit: 12 });
+
+  const mapPosts = formatPrismicPosts(posts);
 
   const post = {
     slug: manualSlug,
@@ -53,5 +65,5 @@ export const getStaticProps: GetStaticProps = async ({ previewData }) => {
     },
   };
 
-  return { props: { post }, revalidate: ONE_HOUR };
+  return { props: { post, posts: mapPosts }, revalidate: ONE_HOUR };
 };

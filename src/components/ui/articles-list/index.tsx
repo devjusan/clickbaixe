@@ -3,7 +3,18 @@ import { NextComponentType } from 'next';
 import { StyledContainer, StyledContainerList } from './styled';
 import Article from './article';
 
-const ArticlesList: NextComponentType = () => {
+interface IArticlesList {
+  posts: {
+    title: string;
+    subtitle: string;
+    slug: string;
+    image: {
+      url: string;
+    };
+  }[];
+}
+
+const ArticlesList = ({ posts }: IArticlesList) => {
   const list = [
     { title: 'Here are some things you should know regarding how we work' },
     {
@@ -31,8 +42,13 @@ const ArticlesList: NextComponentType = () => {
         Últimos posts
       </StyledTitle>
       <StyledContainerList>
-        {[...list].map((l) => (
-          <Article title={l.title} key={l.title} />
+        {[...posts].map((post) => (
+          <Article
+            slug={post.slug}
+            image={post.image}
+            title={post.title}
+            key={post.slug}
+          />
         ))}
       </StyledContainerList>
     </StyledContainer>
