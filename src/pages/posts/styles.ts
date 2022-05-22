@@ -5,7 +5,7 @@ const StyledContainer = styled('article', {
   flexFlow: 'column nowrap',
   alignItems: 'center',
   justifyContent: 'center',
-  gap: '$44',
+  gap: '$32',
 });
 
 export { StyledContainer };

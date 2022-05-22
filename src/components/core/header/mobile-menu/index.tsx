@@ -4,7 +4,7 @@ import { MouseEvent, useState } from 'react';
 import { StyledMenu, StyledA, StyledNav } from './styles';
 
 const MobileMenu: NextComponentType = () => {
-  const [openMenu, setOpenMenu] = useState(true);
+  const [openMenu, setOpenMenu] = useState(false);
 
   const toggleClass = (
     event: MouseEvent<HTMLDivElement, globalThis.MouseEvent>,
