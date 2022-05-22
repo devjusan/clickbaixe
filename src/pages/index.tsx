@@ -14,12 +14,10 @@ const Home: NextPage = () => {
         <meta name="description" content="Site para download de conteúdos" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
       <StyledMain>
         <Post />
         <ArticleList />
       </StyledMain>
-      <Footer />
     </>
   );
 };

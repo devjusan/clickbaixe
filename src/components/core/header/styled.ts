@@ -15,11 +15,10 @@ const StyledNav = styled('nav', {
   display: 'flex',
   alignContent: 'center',
   gap: '$28',
-  filter: 'drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))',
+  filter: 'drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.25))',
+
   '@md': {
-    a: {
-      display: 'none',
-    },
+    display: 'none',
   },
   a: {
     transition: 'color .2s',

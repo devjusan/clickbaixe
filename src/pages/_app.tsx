@@ -4,6 +4,8 @@ import { globalStyles } from '../styles/global';
 import { linkResolver, repositoryName } from '../../prismic.config';
 import type { AppProps } from 'next/app';
 import Link from 'next/link';
+import Header from '../components/core/header';
+import Footer from '../components/core/footer';
 
 globalStyles();
 function MyApp({ Component, pageProps }: AppProps) {
@@ -12,12 +14,14 @@ function MyApp({ Component, pageProps }: AppProps) {
       linkResolver={linkResolver}
       internalLinkComponent={({ href, children, ...props }) => (
         <Link href={href}>
-          <a {...props}></a>
+          <a {...props}>{children}</a>
         </Link>
       )}
     >
       <PrismicPreview repositoryName={repositoryName}>
-        <Component {...pageProps} />{' '}
+        <Header />
+        <Component {...pageProps} />
+        <Footer />
       </PrismicPreview>
     </PrismicProvider>
   );
