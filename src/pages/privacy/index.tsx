@@ -46,7 +46,7 @@ const Privacy: NextPage = () => {
         <StyledSubtitle type={'h2'}>
           Política de Cookies CLICKBAIXE
         </StyledSubtitle>
-        <StyledSubtitle type={'articleTitle'}>
+        <StyledSubtitle css={{ textAlign: 'start' }} type={'articleTitle'}>
           O que são cookies?
         </StyledSubtitle>
         <p>
@@ -58,7 +58,7 @@ const Privacy: NextPage = () => {
           esses cookies sejam armazenados, no entanto, isso pode fazer o
           downgrade ou 'quebrar' certos elementos da funcionalidade do site.
         </p>
-        <StyledSubtitle type={'articleTitle'}>
+        <StyledSubtitle css={{ textAlign: 'start' }} type={'articleTitle'}>
           Como usamos os cookies?
         </StyledSubtitle>
         <p>
@@ -69,7 +69,9 @@ const Privacy: NextPage = () => {
           deixe todos os cookies se não tiver certeza se precisa ou não deles,
           caso sejam usados ​​para fornecer um serviço que você usa.
         </p>
-        <StyledSubtitle type={'articleTitle'}>Desativar cookies</StyledSubtitle>
+        <StyledSubtitle css={{ textAlign: 'start' }} type={'articleTitle'}>
+          Desativar cookies
+        </StyledSubtitle>
         <p>
           Você pode impedir a configuração de cookies ajustando as configurações
           do seu navegador (consulte a Ajuda do navegador para saber como fazer
@@ -79,7 +81,7 @@ const Privacy: NextPage = () => {
           determinadas funcionalidades e recursos deste site. Portanto, é
           recomendável que você não desative os cookies.
         </p>
-        <StyledSubtitle type={'articleTitle'}>
+        <StyledSubtitle css={{ textAlign: 'start' }} type={'articleTitle'}>
           Cookies que definimos
         </StyledSubtitle>
         <ul>
@@ -244,7 +246,7 @@ const Privacy: NextPage = () => {
         </ul>
       </StyledPost>
       <StyledPost>
-        <StyledSubtitle type={'subtitle'} css={{ fontWeight: 'bold' }}>
+        <StyledSubtitle type={'h2'} css={{ fontWeight: 'bold' }}>
           Mais informações
         </StyledSubtitle>
         <p>

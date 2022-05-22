@@ -1,23 +1,45 @@
-import { NextComponentType } from 'next';
 import { StyledArticle, StyledImageContainer, StyledLine } from './styled';
 import { StyledSubtitle, StyledTitle } from '@//styles/global';
 import Image from 'next/image';
-import img from '../../../assets/img.svg';
+import { useRouter } from 'next/router';
 
-const Post: NextComponentType = () => {
+interface IPost {
+  post: {
+    slug: string;
+    title: string;
+    subtitle: string;
+    image: {
+      url: string;
+    };
+  };
+}
+
+const Post = ({ post: { image, slug, subtitle, title } }: IPost) => {
+  const { push } = useRouter();
+  const handleClick = () => {
+    push(`/posts/${slug}`);
+  };
+
   return (
-    <StyledArticle>
+    <StyledArticle onClick={handleClick}>
       <StyledImageContainer>
-        <Image priority={false} src={img} alt="Imagem do post" />
+        <Image
+          style={{ borderRadius: '10px' }}
+          priority={false}
+          width={700}
+          height={350}
+          src={image.url}
+          alt="Imagem do post"
+        />
       </StyledImageContainer>
       <StyledTitle
         css={{ marginBottom: '$44' }}
         type={{ '@initial': 'title', '@sm': 'mobile' }}
       >
-        A few words about this blog platform, Ghost, and how this site was made
+        {title}
       </StyledTitle>
       <StyledSubtitle css={{ position: 'relative' }} type={'articleTitle'}>
-        Why Ghost (& Figma) instead of Medium, WordPress or other options?
+        {subtitle}
       </StyledSubtitle>{' '}
       <StyledLine />
     </StyledArticle>
