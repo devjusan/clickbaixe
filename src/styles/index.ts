@@ -10,7 +10,7 @@ export const { styled, getCssText, globalCss } = createStitches({
     colors: {
       black: '#000000',
       white: '#ffffff',
-      background: '#ffffff',
+      background: '#F5FFFA',
       backgroundYellow: '#ffd900',
     },
     space: {

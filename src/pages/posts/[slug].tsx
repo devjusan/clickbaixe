@@ -1,5 +1,5 @@
 import { StyledSubtitle, StyledTitle } from '@//styles/global';
-import { StyledContainer, StyledContent } from './styles';
+import { StyledContainer, StyledContent, StyledLine } from './styles';
 import { GetServerSideProps } from 'next';
 import { createClient } from 'prismic.config';
 import { RichText } from 'prismic-dom';
@@ -7,6 +7,8 @@ import { useCallback } from 'react';
 import DOMPurify from 'isomorphic-dompurify';
 import Head from 'next/head';
 import Image from 'next/image';
+import NextBelow from '@//components/ui/next-bellow';
+import { formatPrismicPosts } from '@//utils/prismic.utils';
 
 interface IPost {
   post: {
@@ -19,10 +21,19 @@ interface IPost {
       url: string;
     };
   };
+  posts: {
+    title: string;
+    subtitle: string;
+    slug: string;
+    image: {
+      url: string;
+    };
+  }[];
 }
 
 const Post = ({
-  post: { title, subtitle, image, slug, content, updatedAt },
+  post: { title, subtitle, image, content, updatedAt },
+  posts,
 }: IPost) => {
   const sanitizedContent = useCallback(() => {
     return DOMPurify.sanitize(content);
@@ -53,7 +64,9 @@ const Post = ({
         />
         <StyledContent
           dangerouslySetInnerHTML={{ __html: sanitizedContent() }}
-        ></StyledContent>
+        />
+        <StyledLine />
+        <NextBelow posts={posts} />
       </StyledContainer>
     </>
   );
@@ -68,6 +81,9 @@ export const getServerSideProps: GetServerSideProps = async ({
   const slug = params?.slug?.toString();
   const prismiClient = createClient({ previewData });
   const prismicData = await prismiClient.getByUID('posts', slug ?? '');
+  const posts = await prismiClient.getAllByType('posts');
+  const mapPosts = formatPrismicPosts(posts);
+  const sortedPosts = mapPosts.sort().splice(0, 12);
 
   const post = {
     slug: slug?.toString(),
@@ -79,5 +95,5 @@ export const getServerSideProps: GetServerSideProps = async ({
     },
   };
 
-  return { props: { post } };
+  return { props: { post, posts: sortedPosts } };
 };

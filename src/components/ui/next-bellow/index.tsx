@@ -1,6 +1,6 @@
 import { StyledTitle } from '@//styles/global';
+import Article from '../articles-list/article';
 import { StyledContainer, StyledContainerList } from './styled';
-import Article from './article';
 
 interface IArticlesList {
   posts: {
@@ -13,12 +13,10 @@ interface IArticlesList {
   }[];
 }
 
-const ArticlesList = ({ posts }: IArticlesList) => {
+const NextBelow = ({ posts }: IArticlesList) => {
   return (
     <StyledContainer>
-      <StyledTitle css={{ fontSize: '35px', marginBottom: '$44' }} type="title">
-        Últimos posts
-      </StyledTitle>
+      <StyledTitle>O que ver depois</StyledTitle>
       <StyledContainerList>
         {[...posts].map((post) => (
           <Article
@@ -33,4 +31,4 @@ const ArticlesList = ({ posts }: IArticlesList) => {
   );
 };
 
-export default ArticlesList;
+export default NextBelow;

@@ -55,4 +55,11 @@ const StyledContent = styled('article', {
   },
 });
 
-export { StyledContainer, StyledContent };
+const StyledLine = styled('div', {
+  width: '100%',
+  background: '$black',
+  borderRadius: '$full',
+  height: '2px',
+});
+
+export { StyledContainer, StyledContent, StyledLine };

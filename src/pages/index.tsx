@@ -1,4 +1,4 @@
-import { GetStaticPaths, GetStaticProps } from 'next';
+import { GetStaticProps } from 'next';
 import { StyledMain } from '../styles/global';
 import { createClient } from 'prismic.config';
 import { formatPrismicPosts } from '../utils/prismic.utils';
@@ -47,13 +47,6 @@ const Home = ({ post, posts }: IPost) => {
 };
 
 export default Home;
-
-export const getStaticPaths: GetStaticPaths = async () => {
-  return {
-    paths: [{ params: { slug: FAVORITE_SLUG } }],
-    fallback: 'blocking',
-  };
-};
 
 export const getStaticProps: GetStaticProps = async ({ previewData }) => {
   const ONE_HOUR = 60 * 30;
