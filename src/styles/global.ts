@@ -22,6 +22,19 @@ export const globalStyles = globalCss({
     maxWidth: '$1120',
     py: '$72',
   },
+  a: {
+    textDecoration: 'none',
+    fontSize: '$20',
+    fontFamily: '$subtitle',
+    transition: 'color .2s',
+    color: '$black',
+    '&:hover': {
+      color: '$backgroundYellow !important',
+    },
+  },
+  'p, li': {
+    px: '$12',
+  },
 });
 
 export const StyledMain = styled('main', {
@@ -32,7 +45,7 @@ export const StyledMain = styled('main', {
   paddingBottom: '$105',
 });
 
-export const StyleTitle = styled('h1', {
+export const StyledTitle = styled('h1', {
   textAlign: 'center',
   maxWidth: '650px',
   px: '$20',
@@ -74,6 +87,11 @@ export const StyledSubtitle = styled('h2', {
   maxWidth: '400px',
   lineHeight: '$space$32',
   position: 'relative',
+  '@md': {
+    fontSize: '$32 !important',
+    px: '$12',
+  },
+
   variants: {
     type: {
       subtitle: {
@@ -83,6 +101,13 @@ export const StyledSubtitle = styled('h2', {
       articleTitle: {
         fontFamily: '$articleTitle',
         fontWeight: '500',
+      },
+      h2: {
+        fontFamily: '$title',
+        fontWeight: '700',
+        fontSize: '$52',
+        lineHeight: '$space$52',
+        whiteSpace: 'nowrap',
       },
     },
   },

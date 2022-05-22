@@ -1,4 +1,4 @@
-import { StyledSubtitle, StyleTitle } from '@//styles/global';
+import { StyledSubtitle, StyledTitle } from '@//styles/global';
 import { StyledContainer } from './styles';
 import { NextPage } from 'next';
 import Head from 'next/head';
@@ -20,13 +20,13 @@ const Post: NextPage = () => {
         <title>Posts / CLICKBAIXE</title>
       </Head>
       <StyledContainer>
-        <StyleTitle
+        <StyledTitle
           css={{ marginBottom: '$44' }}
           type={{ '@initial': 'title', '@sm': 'mobile' }}
         >
           A few words about this blog platform, Ghost, and how this site was
           made
-        </StyleTitle>
+        </StyledTitle>
         <StyledSubtitle css={{ position: 'relative' }} type={'articleTitle'}>
           Why Ghost (& Figma) instead of Medium, WordPress or other options?
         </StyledSubtitle>

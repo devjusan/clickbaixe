@@ -1,4 +1,4 @@
-import { StyleTitle } from '@//styles/global';
+import { StyledTitle } from '@//styles/global';
 import { NextComponentType } from 'next';
 import { StyledContainer, StyledContainerList } from './styled';
 import Article from './article';
@@ -27,9 +27,9 @@ const ArticlesList: NextComponentType = () => {
 
   return (
     <StyledContainer>
-      <StyleTitle css={{ fontSize: '35px', marginBottom: '$44' }} type="title">
+      <StyledTitle css={{ fontSize: '35px', marginBottom: '$44' }} type="title">
         Últimos posts
-      </StyleTitle>
+      </StyledTitle>
       <StyledContainerList>
         {[...list].map((l) => (
           <Article title={l.title} key={l.title} />

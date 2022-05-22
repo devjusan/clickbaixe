@@ -30,7 +30,7 @@ const StyledMenu = styled('div', {
 
 const showUp = keyframes({
   from: { height: 0, opacity: '0' },
-  to: { height: '180px', opacity: '1' },
+  to: { height: '280px', opacity: '1' },
 });
 
 const StyledNav = styled('nav', {
@@ -40,15 +40,18 @@ const StyledNav = styled('nav', {
   top: '$52',
   flexFlow: 'column nowrap',
   gap: '$28',
-  px: '$28',
-  py: '$20',
+
   animation: `${showUp} .3s ease forwards`,
   fontFamily: '$logo',
-  color: 'White',
   fontSize: '$24',
-  background: 'rgba(20,20,20, .95)',
+  background: 'rgba(20,20,20, .98)',
   borderRadius: '$default',
   zIndex: '$accordion',
+  minWidth: '100%',
+  whiteSpace: 'nowrap',
+  px: '$28',
+  py: '$20',
+
   variants: {
     visible: {
       show: {
@@ -62,6 +65,7 @@ const StyledNav = styled('nav', {
 });
 
 const StyledA = styled('a', {
+  color: '$white',
   transition: 'color .2s',
   '&:hover': {
     color: '$backgroundYellow',

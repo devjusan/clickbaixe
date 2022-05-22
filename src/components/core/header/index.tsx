@@ -1,4 +1,4 @@
-import { StyleTitle } from '@//styles/global';
+import { StyledTitle } from '@//styles/global';
 import { NextComponentType } from 'next';
 import ActiveLink from '../../ui/active-link';
 import MobileMenu from './mobile-menu';
@@ -7,7 +7,7 @@ import { StyledHeader, StyledNav, StyledA } from './styled';
 const Header: NextComponentType = () => {
   return (
     <StyledHeader>
-      <StyleTitle type={'logo'}>CLICKBAIXE</StyleTitle>
+      <StyledTitle type={'logo'}>CLICKBAIXE</StyledTitle>
       <StyledNav>
         <ActiveLink activeClassName={'active'} href="/">
           <StyledA> BLOG </StyledA>

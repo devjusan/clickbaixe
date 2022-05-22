@@ -39,7 +39,7 @@ const StyledMedia = styled('div', {
   svg: {
     cursor: 'pointer',
     '&:hover': {
-      fill: '$white',
+      fill: '$backgroundYellow',
     },
     transition: 'fill .2s',
   },
