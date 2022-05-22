@@ -1,6 +1,7 @@
 import { StyleTitle } from '@//styles/global';
 import { NextComponentType } from 'next';
 import ActiveLink from '../../ui/active-link';
+import MobileMenu from './mobile-menu';
 import { StyledHeader, StyledNav, StyledA } from './styled';
 
 const Header: NextComponentType = () => {
@@ -19,6 +20,7 @@ const Header: NextComponentType = () => {
           <StyledA> SOBRE </StyledA>
         </ActiveLink>
       </StyledNav>
+      <MobileMenu />
     </StyledHeader>
   );
 };

@@ -6,6 +6,7 @@ const StyledContainer = styled('div', {
   justifyContent: 'flex-start',
   flexFlow: 'column wrap',
   gap: '$28',
+  cursor: 'pointer',
 });
 
 export { StyledContainer };

@@ -16,9 +16,20 @@ const StyledNav = styled('nav', {
   alignContent: 'center',
   gap: '$28',
   filter: 'drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))',
+  '@md': {
+    a: {
+      display: 'none',
+    },
+  },
+  a: {
+    transition: 'color .2s',
+  },
+  'a:hover': {
+    color: 'rgba(0, 0, 0, 0.70)',
+  },
   'a.active': {
     color: '$black',
-    fontWeight: 'bold',
+    fontWeight: '600',
   },
   'a.active::after': {
     content: '',

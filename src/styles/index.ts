@@ -3,7 +3,7 @@ import { createStitches, ScaleValue } from '@stitches/react';
 export const { styled, getCssText, globalCss } = createStitches({
   media: {
     sm: '(max-width: 640px)',
-    md: '(max-width: 768px)',
+    md: '(max-width: 840px)',
     lg: '(max-width: 1024px)',
   },
   theme: {
@@ -51,6 +51,7 @@ export const { styled, getCssText, globalCss } = createStitches({
     radii: {
       full: '999999px',
       default: '5px',
+      medium: '10px',
     },
     fonts: {
       default: 'New York Medium',

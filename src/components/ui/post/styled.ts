@@ -7,6 +7,7 @@ const StyledArticle = styled('article', {
   justifyContent: 'center',
   gap: '$44',
   borderBottom: '2px solid $color$black',
+  borderRadius: '$default',
 });
 
 const StyledLine = styled('div', {

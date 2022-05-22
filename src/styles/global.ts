@@ -29,12 +29,17 @@ export const StyledMain = styled('main', {
   alignItems: 'center',
   flexFlow: 'column nowrap',
   minHeight: 'calc(100vh - 400px)',
+  paddingBottom: '$105',
 });
 
 export const StyleTitle = styled('h1', {
   textAlign: 'center',
   maxWidth: '650px',
   px: '$20',
+  '@md': {
+    fontSize: '$32 !important',
+    px: '$12',
+  },
 
   variants: {
     type: {
