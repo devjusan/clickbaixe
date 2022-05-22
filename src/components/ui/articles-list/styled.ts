@@ -12,7 +12,7 @@ const StyledContainerList = styled('div', {
   flexWrap: 'wrap',
   justifyContent: 'center',
   gap: '$16',
-  rowGap: '$32',
+  rowGap: '$72',
 });
 
 export { StyledContainer, StyledContainerList };

@@ -10,13 +10,7 @@ interface IArticle {
 const Article = ({ title }: IArticle) => {
   return (
     <StyledContainer>
-      <Image
-        src={Img}
-        width={300}
-        height={176}
-        priority={false}
-        alt="Uma postagem"
-      />
+      <Image src={Img} width={300} height={176} priority alt="Uma postagem" />
       <StyledSubtitle type={'articleTitle'}>{title}</StyledSubtitle>
     </StyledContainer>
   );
