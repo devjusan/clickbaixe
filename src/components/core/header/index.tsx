@@ -1,13 +1,25 @@
 import { StyledTitle } from '@//styles/global';
 import { NextComponentType } from 'next';
+import { StyledHeader, StyledNav, StyledA } from './styled';
+import { useRouter } from 'next/router';
 import ActiveLink from '../../ui/active-link';
 import MobileMenu from './mobile-menu';
-import { StyledHeader, StyledNav, StyledA } from './styled';
 
 const Header: NextComponentType = () => {
+  const { push } = useRouter();
+  const handleClick = () => {
+    push('/');
+  };
+
   return (
     <StyledHeader>
-      <StyledTitle type={'logo'}>CLICKBAIXE</StyledTitle>
+      <StyledTitle
+        onClick={handleClick}
+        css={{ cursor: 'pointer' }}
+        type={'logo'}
+      >
+        CLICKBAIXE
+      </StyledTitle>
       <StyledNav>
         <ActiveLink activeClassName={'active'} href="/">
           <StyledA> BLOG </StyledA>

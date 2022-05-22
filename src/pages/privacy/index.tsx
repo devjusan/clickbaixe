@@ -1,5 +1,5 @@
 import { StyledSubtitle } from '@//styles/global';
-import { NextPage } from 'next';
+import { GetStaticPaths, NextPage } from 'next';
 import Link from 'next/link';
 import { StyledContainer, StyledPost } from './styled';
 

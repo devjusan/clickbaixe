@@ -1,8 +1,7 @@
 import { StyledSubtitle } from '@//styles/global';
-import Image from 'next/image';
 import { StyledContainer } from './styled';
-import Img from '../../../../assets/img.svg';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 
 interface IArticle {
   title: string;
@@ -15,7 +14,7 @@ interface IArticle {
 const Article = ({ title, image, slug }: IArticle) => {
   const { push } = useRouter();
   const handleClick = () => {
-    push(slug);
+    push(`posts/${slug}`);
   };
 
   return (
