@@ -51,13 +51,23 @@ export default Home;
 export const getStaticProps: GetStaticProps = async ({ previewData }) => {
   const ONE_HOUR = 60 * 30;
   const prismiClient = createClient({ previewData });
-  const prismicData = await prismiClient.getByUID('posts', FAVORITE_SLUG);
+  const slug = await prismiClient
+    .getAllByType('favorite-slug', {
+      limit: 1,
+    })
+    .then((response) => response[0].uid);
+  console.log(slug);
+
+  const prismicData = await prismiClient.getByUID(
+    'posts',
+    slug?.toString() ?? FAVORITE_SLUG,
+  );
   const posts = await prismiClient.getAllByType('posts', { limit: 12 });
 
   const mapPosts = formatPrismicPosts(posts);
 
   const post = {
-    slug: FAVORITE_SLUG,
+    slug: slug ?? FAVORITE_SLUG,
     title: RichText.asText(prismicData.data.title),
     subtitle: RichText.asText(prismicData.data.subtitle),
     image: {

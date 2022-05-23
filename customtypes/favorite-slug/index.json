@@ -1,0 +1,17 @@
+{
+  "id": "favorite-slug",
+  "label": "favorite-slug",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "Uid",
+          "placeholder": ""
+        }
+      }
+    }
+  }
+}
