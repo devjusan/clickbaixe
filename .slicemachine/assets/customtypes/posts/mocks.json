@@ -1,6 +1,6 @@
 {
-  "id": "ef79f14a-d4d9-4da1-992a-c0e23e8f3e2d",
-  "uid": "et-iusto-quasi",
+  "id": "abc9a55c-f679-494f-9b25-48622b6223f7",
+  "uid": "magnam-dicta-enim",
   "type": "posts",
   "data": {
     "image": {
@@ -10,28 +10,32 @@
       },
       "alt": "Placeholder image",
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1591012911207-0dbac31f37da?w=900&h=500&fit=crop"
+      "url": "https://images.unsplash.com/photo-1547082299-de196ea013d6?w=900&h=500&fit=crop"
     },
     "content": [
       {
         "type": "paragraph",
-        "text": "Cupidatat do aliqua occaecat. Magna aliquip officia sunt fugiat esse cillum culpa non voluptate et nulla. Est laborum dolor cupidatat quis incididunt dolor cillum exercitation.",
+        "text": "Consequat qui do pariatur mollit occaecat Lorem ipsum cupidatat officia cupidatat ut amet occaecat do aliqua. Ut pariatur cupidatat ea cupidatat consectetur pariatur.",
         "spans": []
       }
     ],
     "title": [
       {
         "type": "heading1",
-        "text": "Incentivize transparent e-tailers",
+        "text": "Architect leading-edge eyeballs",
         "spans": []
       }
     ],
     "subtitle": [
       {
         "type": "paragraph",
-        "text": "Eiusmod et nostrud fugiat Lorem irure irure reprehenderit qui enim irure labore.",
+        "text": "Sit sint Lorem magna amet. Ex duis in cupidatat aliquip ullamco.",
         "spans": []
       }
-    ]
+    ],
+    "softwares": {
+      "link_type": "Web",
+      "url": "https://prismic.io"
+    }
   }
 }

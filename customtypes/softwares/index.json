@@ -1,0 +1,9 @@
+{
+  "id": "softwares",
+  "label": "softwares",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {}
+  }
+}

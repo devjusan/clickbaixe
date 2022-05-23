@@ -25,11 +25,11 @@ const Header: NextComponentType = () => {
           <StyledA> BLOG </StyledA>
         </ActiveLink>
 
-        <ActiveLink activeClassName={'active'} href="#">
+        <ActiveLink activeClassName={'active'} href="/categories">
           <StyledA> CATEGORIAS </StyledA>
         </ActiveLink>
-        <ActiveLink activeClassName={'active'} href="#">
-          <StyledA> SOBRE </StyledA>
+        <ActiveLink activeClassName={'active'} href="/helpus">
+          <StyledA> APOIE </StyledA>
         </ActiveLink>
       </StyledNav>
       <MobileMenu />

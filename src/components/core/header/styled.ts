@@ -7,6 +7,7 @@ const StyledHeader = styled('header', {
   justifyContent: 'space-between',
   alignItems: 'center',
 
+  background: '$backgroundYellow',
   px: '$52',
   boxShadow: '0px 1px 0px rgba(0, 0, 0, 0.22);',
 });
@@ -21,10 +22,11 @@ const StyledNav = styled('nav', {
     display: 'none',
   },
   a: {
+    position: 'relative',
     transition: 'color .2s',
   },
   'a:hover': {
-    color: 'rgba(0, 0, 0, 0.70)',
+    color: 'rgba(0, 0, 0, 0.70) !important',
   },
   'a.active': {
     color: '$black',
@@ -34,7 +36,7 @@ const StyledNav = styled('nav', {
     content: '',
     height: '2px',
     borderRadius: '$full',
-    width: '4rem',
+    width: '100%',
     position: 'absolute',
     top: '5.45rem',
     left: '0',
