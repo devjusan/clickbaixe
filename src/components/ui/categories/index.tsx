@@ -14,11 +14,13 @@ const Categories = () => {
     category: string,
   ) => {
     const _category = category.toLowerCase();
+    event.preventDefault();
+
     if (_category === 'tudo') {
-      push(`/`, '/');
+      push(`/`);
       return;
     }
-    push(`/posts/category/${_category}`);
+    push(`/category/${_category}`);
   };
 
   return (
@@ -26,6 +28,7 @@ const Categories = () => {
       <ul>
         {categories().map((category: string) => (
           <StyledButton
+            css={{ borderRadius: '$full' }}
             onClick={(event) => handleClick(event, category)}
             key={category}
           >

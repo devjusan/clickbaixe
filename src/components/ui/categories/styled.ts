@@ -3,7 +3,7 @@ import { styled } from '@//styles';
 const StyledContainer = styled('div', {
   width: '100%',
   overflowX: 'auto',
-  borderBottom: '1px solid black',
+  boxShadow: '0px 1px 0px rgba(0, 0, 0, 0.22);',
   px: '$32',
   py: '$16',
 
@@ -28,7 +28,6 @@ const StyledButton = styled('li', {
   color: 'rgba(33, 37, 41, .6)',
   px: '$32',
   py: '$12',
-  borderRadius: '$full',
   transition: 'all .2s',
   '&:hover': {
     color: '$white',

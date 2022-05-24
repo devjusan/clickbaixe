@@ -10,10 +10,10 @@ import { StyledSubtitle } from '@//styles/global';
 import { GetServerSideProps } from 'next';
 import { createClient } from 'prismic.config';
 import { formatPrismicPosts } from '@//utils/prismic.utils';
+import { getSlugFromParam, split } from '@//utils/formatter.utils';
 import Head from 'next/head';
 import SocialMedias from '@//components/ui/social-medias';
 import ArticlesList from '@//components/ui/articles-list';
-import { getSlugFromParam, split } from '@//utils/formatter.utils';
 
 interface ICategories {
   posts: {
@@ -59,10 +59,9 @@ const Categories = ({ posts }: ICategories) => {
               {category()}
             </StyledSubtitle>
           </StyledCategory>
-          <ArticlesList hideTitle posts={posts}></ArticlesList>
+          <ArticlesList fromCategory hideTitle posts={posts}></ArticlesList>
         </StyledLeftContainer>
         <StyledRightContainer>
-          {' '}
           <SocialMedias />
         </StyledRightContainer>
       </StyledContainer>
@@ -77,7 +76,6 @@ export const getServerSideProps: GetServerSideProps = async ({
   params,
 }) => {
   const slug = getSlugFromParam(params);
-
   const prismicClient = createClient({ previewData });
   const prismicData = await prismicClient.getAllBySomeTags([slug]);
   const posts = formatPrismicPosts(prismicData);

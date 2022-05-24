@@ -25,9 +25,6 @@ const MobileMenu: NextComponentType = () => {
           <StyledA> BLOG </StyledA>
         </ActiveLink>
 
-        <ActiveLink activeClassName={'active'} href="/categories">
-          <StyledA> CATEGORIAS </StyledA>
-        </ActiveLink>
         <ActiveLink activeClassName={'active'} href="/privacy">
           <StyledA> POLÍTICA DE PRIVACIDADE </StyledA>
         </ActiveLink>

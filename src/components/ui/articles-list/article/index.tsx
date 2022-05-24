@@ -9,13 +9,14 @@ interface IArticle {
   image: {
     url: string;
   };
-  category?: string;
+  fromCategory?: boolean;
 }
 
-const Article = ({ title, image, slug }: IArticle) => {
+const Article = ({ title, image, slug, fromCategory }: IArticle) => {
   const { push } = useRouter();
   const handleClick = (event: any) => {
     event.preventDefault();
+
     push(`posts/${slug}`);
   };
 
