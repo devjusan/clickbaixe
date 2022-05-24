@@ -5,6 +5,8 @@ export const { styled, getCssText, globalCss } = createStitches({
     sm: `(max-width: 640px)`,
     md: `(max-width: 840px)`,
     lg: `(max-width: 1024px)`,
+    xlg: `(max-width: 1200px)`,
+    reset: `(min-width: 1201px)`,
   },
   theme: {
     colors: {

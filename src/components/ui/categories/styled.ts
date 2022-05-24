@@ -1,11 +1,32 @@
 import { styled } from '../../../styles';
 
 const StyledContainer = styled(`div`, {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  gap: '$20',
   width: `100%`,
-  overflowX: `auto`,
   boxShadow: `0px 1px 0px rgba(0, 0, 0, 0.22);`,
   px: `$32`,
   py: `$16`,
+
+  div: {
+    display: 'none',
+    padding: '0 !important',
+  },
+
+  '@xlg': {
+    div: {
+      display: 'block !important',
+    },
+  },
+
+  '@reset': {
+    ul: {
+      paddingLeft: '0 !important',
+      paddingRight: '0 !important',
+    },
+  },
 
   ul: {
     display: `flex`,
@@ -14,6 +35,8 @@ const StyledContainer = styled(`div`, {
     alignItems: `center`,
     gap: `$44`,
     listStyle: `none`,
+    overflow: 'hidden',
+    transition: 'all .2s',
   },
 });
 
@@ -35,4 +58,27 @@ const StyledButton = styled(`li`, {
   },
 });
 
-export { StyledContainer, StyledButton };
+const StyledLeftArrow = styled('div', {
+  position: 'fixed',
+  left: '2rem',
+  cursor: 'pointer',
+  img: {
+    transition: 'transform 0.2s',
+  },
+  '&:hover img': {
+    transform: 'scale(1.1)',
+  },
+});
+const StyledRightArrow = styled('div', {
+  position: 'fixed',
+  right: '2rem',
+  cursor: 'pointer',
+  img: {
+    transition: 'transform 0.2s',
+  },
+  '&:hover img': {
+    transform: 'scale(1.1)',
+  },
+});
+
+export { StyledContainer, StyledButton, StyledLeftArrow, StyledRightArrow };
