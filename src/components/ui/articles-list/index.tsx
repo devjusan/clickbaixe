@@ -12,10 +12,9 @@ interface IArticlesList {
     };
   }[];
   hideTitle?: boolean;
-  fromCategory?: boolean;
 }
 
-const ArticlesList = ({ posts, hideTitle, fromCategory }: IArticlesList) => {
+const ArticlesList = ({ posts, hideTitle }: IArticlesList) => {
   return (
     <StyledContainer>
       {!hideTitle && (
@@ -30,7 +29,6 @@ const ArticlesList = ({ posts, hideTitle, fromCategory }: IArticlesList) => {
       <StyledContainerList>
         {[...posts].map((post) => (
           <Article
-            fromCategory={fromCategory}
             slug={post.slug}
             image={post.image}
             title={post.title}

@@ -59,7 +59,7 @@ const Categories = ({ posts }: ICategories) => {
               {category()}
             </StyledSubtitle>
           </StyledCategory>
-          <ArticlesList fromCategory hideTitle posts={posts}></ArticlesList>
+          <ArticlesList hideTitle posts={posts}></ArticlesList>
         </StyledLeftContainer>
         <StyledRightContainer>
           <SocialMedias />
