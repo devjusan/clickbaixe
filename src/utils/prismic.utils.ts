@@ -6,8 +6,6 @@ export const formatPrismicPosts = (
   posts: prismicT.PrismicDocument<Record<string, any>, string, string>[],
 ) =>
   posts.map((post) => {
-    console.log(post);
-
     return {
       slug: post.uid,
       title: RichText.asText(post.data.title),
