@@ -1,6 +1,6 @@
 import { StyledContainer, StyledContainerList } from './styled';
 import Article from './article';
-import { StyledTitle } from '../../../styles/global';
+import { StyledSubtitle, StyledTitle } from '../../../styles/global';
 
 interface IArticlesList {
   posts: {
@@ -23,14 +23,21 @@ const ArticlesList = ({ posts, hideTitle }: IArticlesList) => (
     )}
 
     <StyledContainerList>
-      {[...posts].map((post) => (
-        <Article
-          slug={post.slug}
-          image={post.image}
-          title={post.title}
-          key={post.slug}
-        />
-      ))}
+      {posts.length ? (
+        [...posts].map((post) => (
+          <Article
+            slug={post.slug}
+            image={post.image}
+            title={post.title}
+            key={post.slug}
+          />
+        ))
+      ) : (
+        <StyledSubtitle>
+          Ainda não há conteudos sobre esta categoria. Tente novamente mais
+          tarde!
+        </StyledSubtitle>
+      )}
     </StyledContainerList>
   </StyledContainer>
 );

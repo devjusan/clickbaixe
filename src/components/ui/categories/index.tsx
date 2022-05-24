@@ -38,13 +38,13 @@ const Categories = () => {
     if (to === 'left') {
       setPaddingRight(() => 0);
       setPaddingLeft((state) => state + 8);
-      if (paddingLeft > 40) {
+      if (paddingLeft > 32) {
         setPaddingLeft(0);
       }
     } else {
       setPaddingLeft(() => 0);
       setPaddingRight((state) => state + 8);
-      if (paddingRight > 40) {
+      if (paddingRight > 32) {
         setPaddingRight(0);
       }
     }
