@@ -1,5 +1,4 @@
 import { GetStaticProps } from 'next';
-import { createClient } from 'prismic.config';
 import { RichText } from 'prismic-dom';
 import Head from 'next/head';
 import { StyledMain } from '../styles/global';
@@ -8,6 +7,7 @@ import ArticleList from '../components/ui/articles-list';
 import Post from '../components/ui/post';
 import { FAVORITE_SLUG } from '../constants/favorite-slug';
 import { formatDate } from '../utils/formatter.utils';
+import { createClient } from '../../prismic.config';
 
 interface IPost {
   post: {
