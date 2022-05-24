@@ -3,7 +3,7 @@ import {
   StyledCategory,
   StyledLeftContainer,
   StyledRightContainer,
-} from './styles';
+} from '../../pages-styles/category-styled';
 import { useRouter } from 'next/router';
 import { useCallback } from 'react';
 import { StyledSubtitle } from '@//styles/global';

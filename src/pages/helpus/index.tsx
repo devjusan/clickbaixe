@@ -1,6 +1,6 @@
 import { StyledTitle } from '@//styles/global';
 import Image from 'next/image';
-import { StyledContainer } from './styled';
+import { StyledContainer } from '../../pages-styles/hepup-styled';
 import img from '../../assets/hunter.png';
 
 const HelpUs = () => {

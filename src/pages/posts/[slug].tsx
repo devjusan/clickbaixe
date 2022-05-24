@@ -1,5 +1,9 @@
 import { StyledSubtitle, StyledTitle } from '@//styles/global';
-import { StyledContainer, StyledContent, StyledLine } from './styles';
+import {
+  StyledContainer,
+  StyledContent,
+  StyledLine,
+} from '../../pages-styles/posts-styled';
 import { GetServerSideProps } from 'next';
 import { createClient } from 'prismic.config';
 import { RichText } from 'prismic-dom';
