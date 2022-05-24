@@ -9,11 +9,13 @@ interface IArticle {
   image: {
     url: string;
   };
+  category?: string;
 }
 
 const Article = ({ title, image, slug }: IArticle) => {
   const { push } = useRouter();
-  const handleClick = () => {
+  const handleClick = (event: any) => {
+    event.preventDefault();
     push(`posts/${slug}`);
   };
 
@@ -26,7 +28,9 @@ const Article = ({ title, image, slug }: IArticle) => {
         priority
         alt="Uma postagem"
       />
-      <StyledSubtitle type={'articleTitle'}>{title}</StyledSubtitle>
+      <StyledSubtitle type={'articleTitle'} css={{ fontWeight: 'bold' }}>
+        {title}
+      </StyledSubtitle>
     </StyledContainer>
   );
 };

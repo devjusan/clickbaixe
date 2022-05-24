@@ -7,6 +7,7 @@ import ArticleList from '../components/ui/articles-list';
 import Head from 'next/head';
 import Post from '../components/ui/post';
 import { FAVORITE_SLUG } from '../constants/favorite-slug';
+import { formatDate } from '../utils/formatter.utils';
 
 interface IPost {
   post: {
@@ -16,6 +17,7 @@ interface IPost {
     image: {
       url: string;
     };
+    updatedAt: string;
   };
   posts: {
     title: string;
@@ -40,7 +42,7 @@ const Home = ({ post, posts }: IPost) => {
       </Head>
       <StyledMain>
         <Post post={post} />
-        <ArticleList posts={posts} />
+        <ArticleList hideTitle posts={posts} />
       </StyledMain>
     </>
   );
@@ -51,19 +53,14 @@ export default Home;
 export const getStaticProps: GetStaticProps = async ({ previewData }) => {
   const ONE_HOUR = 60 * 30;
   const prismiClient = createClient({ previewData });
-  const slug = await prismiClient
-    .getAllByType('favorite-slug', {
-      limit: 1,
-    })
-    .then((response) => response[0].uid);
-  console.log(slug);
+  const { results } = await prismiClient.getByType('favorite-slug');
+  const { uid: slug } = results[0];
 
   const prismicData = await prismiClient.getByUID(
     'posts',
     slug?.toString() ?? FAVORITE_SLUG,
   );
   const posts = await prismiClient.getAllByType('posts', { limit: 12 });
-
   const mapPosts = formatPrismicPosts(posts);
 
   const post = {
@@ -73,6 +70,7 @@ export const getStaticProps: GetStaticProps = async ({ previewData }) => {
     image: {
       url: prismicData.data.image.url,
     },
+    updatedAt: formatDate(prismicData.last_publication_date),
   };
 
   return { props: { post, posts: mapPosts }, revalidate: ONE_HOUR };

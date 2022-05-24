@@ -11,6 +11,7 @@ interface IPost {
     image: {
       url: string;
     };
+    updatedAt: string;
   };
 }
 
@@ -31,6 +32,7 @@ const Post = ({ post: { image, slug, subtitle, title } }: IPost) => {
           src={image.url}
           alt="Imagem do post"
         />
+        <time></time>
       </StyledImageContainer>
       <StyledTitle
         css={{ marginBottom: '$44' }}

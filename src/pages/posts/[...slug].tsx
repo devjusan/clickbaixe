@@ -9,6 +9,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import NextBelow from '@//components/ui/next-bellow';
 import { formatPrismicPosts } from '@//utils/prismic.utils';
+import { getSlugFromParam } from '@//utils/formatter.utils';
 
 interface IPost {
   post: {
@@ -42,7 +43,7 @@ const Post = ({
   return (
     <>
       <Head>
-        <title>Posts / CLICKBAIXE</title>
+        <title>{title} / CLICKBAIXE</title>
       </Head>
       <StyledContainer>
         <StyledTitle
@@ -78,15 +79,15 @@ export const getServerSideProps: GetServerSideProps = async ({
   params,
   previewData,
 }) => {
-  const slug = params?.slug?.toString();
+  const slug = getSlugFromParam(params);
   const prismiClient = createClient({ previewData });
-  const prismicData = await prismiClient.getByUID('posts', slug ?? '');
+  const prismicData = await prismiClient.getByUID('posts', slug);
   const posts = await prismiClient.getAllByType('posts');
   const mapPosts = formatPrismicPosts(posts);
   const sortedPosts = mapPosts.sort().splice(0, 12);
 
   const post = {
-    slug: slug?.toString(),
+    slug: slug,
     title: RichText.asText(prismicData.data.title),
     subtitle: RichText.asText(prismicData.data.subtitle),
     content: RichText.asHtml(prismicData.data.content),

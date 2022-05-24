@@ -11,14 +11,21 @@ interface IArticlesList {
       url: string;
     };
   }[];
+  hideTitle?: boolean;
 }
 
-const ArticlesList = ({ posts }: IArticlesList) => {
+const ArticlesList = ({ posts, hideTitle }: IArticlesList) => {
   return (
     <StyledContainer>
-      <StyledTitle css={{ fontSize: '35px', marginBottom: '$44' }} type="title">
-        Últimos posts
-      </StyledTitle>
+      {!hideTitle && (
+        <StyledTitle
+          css={{ fontSize: '35px', marginBottom: '$44' }}
+          type="title"
+        >
+          Últimos posts
+        </StyledTitle>
+      )}
+
       <StyledContainerList>
         {[...posts].map((post) => (
           <Article

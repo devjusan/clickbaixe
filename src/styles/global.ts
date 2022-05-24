@@ -21,6 +21,7 @@ export const globalStyles = globalCss({
   article: {
     maxWidth: '$1120',
     py: '$72',
+    margin: '0 auto',
   },
   a: {
     textDecoration: 'none',

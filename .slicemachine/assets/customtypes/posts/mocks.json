@@ -1,6 +1,6 @@
 {
-  "id": "abc9a55c-f679-494f-9b25-48622b6223f7",
-  "uid": "magnam-dicta-enim",
+  "id": "33b792b0-e68a-4034-a9f2-314398f5d0a5",
+  "uid": "voluptatem-consequatur-molestiae",
   "type": "posts",
   "data": {
     "image": {
@@ -10,32 +10,28 @@
       },
       "alt": "Placeholder image",
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1547082299-de196ea013d6?w=900&h=500&fit=crop"
+      "url": "https://images.unsplash.com/photo-1587905069134-008460d7a636?w=900&h=500&fit=crop"
     },
     "content": [
       {
         "type": "paragraph",
-        "text": "Consequat qui do pariatur mollit occaecat Lorem ipsum cupidatat officia cupidatat ut amet occaecat do aliqua. Ut pariatur cupidatat ea cupidatat consectetur pariatur.",
+        "text": "Minim aute dolor dolore officia. Cupidatat sunt dolore minim sit.",
         "spans": []
       }
     ],
     "title": [
       {
         "type": "heading1",
-        "text": "Architect leading-edge eyeballs",
+        "text": "Synergize end-to-end experiences",
         "spans": []
       }
     ],
     "subtitle": [
       {
         "type": "paragraph",
-        "text": "Sit sint Lorem magna amet. Ex duis in cupidatat aliquip ullamco.",
+        "text": "Ullamco occaecat minim nostrud magna voluptate Lorem sunt. Elit commodo adipisicing in duis cillum commodo anim in veniam anim excepteur consectetur. Tempor aute sunt culpa adipisicing qui ex velit.",
         "spans": []
       }
-    ],
-    "softwares": {
-      "link_type": "Web",
-      "url": "https://prismic.io"
-    }
+    ]
   }
 }

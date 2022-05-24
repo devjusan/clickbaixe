@@ -6,6 +6,7 @@ import type { AppProps } from 'next/app';
 import Link from 'next/link';
 import Header from '../components/core/header';
 import Footer from '../components/core/footer';
+import Categories from '../components/ui/categories';
 
 globalStyles();
 function MyApp({ Component, pageProps }: AppProps) {
@@ -20,6 +21,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     >
       <PrismicPreview repositoryName={repositoryName}>
         <Header />
+        <Categories />
         <Component {...pageProps} />
         <Footer />
       </PrismicPreview>

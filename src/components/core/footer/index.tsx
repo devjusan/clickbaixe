@@ -7,7 +7,7 @@ import {
   StyledMedia,
   StyledRights,
 } from './styled';
-import { FaTwitter, FaLinkedin } from 'react-icons/fa';
+import { FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import Link from 'next/link';
 const Footer: NextComponentType = () => {
   const year = new Date().getFullYear();
@@ -34,6 +34,9 @@ const Footer: NextComponentType = () => {
             </a>
             <a href="https://www.linkedin.com/in/devjusan/" target="_blank">
               <FaLinkedin color="#aaa" size={25} />
+            </a>
+            <a href="https://www.instagram.com/devjusan/" target="_blank">
+              <FaInstagram color="#aaa" size={25} />
             </a>
           </StyledMedia>
         </StyledAbout>
