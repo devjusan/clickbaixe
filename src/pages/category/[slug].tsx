@@ -1,19 +1,19 @@
+import { useRouter } from 'next/router';
+import { useCallback } from 'react';
+import Head from 'next/head';
+import { GetServerSideProps } from 'next';
+import { createClient } from 'prismic.config';
+import { StyledSubtitle } from '@//styles/global';
+import { formatPrismicPosts } from '@//utils/prismic.utils';
+import { getSlugFromParam, split } from '@//utils/formatter.utils';
+import SocialMedias from '@//components/ui/social-medias';
+import ArticlesList from '@//components/ui/articles-list';
 import {
   StyledContainer,
   StyledCategory,
   StyledLeftContainer,
   StyledRightContainer,
 } from '../../pages-styles/category-styled';
-import { useRouter } from 'next/router';
-import { useCallback } from 'react';
-import { StyledSubtitle } from '@//styles/global';
-import { GetServerSideProps } from 'next';
-import { createClient } from 'prismic.config';
-import { formatPrismicPosts } from '@//utils/prismic.utils';
-import { getSlugFromParam, split } from '@//utils/formatter.utils';
-import Head from 'next/head';
-import SocialMedias from '@//components/ui/social-medias';
-import ArticlesList from '@//components/ui/articles-list';
 
 interface ICategories {
   posts: {
@@ -28,9 +28,7 @@ interface ICategories {
 
 const Categories = ({ posts }: ICategories) => {
   const { asPath } = useRouter();
-  const category = useCallback(() => {
-    return split(asPath);
-  }, [asPath]);
+  const category = useCallback(() => split(asPath), [asPath]);
 
   return (
     <>
@@ -44,22 +42,22 @@ const Categories = ({ posts }: ICategories) => {
       </Head>
       <StyledContainer>
         <StyledLeftContainer>
-          {' '}
+          {` `}
           <StyledCategory>
             <span>TUDO SOBRE</span>
             <StyledSubtitle
               css={{
-                textAlign: 'start',
-                paddingLeft: '0',
-                fontWeight: '700',
-                fontSize: '$52',
-                fontFamily: '$logo',
+                textAlign: `start`,
+                paddingLeft: `0`,
+                fontWeight: `700`,
+                fontSize: `$52`,
+                fontFamily: `$logo`,
               }}
             >
               {category()}
             </StyledSubtitle>
           </StyledCategory>
-          <ArticlesList hideTitle posts={posts}></ArticlesList>
+          <ArticlesList hideTitle posts={posts} />
         </StyledLeftContainer>
         <StyledRightContainer>
           <SocialMedias />

@@ -5,16 +5,14 @@ interface IParam {
 export const formatDate = (date: string) => {
   const _date = new Date(date);
 
-  return _date.toLocaleDateString('pt-BR', {
-    day: '2-digit',
-    month: 'long',
-    year: 'numeric',
+  return _date.toLocaleDateString(`pt-BR`, {
+    day: `2-digit`,
+    month: `long`,
+    year: `numeric`,
   });
 };
 
-export const split = (url: string) => {
-  return url.split('/').slice(-1)[0].toUpperCase();
-};
+export const split = (url: string) => url.split(`/`).slice(-1)[0].toUpperCase();
 
 export const getSlugFromParam = (params: any) => {
   if (Array.isArray(params?.slug)) {

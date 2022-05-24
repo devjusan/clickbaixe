@@ -1,7 +1,7 @@
-import { StyledArticle, StyledImageContainer, StyledLine } from './styled';
 import { StyledSubtitle, StyledTitle } from '@//styles/global';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
+import { StyledArticle, StyledImageContainer, StyledLine } from './styled';
 
 interface IPost {
   post: {
@@ -25,7 +25,7 @@ const Post = ({ post: { image, slug, subtitle, title } }: IPost) => {
     <StyledArticle>
       <StyledImageContainer>
         <Image
-          style={{ borderRadius: '10px' }}
+          style={{ borderRadius: `10px` }}
           priority={false}
           width={700}
           height={350}
@@ -34,17 +34,18 @@ const Post = ({ post: { image, slug, subtitle, title } }: IPost) => {
           onClick={handleClick}
           className="img-zoom"
         />
-        <time></time>
+        <time />
       </StyledImageContainer>
       <StyledTitle
-        css={{ marginBottom: '$44' }}
-        type={{ '@initial': 'title', '@sm': 'mobile' }}
+        css={{ marginBottom: `$44` }}
+        type={{ '@initial': `title`, '@sm': `mobile` }}
       >
         {title}
       </StyledTitle>
-      <StyledSubtitle css={{ position: 'relative' }} type={'articleTitle'}>
+      <StyledSubtitle css={{ position: `relative` }} type="articleTitle">
         {subtitle}
-      </StyledSubtitle>{' '}
+      </StyledSubtitle>
+      {` `}
       <StyledLine />
     </StyledArticle>
   );

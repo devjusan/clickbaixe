@@ -1,7 +1,7 @@
 export const categoriesList = [
-  'Tudo',
-  'Games',
-  'Tutoriais',
-  'Novidades',
-  'softwares',
+  `Tudo`,
+  `Games`,
+  `Tutoriais`,
+  `Novidades`,
+  `softwares`,
 ];

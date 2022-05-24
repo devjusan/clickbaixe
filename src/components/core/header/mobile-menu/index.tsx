@@ -10,25 +10,25 @@ const MobileMenu: NextComponentType = () => {
     event: MouseEvent<HTMLDivElement, globalThis.MouseEvent>,
   ) => {
     const element = event.currentTarget;
-    element.classList.toggle('active');
+    element.classList.toggle(`active`);
     setOpenMenu((state) => !state);
   };
 
   return (
     <StyledMenu onClick={(event) => toggleClass(event)}>
-      <div className="bar1"></div>
-      <div className="bar2"></div>
-      <div className="bar3"></div>
+      <div className="bar1" />
+      <div className="bar2" />
+      <div className="bar3" />
 
-      <StyledNav visible={openMenu ? 'show' : 'hide'}>
-        <ActiveLink activeClassName={'active'} href="/">
+      <StyledNav visible={openMenu ? `show` : `hide`}>
+        <ActiveLink activeClassName="active" href="/">
           <StyledA> BLOG </StyledA>
         </ActiveLink>
 
-        <ActiveLink activeClassName={'active'} href="/privacy">
+        <ActiveLink activeClassName="active" href="/privacy">
           <StyledA> POLÍTICA DE PRIVACIDADE </StyledA>
         </ActiveLink>
-        <ActiveLink activeClassName={'active'} href="/helpus">
+        <ActiveLink activeClassName="active" href="/helpus">
           <StyledA> APOIE </StyledA>
         </ActiveLink>
       </StyledNav>

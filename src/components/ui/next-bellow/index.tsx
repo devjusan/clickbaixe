@@ -13,22 +13,20 @@ interface IArticlesList {
   }[];
 }
 
-const NextBelow = ({ posts }: IArticlesList) => {
-  return (
-    <StyledContainer>
-      <StyledTitle>O que ver depois</StyledTitle>
-      <StyledContainerList>
-        {[...posts].map((post) => (
-          <Article
-            slug={post.slug}
-            image={post.image}
-            title={post.title}
-            key={post.slug}
-          />
-        ))}
-      </StyledContainerList>
-    </StyledContainer>
-  );
-};
+const NextBelow = ({ posts }: IArticlesList) => (
+  <StyledContainer>
+    <StyledTitle>O que ver depois</StyledTitle>
+    <StyledContainerList>
+      {[...posts].map((post) => (
+        <Article
+          slug={post.slug}
+          image={post.image}
+          title={post.title}
+          key={post.slug}
+        />
+      ))}
+    </StyledContainerList>
+  </StyledContainer>
+);
 
 export default NextBelow;

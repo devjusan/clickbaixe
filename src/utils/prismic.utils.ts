@@ -5,16 +5,14 @@ import { formatDate } from './formatter.utils';
 export const formatPrismicPosts = (
   posts: prismicT.PrismicDocument<Record<string, any>, string, string>[],
 ) =>
-  posts.map((post) => {
-    return {
-      slug: post.uid,
-      title: RichText.asText(post.data.title),
-      subtitle: RichText.asText(post.data.subtitle),
-      image: {
-        url: post.data.image.url,
-      },
-    };
-  });
+  posts.map((post) => ({
+    slug: post.uid,
+    title: RichText.asText(post.data.title),
+    subtitle: RichText.asText(post.data.subtitle),
+    image: {
+      url: post.data.image.url,
+    },
+  }));
 
 export const formatPrismicArticles = (
   posts: prismicT.PrismicDocument<Record<string, any>, string, string>[],

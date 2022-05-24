@@ -1,5 +1,7 @@
 import { StyledTitle } from '@//styles/global';
 import { NextComponentType } from 'next';
+import { FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
+import Link from 'next/link';
 import {
   StyledFooter,
   StyledAbout,
@@ -7,8 +9,7 @@ import {
   StyledMedia,
   StyledRights,
 } from './styled';
-import { FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
-import Link from 'next/link';
+
 const Footer: NextComponentType = () => {
   const year = new Date().getFullYear();
 
@@ -16,26 +17,38 @@ const Footer: NextComponentType = () => {
     <StyledFooter>
       <StyledContent>
         <StyledTitle
-          css={{ color: '$white', fontSize: '$44', lineHeight: '$space$52' }}
-          type={'logo'}
+          css={{ color: `$white`, fontSize: `$44`, lineHeight: `$space$52` }}
+          type="logo"
         >
           CLICKBAIXE
         </StyledTitle>
         <StyledAbout>
           <p>
-            Site desenvolvido por <strong>Junior</strong>.{' '}
+            Site desenvolvido por <strong>Junior</strong>.{` `}
           </p>
-          <Link href={'/privacy'}>
-            <a style={{ color: 'white' }}>Política de privacidade</a>
+          <Link href="/privacy">
+            <a style={{ color: `white` }}>Política de privacidade</a>
           </Link>
           <StyledMedia>
-            <a href="https://twitter.com/devjusan" target="_blank">
+            <a
+              href="https://twitter.com/devjusan"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FaTwitter color="#aaa" size={25} />
             </a>
-            <a href="https://www.linkedin.com/in/devjusan/" target="_blank">
+            <a
+              href="https://www.linkedin.com/in/devjusan/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FaLinkedin color="#aaa" size={25} />
             </a>
-            <a href="https://www.instagram.com/devjusan/" target="_blank">
+            <a
+              href="https://www.instagram.com/devjusan/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FaInstagram color="#aaa" size={25} />
             </a>
           </StyledMedia>

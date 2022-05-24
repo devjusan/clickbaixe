@@ -14,30 +14,25 @@ interface IArticlesList {
   hideTitle?: boolean;
 }
 
-const ArticlesList = ({ posts, hideTitle }: IArticlesList) => {
-  return (
-    <StyledContainer>
-      {!hideTitle && (
-        <StyledTitle
-          css={{ fontSize: '35px', marginBottom: '$44' }}
-          type="title"
-        >
-          Últimos posts
-        </StyledTitle>
-      )}
+const ArticlesList = ({ posts, hideTitle }: IArticlesList) => (
+  <StyledContainer>
+    {!hideTitle && (
+      <StyledTitle css={{ fontSize: `35px`, marginBottom: `$44` }} type="title">
+        Últimos posts
+      </StyledTitle>
+    )}
 
-      <StyledContainerList>
-        {[...posts].map((post) => (
-          <Article
-            slug={post.slug}
-            image={post.image}
-            title={post.title}
-            key={post.slug}
-          />
-        ))}
-      </StyledContainerList>
-    </StyledContainer>
-  );
-};
+    <StyledContainerList>
+      {[...posts].map((post) => (
+        <Article
+          slug={post.slug}
+          image={post.image}
+          title={post.title}
+          key={post.slug}
+        />
+      ))}
+    </StyledContainerList>
+  </StyledContainer>
+);
 
 export default ArticlesList;

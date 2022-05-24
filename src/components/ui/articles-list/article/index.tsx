@@ -1,7 +1,7 @@
 import { StyledSubtitle } from '@//styles/global';
-import { StyledContainer } from './styled';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
+import { StyledContainer } from './styled';
 
 interface IArticle {
   title: string;
@@ -28,10 +28,10 @@ const Article = ({ title, image, slug }: IArticle) => {
         priority
         alt="Uma postagem"
         onClick={handleClick}
-        style={{ cursor: 'pointer' }}
+        style={{ cursor: `pointer` }}
         className="img-zoom"
       />
-      <StyledSubtitle type={'articleTitle'} css={{ fontWeight: 'bold' }}>
+      <StyledSubtitle type="articleTitle" css={{ fontWeight: `bold` }}>
         {title}
       </StyledSubtitle>
     </StyledContainer>

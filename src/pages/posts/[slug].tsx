@@ -1,9 +1,3 @@
-import { StyledSubtitle, StyledTitle } from '@//styles/global';
-import {
-  StyledContainer,
-  StyledContent,
-  StyledLine,
-} from '../../pages-styles/posts-styled';
 import { GetServerSideProps } from 'next';
 import { createClient } from 'prismic.config';
 import { RichText } from 'prismic-dom';
@@ -12,8 +6,14 @@ import DOMPurify from 'isomorphic-dompurify';
 import Head from 'next/head';
 import Image from 'next/image';
 import NextBelow from '@//components/ui/next-bellow';
+import { StyledSubtitle, StyledTitle } from '@//styles/global';
 import { formatPrismicPosts } from '@//utils/prismic.utils';
 import { getSlugFromParam } from '@//utils/formatter.utils';
+import {
+  StyledContainer,
+  StyledContent,
+  StyledLine,
+} from '../../pages-styles/posts-styled';
 
 interface IPost {
   post: {
@@ -36,13 +36,11 @@ interface IPost {
   }[];
 }
 
-const Post = ({
-  post: { title, subtitle, image, content, updatedAt },
-  posts,
-}: IPost) => {
-  const sanitizedContent = useCallback(() => {
-    return DOMPurify.sanitize(content);
-  }, [content]);
+const Post = ({ post: { title, subtitle, image, content }, posts }: IPost) => {
+  const sanitizedContent = useCallback(
+    () => DOMPurify.sanitize(content),
+    [content],
+  );
 
   return (
     <>
@@ -51,16 +49,16 @@ const Post = ({
       </Head>
       <StyledContainer>
         <StyledTitle
-          css={{ marginBottom: '$44' }}
-          type={{ '@initial': 'title', '@sm': 'mobile' }}
+          css={{ marginBottom: `$44` }}
+          type={{ '@initial': `title`, '@sm': `mobile` }}
         >
           {title}
         </StyledTitle>
-        <StyledSubtitle css={{ position: 'relative' }} type={'articleTitle'}>
+        <StyledSubtitle css={{ position: `relative` }} type="articleTitle">
           {subtitle}
         </StyledSubtitle>
         <Image
-          style={{ borderRadius: '10px' }}
+          style={{ borderRadius: `10px` }}
           priority={false}
           width={700}
           height={350}
@@ -85,13 +83,13 @@ export const getServerSideProps: GetServerSideProps = async ({
 }) => {
   const slug = getSlugFromParam(params);
   const prismiClient = createClient({ previewData });
-  const prismicData = await prismiClient.getByUID('posts', slug);
-  const posts = await prismiClient.getAllByType('posts');
+  const prismicData = await prismiClient.getByUID(`posts`, slug);
+  const posts = await prismiClient.getAllByType(`posts`);
   const mapPosts = formatPrismicPosts(posts);
   const sortedPosts = mapPosts.sort().splice(0, 12);
 
   const post = {
-    slug: slug,
+    slug,
     title: RichText.asText(prismicData.data.title),
     subtitle: RichText.asText(prismicData.data.subtitle),
     content: RichText.asHtml(prismicData.data.content),

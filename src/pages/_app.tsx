@@ -1,9 +1,9 @@
 import { PrismicProvider } from '@prismicio/react';
 import { PrismicPreview } from '@prismicio/next';
-import { globalStyles } from '../styles/global';
-import { linkResolver, repositoryName } from '../../prismic.config';
 import type { AppProps } from 'next/app';
 import Link from 'next/link';
+import { globalStyles } from '../styles/global';
+import { linkResolver, repositoryName } from '../../prismic.config';
 import Header from '../components/core/header';
 import Footer from '../components/core/footer';
 
