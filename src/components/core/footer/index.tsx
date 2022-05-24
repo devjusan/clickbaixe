@@ -1,4 +1,3 @@
-import { StyledTitle } from '@//styles/global';
 import { NextComponentType } from 'next';
 import { FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import Link from 'next/link';
@@ -9,6 +8,7 @@ import {
   StyledMedia,
   StyledRights,
 } from './styled';
+import { StyledTitle } from '../../../styles/global';
 
 const Footer: NextComponentType = () => {
   const year = new Date().getFullYear();

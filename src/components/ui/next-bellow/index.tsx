@@ -1,4 +1,4 @@
-import { StyledTitle } from '@//styles/global';
+import { StyledTitle } from '../../../styles/global';
 import Article from '../articles-list/article';
 import { StyledContainer, StyledContainerList } from './styled';
 

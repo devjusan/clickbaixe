@@ -1,19 +1,19 @@
 import { GetServerSideProps } from 'next';
-import { createClient } from 'prismic.config';
 import { RichText } from 'prismic-dom';
 import { useCallback } from 'react';
 import DOMPurify from 'isomorphic-dompurify';
 import Head from 'next/head';
 import Image from 'next/image';
-import NextBelow from '@//components/ui/next-bellow';
-import { StyledSubtitle, StyledTitle } from '@//styles/global';
-import { formatPrismicPosts } from '@//utils/prismic.utils';
-import { getSlugFromParam } from '@//utils/formatter.utils';
 import {
   StyledContainer,
   StyledContent,
   StyledLine,
 } from '../../pages-styles/posts-styled';
+import { StyledSubtitle, StyledTitle } from '../../styles/global';
+import NextBelow from '../../components/ui/next-bellow';
+import { getSlugFromParam } from '../../utils/formatter.utils';
+import { createClient } from '../../../prismic.config';
+import { formatPrismicPosts } from '../../utils/prismic.utils';
 
 interface IPost {
   post: {

@@ -1,5 +1,5 @@
 import { FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
-import { StyledSubtitle } from '@//styles/global';
+import { StyledSubtitle } from '../../../styles/global';
 import { StyledContainer, StyledMedia } from './styled';
 
 const SocialMedias = () => (

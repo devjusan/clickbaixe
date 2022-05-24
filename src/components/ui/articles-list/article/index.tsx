@@ -1,7 +1,7 @@
-import { StyledSubtitle } from '@//styles/global';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 import { StyledContainer } from './styled';
+import { StyledSubtitle } from '../../../../styles/global';
 
 interface IArticle {
   title: string;

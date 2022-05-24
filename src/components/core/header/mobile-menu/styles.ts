@@ -1,5 +1,5 @@
-import { styled } from '@//styles';
 import { keyframes } from '@stitches/react';
+import { styled } from '../../../../styles';
 
 const StyledMenu = styled(`div`, {
   position: `relative`,

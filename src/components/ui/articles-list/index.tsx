@@ -1,6 +1,6 @@
-import { StyledTitle } from '@//styles/global';
 import { StyledContainer, StyledContainerList } from './styled';
 import Article from './article';
+import { StyledTitle } from '../../../styles/global';
 
 interface IArticlesList {
   posts: {

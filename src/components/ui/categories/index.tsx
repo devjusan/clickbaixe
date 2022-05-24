@@ -1,7 +1,7 @@
 import { MouseEvent, useCallback } from 'react';
 import { useRouter } from 'next/router';
-import { categoriesList } from '@//utils/categories-list.utils';
 import { StyledContainer, StyledButton } from './styled';
+import { categoriesList } from '../../../utils/categories-list.utils';
 
 const Categories = () => {
   const { push } = useRouter();
@@ -30,7 +30,9 @@ const Categories = () => {
         {categories().map((category: string) => (
           <StyledButton
             css={{ borderRadius: `$full` }}
-            onClick={(event) => handleClick(event, category)}
+            onClick={(
+              event: MouseEvent<HTMLLIElement, globalThis.MouseEvent>,
+            ) => handleClick(event, category)}
             key={category}
           >
             {category}

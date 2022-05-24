@@ -2,8 +2,8 @@
 import { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
-import { StyledSubtitle } from '@//styles/global';
 import { StyledContainer, StyledPost } from '../../pages-styles/privacy-styled';
+import { StyledSubtitle } from '../../styles/global';
 
 const Privacy: NextPage = () => (
   <>

@@ -1,4 +1,4 @@
-import { styled } from '@//styles';
+import { styled } from '../../../styles';
 
 const StyledContainer = styled(`div`, {
   width: `100%`,

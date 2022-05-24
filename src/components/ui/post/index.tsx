@@ -1,6 +1,6 @@
-import { StyledSubtitle, StyledTitle } from '@//styles/global';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
+import { StyledTitle, StyledSubtitle } from '../../../styles/global';
 import { StyledArticle, StyledImageContainer, StyledLine } from './styled';
 
 interface IPost {

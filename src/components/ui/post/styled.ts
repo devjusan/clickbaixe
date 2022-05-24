@@ -1,4 +1,4 @@
-import { styled } from '@//styles';
+import { styled } from '../../../styles';
 
 const StyledArticle = styled(`article`, {
   display: `flex`,

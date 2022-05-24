@@ -1,6 +1,6 @@
-import ActiveLink from '@//components/ui/active-link';
 import { NextComponentType } from 'next';
 import { MouseEvent, useState } from 'react';
+import ActiveLink from '../../../ui/active-link';
 import { StyledMenu, StyledA, StyledNav } from './styles';
 
 const MobileMenu: NextComponentType = () => {
@@ -15,7 +15,11 @@ const MobileMenu: NextComponentType = () => {
   };
 
   return (
-    <StyledMenu onClick={(event) => toggleClass(event)}>
+    <StyledMenu
+      onClick={(event: MouseEvent<HTMLDivElement, globalThis.MouseEvent>) =>
+        toggleClass(event)
+      }
+    >
       <div className="bar1" />
       <div className="bar2" />
       <div className="bar3" />

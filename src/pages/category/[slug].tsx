@@ -2,18 +2,18 @@ import { useRouter } from 'next/router';
 import { useCallback } from 'react';
 import Head from 'next/head';
 import { GetServerSideProps } from 'next';
-import { createClient } from 'prismic.config';
-import { StyledSubtitle } from '@//styles/global';
-import { formatPrismicPosts } from '@//utils/prismic.utils';
-import { getSlugFromParam, split } from '@//utils/formatter.utils';
-import SocialMedias from '@//components/ui/social-medias';
-import ArticlesList from '@//components/ui/articles-list';
 import {
   StyledContainer,
   StyledCategory,
   StyledLeftContainer,
   StyledRightContainer,
 } from '../../pages-styles/category-styled';
+import { split, getSlugFromParam } from '../../utils/formatter.utils';
+import { StyledSubtitle } from '../../styles/global';
+import ArticlesList from '../../components/ui/articles-list';
+import SocialMedias from '../../components/ui/social-medias';
+import { createClient } from '../../../prismic.config';
+import { formatPrismicPosts } from '../../utils/prismic.utils';
 
 interface ICategories {
   posts: {
