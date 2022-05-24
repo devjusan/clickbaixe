@@ -19,6 +19,7 @@ const NextBelow = ({ posts }: IArticlesList) => (
     <StyledContainerList>
       {[...posts].map((post) => (
         <Article
+          fromCategory
           slug={post.slug}
           image={post.image}
           title={post.title}
