@@ -22,7 +22,7 @@ const Post = ({ post: { image, slug, subtitle, title } }: IPost) => {
   };
 
   return (
-    <StyledArticle onClick={handleClick}>
+    <StyledArticle>
       <StyledImageContainer>
         <Image
           style={{ borderRadius: '10px' }}
@@ -31,6 +31,7 @@ const Post = ({ post: { image, slug, subtitle, title } }: IPost) => {
           height={350}
           src={image.url}
           alt="Imagem do post"
+          onClick={handleClick}
         />
         <time></time>
       </StyledImageContainer>

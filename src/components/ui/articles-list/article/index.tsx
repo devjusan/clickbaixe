@@ -21,13 +21,14 @@ const Article = ({ title, image, slug, fromCategory }: IArticle) => {
   };
 
   return (
-    <StyledContainer onClick={handleClick}>
+    <StyledContainer>
       <Image
         src={image.url}
         width={300}
         height={176}
         priority
         alt="Uma postagem"
+        onClick={handleClick}
       />
       <StyledSubtitle type={'articleTitle'} css={{ fontWeight: 'bold' }}>
         {title}
