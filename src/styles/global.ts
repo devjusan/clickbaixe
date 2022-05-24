@@ -48,7 +48,6 @@ export const StyledMain = styled('main', {
 
 export const StyledTitle = styled('h1', {
   textAlign: 'center',
-  maxWidth: '650px',
   px: '$20',
   '@md': {
     fontSize: '$32 !important',

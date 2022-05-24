@@ -9,10 +9,9 @@ interface IArticle {
   image: {
     url: string;
   };
-  fromCategory?: boolean;
 }
 
-const Article = ({ title, image, slug, fromCategory }: IArticle) => {
+const Article = ({ title, image, slug }: IArticle) => {
   const { push } = useRouter();
   const handleClick = (event: any) => {
     event.preventDefault();
@@ -29,6 +28,8 @@ const Article = ({ title, image, slug, fromCategory }: IArticle) => {
         priority
         alt="Uma postagem"
         onClick={handleClick}
+        style={{ cursor: 'pointer' }}
+        className="img-zoom"
       />
       <StyledSubtitle type={'articleTitle'} css={{ fontWeight: 'bold' }}>
         {title}

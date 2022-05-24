@@ -9,7 +9,12 @@ const StyledArticle = styled('article', {
   borderBottom: '2px solid $color$black',
   borderRadius: '$default',
 
-  cursor: 'pointer',
+  img: {
+    transition: 'transform .2s',
+    '&:hover': {
+      transform: 'scale(1.2)',
+    },
+  },
 });
 
 const StyledLine = styled('div', {
@@ -19,6 +24,6 @@ const StyledLine = styled('div', {
   height: '2px',
 });
 
-const StyledImageContainer = styled('div', {});
+const StyledImageContainer = styled('div', { cursor: 'pointer' });
 
 export { StyledArticle, StyledImageContainer, StyledLine };

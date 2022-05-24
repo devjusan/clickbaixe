@@ -32,6 +32,7 @@ const Post = ({ post: { image, slug, subtitle, title } }: IPost) => {
           src={image.url}
           alt="Imagem do post"
           onClick={handleClick}
+          className="img-zoom"
         />
         <time></time>
       </StyledImageContainer>
