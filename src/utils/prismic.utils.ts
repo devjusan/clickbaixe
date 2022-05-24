@@ -1,4 +1,5 @@
 import { RichText } from 'prismic-dom';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import * as prismicT from '@prismicio/types';
 import { formatDate } from './formatter.utils';
 

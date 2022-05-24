@@ -36,10 +36,7 @@ interface IPost {
   }[];
 }
 
-const Post = ({
-  post: { title, subtitle, image, content, updatedAt },
-  posts,
-}: IPost) => {
+const Post = ({ post: { title, subtitle, image, content }, posts }: IPost) => {
   const sanitizedContent = useCallback(
     () => DOMPurify.sanitize(content),
     [content],

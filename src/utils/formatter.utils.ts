@@ -1,11 +1,7 @@
-interface IParam {
-  slug: [] | undefined;
-}
-
 export const formatDate = (date: string) => {
-  const _date = new Date(date);
+  const toDate = new Date(date);
 
-  return _date.toLocaleDateString(`pt-BR`, {
+  return toDate.toLocaleDateString(`pt-BR`, {
     day: `2-digit`,
     month: `long`,
     year: `numeric`,
