@@ -29,8 +29,8 @@ const StyledMenu = styled(`div`, {
 });
 
 const showUp = keyframes({
-  from: { height: 0, opacity: `0` },
-  to: { height: `200px`, opacity: `1` },
+  from: { maxHeight: 0, opacity: `0` },
+  to: { maxHeight: `300px`, opacity: `1` },
 });
 
 const StyledNav = styled(`nav`, {

@@ -66,6 +66,8 @@ export const StyledMain = styled(`main`, {
 
 export const StyledTitle = styled(`h1`, {
   textAlign: `center`,
+  wordBreak: 'break-word',
+
   px: `$20`,
   '@md': {
     fontSize: `$32 !important`,
@@ -105,6 +107,7 @@ export const StyledSubtitle = styled(`h2`, {
   maxWidth: `400px`,
   lineHeight: `$space$32`,
   position: `relative`,
+  wordBreak: 'break-word',
   '@md': {
     fontSize: `$32 !important`,
     px: `$12`,
@@ -125,7 +128,6 @@ export const StyledSubtitle = styled(`h2`, {
         fontWeight: `700`,
         fontSize: `$52`,
         lineHeight: `$space$52`,
-        whiteSpace: `nowrap`,
       },
     },
   },
