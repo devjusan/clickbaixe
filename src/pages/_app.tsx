@@ -1,7 +1,7 @@
 import { PrismicProvider } from '@prismicio/react';
 import { PrismicPreview } from '@prismicio/next';
+import Head from 'next/head';
 import Script from 'next/script';
-import { Head } from 'next/document';
 import type { AppProps } from 'next/app';
 import Link from 'next/link';
 import { globalStyles } from '../styles/global';

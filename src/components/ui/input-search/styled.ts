@@ -1,6 +1,6 @@
 import { styled } from '../../../styles';
 
-const StyledContainer = styled('div', {
+const StyledContainer = styled('form', {
   position: 'relative',
   display: 'flex',
   flexFlow: 'row nowrap',
