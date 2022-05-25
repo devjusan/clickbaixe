@@ -1,13 +1,16 @@
+import { keyframes } from '@stitches/react';
 import { styled } from '../../../styles';
 
 const StyledContainer = styled(`div`, {
+  position: 'relative',
+
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
   gap: '$20',
   width: `100%`,
+  height: '100%',
   boxShadow: `0px 1px 0px rgba(0, 0, 0, 0.22);`,
-  px: `$32`,
   py: `$16`,
 
   div: {
@@ -21,22 +24,19 @@ const StyledContainer = styled(`div`, {
     },
   },
 
-  '@reset': {
-    ul: {
-      paddingLeft: '0 !important',
-      paddingRight: '0 !important',
-    },
-  },
-
   ul: {
     display: `flex`,
-    flexFlow: `row nowrap`,
+    flexFlow: `row wrap`,
     justifyContent: `center`,
     alignItems: `center`,
     gap: `$44`,
     listStyle: `none`,
-    overflow: 'hidden',
     transition: 'all .2s',
+    overflowX: 'auto',
+
+    '@lg': {
+      gap: `$20`,
+    },
   },
 });
 
@@ -56,29 +56,25 @@ const StyledButton = styled(`li`, {
     color: `$white`,
     background: `$backgroundYellow`,
   },
+
+  '@lg': {
+    px: `$16`,
+    py: `$8`,
+    fontSize: `$16`,
+  },
 });
 
-const StyledLeftArrow = styled('div', {
-  position: 'fixed',
-  left: '2rem',
-  cursor: 'pointer',
-  img: {
-    transition: 'transform 0.2s',
-  },
-  '&:hover img': {
-    transform: 'scale(1.1)',
-  },
+const toggleAnimation = keyframes({
+  from: { right: '50%' },
+  to: { right: '51%' },
 });
+
 const StyledRightArrow = styled('div', {
-  position: 'fixed',
-  right: '2rem',
-  cursor: 'pointer',
-  img: {
-    transition: 'transform 0.2s',
-  },
-  '&:hover img': {
-    transform: 'scale(1.1)',
-  },
+  position: 'absolute',
+  right: '50%',
+  top: '72.5%',
+  transform: 'rotate(90deg)',
+  animation: `${toggleAnimation} .8s ease-in-out infinite alternate`,
 });
 
-export { StyledContainer, StyledButton, StyledLeftArrow, StyledRightArrow };
+export { StyledContainer, StyledButton, StyledRightArrow };

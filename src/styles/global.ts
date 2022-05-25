@@ -6,6 +6,24 @@ export const globalStyles = globalCss({
     margin: 0,
     border: `none`,
     boxSizing: `border-box`,
+
+    '*::-webkit-scrollbar': {
+      width: '6px',
+      height: '6px',
+    },
+
+    '*::-webkit-scrollbar-track': {
+      background: '#f1f1f1',
+    },
+
+    '*::-webkit-scrollbar-thumb': {
+      background: '#888',
+      borderRadius: '$full',
+    },
+
+    '*::-webkit-scrollbar-thumb:hover': {
+      background: '#999',
+    },
   },
   body: {
     background: `$background`,
