@@ -5,7 +5,6 @@ import ActiveLink from '../../ui/active-link';
 import MobileMenu from './mobile-menu';
 import Categories from '../../ui/categories';
 import { StyledTitle } from '../../../styles/global';
-import InputSearch from '../../ui/input-search';
 
 const Header: NextComponentType = () => {
   const { push } = useRouter();
@@ -25,7 +24,6 @@ const Header: NextComponentType = () => {
           CLICKBAIXE
         </StyledTitle>
         <StyledNav>
-          <InputSearch />
           <ActiveLink activeClassName="active" href="/">
             <StyledA> BLOG </StyledA>
           </ActiveLink>
