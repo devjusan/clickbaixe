@@ -30,6 +30,7 @@ const StyledContainer = styled(`div`, {
     justifyContent: `center`,
     alignItems: `center`,
     gap: `$44`,
+    px: '$12',
     listStyle: `none`,
     transition: 'all .2s',
     overflowX: 'auto',
