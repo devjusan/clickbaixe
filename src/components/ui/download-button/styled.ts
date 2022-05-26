@@ -14,7 +14,7 @@ const StyledContainer = styled('div', {
   p: {
     textAlign: 'center',
     fontSize: '$20',
-    fontFamily: 'cursive',
+    fontFamily: '$logo',
   },
 
   '@lg': {

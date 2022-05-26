@@ -8,7 +8,7 @@ interface IDownloadButton {
 }
 
 const DownloadButton = ({ href, registerHref }: IDownloadButton) => {
-  const [timer, setTimer] = useState(45 * 6000);
+  const [timer, setTimer] = useState(45 * 1000);
 
   useEffect(() => {
     const interval = setInterval(() => {
