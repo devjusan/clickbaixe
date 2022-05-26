@@ -15,7 +15,7 @@ interface IPost {
   };
 }
 
-const Post = ({ post: { image, slug, subtitle, title } }: IPost) => {
+const Post = ({ post: { image, slug, subtitle, title, updatedAt } }: IPost) => {
   const { push } = useRouter();
   const handleClick = () => {
     push(`/posts/${slug}`);
@@ -34,7 +34,6 @@ const Post = ({ post: { image, slug, subtitle, title } }: IPost) => {
           onClick={handleClick}
           className="img-zoom"
         />
-        <time />
       </StyledImageContainer>
       <StyledTitle
         css={{ marginBottom: `$44` }}
@@ -45,7 +44,7 @@ const Post = ({ post: { image, slug, subtitle, title } }: IPost) => {
       <StyledSubtitle css={{ position: `relative` }} type="articleTitle">
         {subtitle}
       </StyledSubtitle>
-      {` `}
+      <time>{updatedAt}</time>
       <StyledLine />
     </StyledArticle>
   );

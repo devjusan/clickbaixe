@@ -13,6 +13,7 @@ export const formatPrismicPosts = (
     image: {
       url: post.data.image.url,
     },
+    updatedAt: formatDate(post.last_publication_date),
   }));
 
 export const formatPrismicArticles = (
