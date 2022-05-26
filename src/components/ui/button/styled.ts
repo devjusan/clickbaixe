@@ -34,7 +34,7 @@ const StyledContainer = styled('a', {
   py: '$16',
 
   '@md': {
-    width: '180px',
+    width: '240px !important',
   },
 });
 
