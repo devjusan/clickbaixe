@@ -4,10 +4,11 @@ import { StyledContainer } from './styled';
 
 interface IDownloadButton {
   href: string;
+  registerHref: string | null;
 }
 
-const DownloadButton = ({ href }: IDownloadButton) => {
-  const [timer, setTimer] = useState(0);
+const DownloadButton = ({ href, registerHref }: IDownloadButton) => {
+  const [timer, setTimer] = useState(0); // 45 * 6000
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -26,9 +27,16 @@ const DownloadButton = ({ href }: IDownloadButton) => {
   return (
     <StyledContainer>
       {timer === 0 ? (
-        <Button href={href} width={400}>
-          baixar agora!
-        </Button>
+        <>
+          <Button href={href} width={400}>
+            baixe agora!
+          </Button>
+          {registerHref && (
+            <Button href={registerHref} width={400}>
+              chave de registro
+            </Button>
+          )}
+        </>
       ) : (
         <p>
           Aguarde <strong>{timer / 1000}</strong>{' '}

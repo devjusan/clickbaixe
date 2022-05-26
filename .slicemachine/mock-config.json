@@ -12,6 +12,18 @@
           "patternType": "PARAGRAPH",
           "blocks": 1
         }
+      },
+      "href": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      },
+      "register": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
       }
     },
     "softwares": {},

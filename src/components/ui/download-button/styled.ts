@@ -2,6 +2,8 @@ import { styled } from '../../../styles';
 
 const StyledContainer = styled('div', {
   display: 'flex',
+  flexDirection: 'column',
+  gap: '$28',
   alignItems: 'center',
   justifyContent: 'center',
   width: '700px',
