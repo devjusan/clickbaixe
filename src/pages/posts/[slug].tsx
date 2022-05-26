@@ -14,6 +14,7 @@ import NextBelow from '../../components/ui/next-bellow';
 import { formatDate, getSlugFromParam } from '../../utils/formatter.utils';
 import { createClient } from '../../../prismic.config';
 import { formatPrismicPosts } from '../../utils/prismic.utils';
+import DownloadButton from '../../components/ui/download-button';
 
 interface IPost {
   post: {
@@ -72,6 +73,7 @@ const Post = ({
         <StyledContent
           dangerouslySetInnerHTML={{ __html: sanitizedContent() }}
         />
+        <DownloadButton />
         <StyledLine />
         <NextBelow posts={posts} />
       </StyledContainer>
