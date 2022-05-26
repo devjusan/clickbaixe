@@ -107,28 +107,35 @@ export const StyledSubtitle = styled(`h2`, {
   maxWidth: `400px`,
   lineHeight: `$space$32`,
   position: `relative`,
-  whiteSpace: 'nowrap',
-  '@md': {
-    fontSize: `$32 !important`,
-    px: `$12`,
-    whiteSpace: 'normal',
-  },
+  wordBreak: 'break-word',
 
   variants: {
     type: {
       subtitle: {
         fontFamily: `$subtitle`,
         fontWeight: `400`,
+        '@md': {
+          fontSize: '$20 !important',
+        },
       },
       articleTitle: {
         fontFamily: `$articleTitle`,
         fontWeight: `500`,
+
+        '@md': {
+          fontSize: '$20 !important',
+        },
       },
       h2: {
         fontFamily: `$title`,
         fontWeight: `700`,
         fontSize: `$52`,
         lineHeight: `$space$52`,
+        whiteSpace: 'nowrap',
+        '@md': {
+          fontSize: '$20',
+          whiteSpace: 'normal',
+        },
       },
     },
   },

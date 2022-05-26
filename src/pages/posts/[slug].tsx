@@ -77,7 +77,7 @@ const Post = ({
           dangerouslySetInnerHTML={{ __html: sanitizedContent() }}
         />
         <DownloadButton registerHref={register} href={href} />
-        <StyledSubtitle css={{ whiteSpace: 'nowrap', textAlign: 'start' }}>
+        <StyledSubtitle css={{ textAlign: 'start' }}>
           Apoie o desenvolvedor. Compre o programa!
         </StyledSubtitle>
         <Contribute />

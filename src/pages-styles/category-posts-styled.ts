@@ -16,7 +16,6 @@ const StyledContainer = styled(`main`, {
     lineHeight: `$space$32`,
     position: `relative`,
     '@md': {
-      fontSize: `$32 !important`,
       px: `$12`,
     },
   },
