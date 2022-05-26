@@ -11,9 +11,11 @@ import {
 } from '../../../pages-styles/category-posts-styled';
 import { StyledTitle, StyledSubtitle } from '../../../styles/global';
 import NextBelow from '../../../components/ui/next-bellow';
-import { getSlugFromParam } from '../../../utils/formatter.utils';
+import { formatDate, getSlugFromParam } from '../../../utils/formatter.utils';
 import { createClient } from '../../../../prismic.config';
 import { formatPrismicPosts } from '../../../utils/prismic.utils';
+import DownloadButton from '../../../components/ui/download-button';
+import Contribute from '../../../components/ui/contribute';
 
 interface IPost {
   post: {
@@ -22,6 +24,8 @@ interface IPost {
     subtitle: string;
     content: string;
     updatedAt: string;
+    href: string;
+    register: string | null;
     image: {
       url: string;
     };
@@ -36,7 +40,10 @@ interface IPost {
   }[];
 }
 
-const Post = ({ post: { title, subtitle, image, content }, posts }: IPost) => {
+const Post = ({
+  post: { title, subtitle, image, content, href, updatedAt, register },
+  posts,
+}: IPost) => {
   const sanitizedContent = useCallback(
     () => DOMPurify.sanitize(content),
     [content],
@@ -57,6 +64,7 @@ const Post = ({ post: { title, subtitle, image, content }, posts }: IPost) => {
         <StyledSubtitle css={{ position: `relative` }} type="articleTitle">
           {subtitle}
         </StyledSubtitle>
+        <time>{updatedAt}</time>
         <Image
           style={{ borderRadius: `10px` }}
           priority={false}
@@ -68,6 +76,11 @@ const Post = ({ post: { title, subtitle, image, content }, posts }: IPost) => {
         <StyledContent
           dangerouslySetInnerHTML={{ __html: sanitizedContent() }}
         />
+        <DownloadButton registerHref={register} href={href} />
+        <StyledSubtitle css={{ textAlign: 'start' }}>
+          Apoie o desenvolvedor. Compre o programa!
+        </StyledSubtitle>
+        <Contribute />
         <StyledLine />
         <NextBelow posts={posts} />
       </StyledContainer>
@@ -93,6 +106,9 @@ export const getServerSideProps: GetServerSideProps = async ({
     title: RichText.asText(prismicData.data.title),
     subtitle: RichText.asText(prismicData.data.subtitle),
     content: RichText.asHtml(prismicData.data.content),
+    href: RichText.asText(prismicData.data.href),
+    register: RichText.asText(prismicData.data.register),
+    updatedAt: formatDate(prismicData.first_publication_date),
     image: {
       url: prismicData.data.image.url,
     },
