@@ -107,11 +107,11 @@ export const StyledSubtitle = styled(`h2`, {
   maxWidth: `400px`,
   lineHeight: `$space$32`,
   position: `relative`,
-
+  whiteSpace: 'nowrap',
   '@md': {
     fontSize: `$32 !important`,
     px: `$12`,
-    whiteSpace: 'initial',
+    whiteSpace: 'normal',
   },
 
   variants: {

@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { StyledSubtitle } from '../../../styles/global';
 import { StyledContainer } from './styled';
 
