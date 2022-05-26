@@ -10,7 +10,6 @@ interface IArticlesList {
     image: {
       url: string;
     };
-    updatedAt: string;
   }[];
   hideTitle?: boolean;
 }
