@@ -1,7 +1,7 @@
 import { styled } from '../../../styles';
 import { hoverSolidIn, hoverSolidOut } from '../../../styles/transitions';
 
-const StyledContainer = styled('button', {
+const StyledContainer = styled('a', {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
@@ -18,16 +18,16 @@ const StyledContainer = styled('button', {
   color: '$backgroundYellow',
   letterSpacing: '0px',
 
-  transition: `all 0.3s ease`,
+  transition: `color 0.3s ease`,
   animationName: `${hoverSolidOut}`,
   animationDuration: '0.3s',
   animationIterationCount: '1',
-  animationTimingFunction: 'ease-in',
+  animationTimingFunction: 'ease',
   animationDirection: 'normal',
   animationFillMode: 'both',
   '&:hover:not(:disabled)': {
     animationName: `${hoverSolidIn}`,
-    color: '$white',
+    color: '$white !important',
   },
 
   px: '$12',

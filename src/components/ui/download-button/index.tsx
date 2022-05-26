@@ -2,7 +2,11 @@ import { useEffect, useState } from 'react';
 import Button from '../button';
 import { StyledContainer } from './styled';
 
-const DownloadButton = () => {
+interface IDownloadButton {
+  href: string;
+}
+
+const DownloadButton = ({ href }: IDownloadButton) => {
   const [timer, setTimer] = useState(0);
 
   useEffect(() => {
@@ -22,7 +26,9 @@ const DownloadButton = () => {
   return (
     <StyledContainer>
       {timer === 0 ? (
-        <Button width={400}>baixar agora!</Button>
+        <Button href={href} width={400}>
+          baixar agora!
+        </Button>
       ) : (
         <p>
           Aguarde <strong>{timer / 1000}</strong>{' '}

@@ -23,6 +23,7 @@ interface IPost {
     subtitle: string;
     content: string;
     updatedAt: string;
+    href: string;
     image: {
       url: string;
     };
@@ -38,7 +39,7 @@ interface IPost {
 }
 
 const Post = ({
-  post: { title, subtitle, image, content, updatedAt },
+  post: { title, subtitle, image, content, updatedAt, href },
   posts,
 }: IPost) => {
   const sanitizedContent = useCallback(
@@ -73,7 +74,7 @@ const Post = ({
         <StyledContent
           dangerouslySetInnerHTML={{ __html: sanitizedContent() }}
         />
-        <DownloadButton />
+        <DownloadButton href={href} />
         <StyledLine />
         <NextBelow posts={posts} />
       </StyledContainer>
@@ -99,6 +100,7 @@ export const getServerSideProps: GetServerSideProps = async ({
     title: RichText.asText(prismicData.data.title),
     subtitle: RichText.asText(prismicData.data.subtitle),
     content: RichText.asHtml(prismicData.data.content),
+    href: prismicData.data.href,
     updatedAt: formatDate(prismicData.first_publication_date),
     image: {
       url: prismicData.data.image.url,
