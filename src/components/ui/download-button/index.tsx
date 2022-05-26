@@ -3,7 +3,7 @@ import Button from '../button';
 import { StyledContainer } from './styled';
 
 const DownloadButton = () => {
-  const [timer, setTimer] = useState(60 * 1000);
+  const [timer, setTimer] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -22,7 +22,7 @@ const DownloadButton = () => {
   return (
     <StyledContainer>
       {timer === 0 ? (
-        <Button>baixar agora!</Button>
+        <Button width={400}>baixar agora!</Button>
       ) : (
         <p>
           Aguarde <strong>{timer / 1000}</strong>{' '}
