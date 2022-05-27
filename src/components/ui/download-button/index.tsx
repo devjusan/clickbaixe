@@ -20,6 +20,7 @@ const DownloadButton = ({ href, registerHref }: IDownloadButton) => {
     }
 
     return () => {
+      setTimer(0);
       clearInterval(interval);
     };
   }, [timer]);
