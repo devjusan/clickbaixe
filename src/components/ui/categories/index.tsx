@@ -1,28 +1,28 @@
-import { MouseEvent, useCallback } from 'react';
-import { useRouter } from 'next/router';
-import { StyledContainer, StyledButton } from './styled';
-import { categoriesList } from '../../../utils/categories-list.utils';
+import { MouseEvent, useCallback } from 'react'
+import { useRouter } from 'next/router'
+import { StyledContainer, StyledButton } from './styled'
+import { categoriesList } from '../../../utils/categories-list.utils'
 
 const Categories = () => {
-  const { push } = useRouter();
+  const { push } = useRouter()
   const categories = useCallback(
     () => categoriesList.map((category) => category.toUpperCase()),
-    [categoriesList],
-  );
+    [categoriesList]
+  )
 
   const handleClick = (
     event: MouseEvent<HTMLLIElement, globalThis.MouseEvent>,
-    category: string,
+    category: string
   ) => {
-    const categoryToLowercase = category.toLowerCase();
-    event.preventDefault();
+    const categoryToLowercase = category.toLowerCase()
+    event.preventDefault()
 
     if (categoryToLowercase === `tudo`) {
-      push(`/`);
-      return;
+      push(`/`)
+      return
     }
-    push(`/category/${categoryToLowercase}`);
-  };
+    push(`/category/${categoryToLowercase}`)
+  }
 
   return (
     <StyledContainer>
@@ -31,7 +31,7 @@ const Categories = () => {
           <StyledButton
             css={{ borderRadius: `$full` }}
             onClick={(
-              event: MouseEvent<HTMLLIElement, globalThis.MouseEvent>,
+              event: MouseEvent<HTMLLIElement, globalThis.MouseEvent>
             ) => handleClick(event, category)}
             key={category}
           >
@@ -40,7 +40,7 @@ const Categories = () => {
         ))}
       </ul>
     </StyledContainer>
-  );
-};
+  )
+}
 
-export default Categories;
+export default Categories

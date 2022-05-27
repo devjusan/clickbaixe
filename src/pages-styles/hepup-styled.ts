@@ -1,4 +1,4 @@
-import { styled } from '../styles';
+import { styled } from '../styles'
 
 const StyledContainer = styled(`article`, {
   display: `flex`,
@@ -14,6 +14,6 @@ const StyledContainer = styled(`article`, {
     overflowWrap: `break-word`,
     fontFamily: `$articleTitle`,
   },
-});
+})
 
-export { StyledContainer };
+export { StyledContainer }

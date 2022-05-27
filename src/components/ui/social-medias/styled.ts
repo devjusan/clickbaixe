@@ -1,4 +1,4 @@
-import { styled } from '../../../styles';
+import { styled } from '../../../styles'
 
 const StyledContainer = styled(`aside`, {
   h2: {
@@ -12,7 +12,7 @@ const StyledContainer = styled(`aside`, {
     borderBottomRightRadius: `24px`,
     borderTopRightRadius: `8px`,
   },
-});
+})
 
 const StyledMedia = styled(`div`, {
   display: `flex`,
@@ -27,6 +27,6 @@ const StyledMedia = styled(`div`, {
     },
     transition: `fill .2s`,
   },
-});
+})
 
-export { StyledContainer, StyledMedia };
+export { StyledContainer, StyledMedia }

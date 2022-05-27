@@ -1,9 +1,9 @@
 /* eslint-disable no-irregular-whitespace */
-import { NextPage } from 'next';
-import Head from 'next/head';
-import Link from 'next/link';
-import { StyledContainer, StyledPost } from '../../pages-styles/privacy-styled';
-import { StyledSubtitle } from '../../styles/global';
+import { NextPage } from 'next'
+import Head from 'next/head'
+import Link from 'next/link'
+import { StyledContainer, StyledPost } from '../../pages-styles/privacy-styled'
+import { StyledSubtitle } from '../../styles/global'
 
 const Privacy: NextPage = () => (
   <>
@@ -272,6 +272,6 @@ const Privacy: NextPage = () => (
       </StyledPost>
     </StyledContainer>
   </>
-);
+)
 
-export default Privacy;
+export default Privacy

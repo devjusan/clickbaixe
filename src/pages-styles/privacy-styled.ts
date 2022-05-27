@@ -1,4 +1,4 @@
-import { styled } from '../styles';
+import { styled } from '../styles'
 
 const StyledContainer = styled(`main`, {
   display: `flex`,
@@ -6,7 +6,7 @@ const StyledContainer = styled(`main`, {
   alignItems: `center`,
   justifyContent: `center`,
   gap: `$32`,
-});
+})
 
 const StyledPost = styled(`article`, {
   display: `flex`,
@@ -36,6 +36,6 @@ const StyledPost = styled(`article`, {
   li: {
     cursor: `initial !important`,
   },
-});
+})
 
-export { StyledContainer, StyledPost };
+export { StyledContainer, StyledPost }

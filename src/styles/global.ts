@@ -1,4 +1,4 @@
-import { globalCss, styled } from '.';
+import { globalCss, styled } from '.'
 
 export const globalStyles = globalCss({
   '*': {
@@ -54,7 +54,7 @@ export const globalStyles = globalCss({
   'p, li': {
     px: `$12`,
   },
-});
+})
 
 export const StyledMain = styled(`main`, {
   display: `flex`,
@@ -62,7 +62,7 @@ export const StyledMain = styled(`main`, {
   flexFlow: `column nowrap`,
   minHeight: `calc(100vh - 400px)`,
   paddingBottom: `$105`,
-});
+})
 
 export const StyledTitle = styled(`h1`, {
   textAlign: `center`,
@@ -98,7 +98,7 @@ export const StyledTitle = styled(`h1`, {
   defaultVariants: {
     type: `title`,
   },
-});
+})
 
 export const StyledSubtitle = styled(`h2`, {
   fontSize: `$24`,
@@ -143,4 +143,4 @@ export const StyledSubtitle = styled(`h2`, {
   defaultVariants: {
     type: `articleTitle`,
   },
-});
+})

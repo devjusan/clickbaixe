@@ -1,16 +1,17 @@
-import { NextComponentType } from 'next';
-import { useRouter } from 'next/router';
-import { StyledHeader, StyledNav, StyledA } from './styled';
-import ActiveLink from '../../ui/active-link';
-import MobileMenu from './mobile-menu';
-import Categories from '../../ui/categories';
-import { StyledTitle } from '../../../styles/global';
+import { NextComponentType } from 'next'
+import { useRouter } from 'next/router'
+import { StyledHeader, StyledNav, StyledA } from './styled'
+import ActiveLink from '../../ui/active-link'
+import MobileMenu from './mobile-menu'
+import Categories from '../../ui/categories'
+import { StyledTitle } from '../../../styles/global'
+import InputSearch from '../../ui/input-search'
 
 const Header: NextComponentType = () => {
-  const { push } = useRouter();
+  const { push } = useRouter()
   const handleClick = () => {
-    push(`/`);
-  };
+    push(`/`)
+  }
 
   return (
     <>
@@ -24,6 +25,7 @@ const Header: NextComponentType = () => {
           CLICKBAIXE
         </StyledTitle>
         <StyledNav>
+          <InputSearch />
           <ActiveLink activeClassName="active" href="/">
             <StyledA> BLOG </StyledA>
           </ActiveLink>
@@ -36,7 +38,7 @@ const Header: NextComponentType = () => {
       </StyledHeader>
       <Categories />
     </>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

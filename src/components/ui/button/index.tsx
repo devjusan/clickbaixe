@@ -1,10 +1,10 @@
-import React from 'react';
-import { StyledContainer } from './styled';
+import React from 'react'
+import { StyledContainer } from './styled'
 
 interface IButton {
-  children: string;
-  width: string | number;
-  href: string;
+  children: string
+  width: string | number
+  href: string
 }
 
 const Button = ({ children, width, href }: IButton) => (
@@ -16,6 +16,6 @@ const Button = ({ children, width, href }: IButton) => (
   >
     {children}
   </StyledContainer>
-);
+)
 
-export default Button;
+export default Button

@@ -1,4 +1,4 @@
-import { createStitches, ScaleValue } from '@stitches/react';
+import { createStitches, ScaleValue } from '@stitches/react'
 
 export const { styled, getCssText, globalCss } = createStitches({
   media: {
@@ -89,4 +89,4 @@ export const { styled, getCssText, globalCss } = createStitches({
       marginBottom: value,
     }),
   },
-});
+})

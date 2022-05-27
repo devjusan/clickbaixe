@@ -1,6 +1,6 @@
-import { styled } from '../../../styles';
+import { styled } from '../../../styles'
 
-const StyledContainer = styled(`article`, {});
+const StyledContainer = styled(`article`, {})
 
 const StyledContainerList = styled(`div`, {
   display: `flex`,
@@ -9,6 +9,6 @@ const StyledContainerList = styled(`div`, {
   gap: `$16`,
   rowGap: `$72`,
   marginTop: `$52`,
-});
+})
 
-export { StyledContainer, StyledContainerList };
+export { StyledContainer, StyledContainerList }

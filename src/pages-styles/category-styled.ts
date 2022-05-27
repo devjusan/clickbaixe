@@ -1,4 +1,4 @@
-import { styled } from '../styles';
+import { styled } from '../styles'
 
 const StyledContainer = styled(`article`, {
   display: `flex`,
@@ -6,7 +6,7 @@ const StyledContainer = styled(`article`, {
   alignItems: `flex-start`,
   justifyContent: `center`,
   gap: `$28`,
-});
+})
 
 const StyledCategory = styled(`div`, {
   background: `$backgroundYellow`,
@@ -19,18 +19,18 @@ const StyledCategory = styled(`div`, {
     color: `#999`,
     fontFamily: `$logo`,
   },
-});
+})
 
 const StyledLeftContainer = styled(`aside`, {
   display: `flex`,
   flexFlow: `column nowrap`,
   gap: `$44`,
-});
-const StyledRightContainer = styled(`aside`, { width: `100%%` });
+})
+const StyledRightContainer = styled(`aside`, { width: `100%%` })
 
 export {
   StyledContainer,
   StyledCategory,
   StyledLeftContainer,
   StyledRightContainer,
-};
+}

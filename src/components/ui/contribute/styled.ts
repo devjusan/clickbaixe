@@ -1,4 +1,4 @@
-import { styled } from '../../../styles';
+import { styled } from '../../../styles'
 
 const StyledContainer = styled('div', {
   display: 'flex',
@@ -9,6 +9,6 @@ const StyledContainer = styled('div', {
   py: '$16',
 
   border: '1px solid $black',
-});
+})
 
-export { StyledContainer };
+export { StyledContainer }

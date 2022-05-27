@@ -1,5 +1,5 @@
-import { keyframes } from '@stitches/react';
-import { styled } from '../../../styles';
+import { keyframes } from '@stitches/react'
+import { styled } from '../../../styles'
 
 const StyledContainer = styled(`div`, {
   position: 'relative',
@@ -39,7 +39,7 @@ const StyledContainer = styled(`div`, {
       gap: `$20`,
     },
   },
-});
+})
 
 const StyledButton = styled(`li`, {
   all: `initial`,
@@ -63,12 +63,12 @@ const StyledButton = styled(`li`, {
     py: `$8`,
     fontSize: `$16`,
   },
-});
+})
 
 const toggleAnimation = keyframes({
   from: { right: '50%' },
   to: { right: '51%' },
-});
+})
 
 const StyledRightArrow = styled('div', {
   position: 'absolute',
@@ -76,6 +76,6 @@ const StyledRightArrow = styled('div', {
   top: '72.5%',
   transform: 'rotate(90deg)',
   animation: `${toggleAnimation} .8s ease-in-out infinite alternate`,
-});
+})
 
-export { StyledContainer, StyledButton, StyledRightArrow };
+export { StyledContainer, StyledButton, StyledRightArrow }

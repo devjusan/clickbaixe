@@ -1,23 +1,30 @@
-import { useState } from 'react';
-import Image from 'next/image';
-import { StyledContainer, StyledInput, StyledImageContainer } from './styled';
-import searchImg from '../../../assets/search.svg';
+import React, { useState } from 'react'
+import { useRouter } from 'next/router'
+import Image from 'next/image'
+import { StyledContainer, StyledInput, StyledImageContainer } from './styled'
+import searchImg from '../../../assets/search.svg'
 
 const InputSearch = () => {
-  const [inputValue, setValue] = useState('');
+  const { push } = useRouter()
+  const [inputValue, setValue] = useState('')
 
   const handleInputChange = (event: any) => {
-    event.preventDefault?.();
-    let value = event?.target?.value;
+    event.preventDefault?.()
+    let value = event?.target?.value
     if (!value) {
-      value = '';
+      value = ''
     }
-    setValue(value);
-  };
+    setValue(value)
+  }
 
+  const handleSubmit = (event: React.SyntheticEvent) => {
+    event.preventDefault()
+    push({ pathname: '/search/[slug]', query: { slug: inputValue } })
+  }
   return (
-    <StyledContainer>
+    <StyledContainer onSubmit={handleSubmit}>
       <StyledInput
+        type="text"
         onChange={handleInputChange}
         placeholder="Busque em nosso site"
       />
@@ -25,7 +32,7 @@ const InputSearch = () => {
         <Image priority={false} src={searchImg} />
       </StyledImageContainer>
     </StyledContainer>
-  );
-};
+  )
+}
 
-export default InputSearch;
+export default InputSearch

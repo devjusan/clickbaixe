@@ -1,4 +1,4 @@
-import { styled } from '../../../styles';
+import { styled } from '../../../styles'
 
 const StyledArticle = styled(`article`, {
   display: `flex`,
@@ -15,15 +15,15 @@ const StyledArticle = styled(`article`, {
       transform: `scale(1.2)`,
     },
   },
-});
+})
 
 const StyledLine = styled(`div`, {
   width: `55%`,
   background: `$black`,
   borderRadius: `$full`,
   height: `2px`,
-});
+})
 
-const StyledImageContainer = styled(`div`, { cursor: `pointer` });
+const StyledImageContainer = styled(`div`, { cursor: `pointer` })
 
-export { StyledArticle, StyledImageContainer, StyledLine };
+export { StyledArticle, StyledImageContainer, StyledLine }

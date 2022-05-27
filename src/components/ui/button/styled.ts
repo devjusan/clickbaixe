@@ -1,5 +1,5 @@
-import { styled } from '../../../styles';
-import { hoverSolidIn, hoverSolidOut } from '../../../styles/transitions';
+import { styled } from '../../../styles'
+import { hoverSolidIn, hoverSolidOut } from '../../../styles/transitions'
 
 const StyledContainer = styled('a', {
   display: 'flex',
@@ -36,6 +36,6 @@ const StyledContainer = styled('a', {
   '@md': {
     width: '240px !important',
   },
-});
+})
 
-export { StyledContainer };
+export { StyledContainer }

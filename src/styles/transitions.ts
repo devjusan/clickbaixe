@@ -1,4 +1,4 @@
-import { keyframes } from '@stitches/react';
+import { keyframes } from '@stitches/react'
 
 const hoverSolidIn = keyframes({
   '0%': {
@@ -45,7 +45,7 @@ const hoverSolidIn = keyframes({
     backgroundImage:
       'linear-gradient(270deg, rgb(228, 208, 10, 1) 0.10%, rgba(255, 226, 73, 1) 100%)',
   },
-});
+})
 
 const hoverSolidOut = keyframes({
   '0%': {
@@ -92,6 +92,6 @@ const hoverSolidOut = keyframes({
     backgroundImage:
       'linear-gradient(270deg, rgb(228, 208, 10, 0) 0%, rgba(255, 226, 73, 0) 100%)',
   },
-});
+})
 
-export { hoverSolidIn, hoverSolidOut };
+export { hoverSolidIn, hoverSolidOut }

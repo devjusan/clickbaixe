@@ -1,5 +1,5 @@
-import { StyledSubtitle } from '../../../styles/global';
-import { StyledContainer } from './styled';
+import { StyledSubtitle } from '../../../styles/global'
+import { StyledContainer } from './styled'
 
 const Contribute = () => (
   <StyledContainer>
@@ -8,6 +8,6 @@ const Contribute = () => (
       <strong>devjusan@hotmail.com</strong>
     </StyledSubtitle>
   </StyledContainer>
-);
+)
 
-export default Contribute;
+export default Contribute

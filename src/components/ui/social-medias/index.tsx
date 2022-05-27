@@ -1,6 +1,6 @@
-import { FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
-import { StyledSubtitle } from '../../../styles/global';
-import { StyledContainer, StyledMedia } from './styled';
+import { FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa'
+import { StyledSubtitle } from '../../../styles/global'
+import { StyledContainer, StyledMedia } from './styled'
 
 const SocialMedias = () => (
   <StyledContainer>
@@ -35,6 +35,6 @@ const SocialMedias = () => (
       </a>
     </StyledMedia>
   </StyledContainer>
-);
+)
 
-export default SocialMedias;
+export default SocialMedias

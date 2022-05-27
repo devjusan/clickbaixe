@@ -1,18 +1,18 @@
-import { NextComponentType } from 'next';
-import { MouseEvent, useState } from 'react';
-import ActiveLink from '../../../ui/active-link';
-import { StyledMenu, StyledA, StyledNav } from './styles';
+import { NextComponentType } from 'next'
+import { MouseEvent, useState } from 'react'
+import ActiveLink from '../../../ui/active-link'
+import { StyledMenu, StyledA, StyledNav } from './styles'
 
 const MobileMenu: NextComponentType = () => {
-  const [openMenu, setOpenMenu] = useState(false);
+  const [openMenu, setOpenMenu] = useState(false)
 
   const toggleClass = (
-    event: MouseEvent<HTMLDivElement, globalThis.MouseEvent>,
+    event: MouseEvent<HTMLDivElement, globalThis.MouseEvent>
   ) => {
-    const element = event.currentTarget;
-    element.classList.toggle(`active`);
-    setOpenMenu((state) => !state);
-  };
+    const element = event.currentTarget
+    element.classList.toggle(`active`)
+    setOpenMenu((state) => !state)
+  }
 
   return (
     <StyledMenu
@@ -37,7 +37,7 @@ const MobileMenu: NextComponentType = () => {
         </ActiveLink>
       </StyledNav>
     </StyledMenu>
-  );
-};
+  )
+}
 
-export default MobileMenu;
+export default MobileMenu

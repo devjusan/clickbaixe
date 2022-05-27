@@ -1,16 +1,16 @@
-import { StyledTitle } from '../../../styles/global';
-import Article from '../articles-list/article';
-import { StyledContainer, StyledContainerList } from './styled';
+import { StyledTitle } from '../../../styles/global'
+import Article from '../articles-list/article'
+import { StyledContainer, StyledContainerList } from './styled'
 
 interface IArticlesList {
   posts: {
-    title: string;
-    subtitle: string;
-    slug: string;
+    title: string
+    subtitle: string
+    slug: string
     image: {
-      url: string;
-    };
-  }[];
+      url: string
+    }
+  }[]
 }
 
 const NextBelow = ({ posts }: IArticlesList) => (
@@ -28,6 +28,6 @@ const NextBelow = ({ posts }: IArticlesList) => (
       ))}
     </StyledContainerList>
   </StyledContainer>
-);
+)
 
-export default NextBelow;
+export default NextBelow

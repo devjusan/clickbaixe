@@ -1,20 +1,22 @@
-import { StyledContainer, StyledContainerList } from './styled';
-import Article from './article';
-import { StyledSubtitle, StyledTitle } from '../../../styles/global';
+/* eslint-disable no-nested-ternary */
+import { StyledContainer, StyledContainerList } from './styled'
+import Article from './article'
+import { StyledSubtitle, StyledTitle } from '../../../styles/global'
 
 interface IArticlesList {
   posts: {
-    title: string;
-    subtitle: string;
-    slug: string;
+    title: string
+    subtitle: string
+    slug: string
     image: {
-      url: string;
-    };
-  }[];
-  hideTitle?: boolean;
+      url: string
+    }
+  }[]
+  isSearch?: boolean
+  hideTitle?: boolean
 }
 
-const ArticlesList = ({ posts, hideTitle }: IArticlesList) => (
+const ArticlesList = ({ posts, hideTitle, isSearch }: IArticlesList) => (
   <StyledContainer>
     {!hideTitle && (
       <StyledTitle css={{ fontSize: `35px`, marginBottom: `$44` }} type="title">
@@ -32,6 +34,10 @@ const ArticlesList = ({ posts, hideTitle }: IArticlesList) => (
             key={post.slug}
           />
         ))
+      ) : isSearch ? (
+        <StyledSubtitle>
+          Não foram encontrados resultados referente a pesquisa
+        </StyledSubtitle>
       ) : (
         <StyledSubtitle>
           Ainda não há conteudos sobre esta categoria. Tente novamente mais
@@ -40,6 +46,6 @@ const ArticlesList = ({ posts, hideTitle }: IArticlesList) => (
       )}
     </StyledContainerList>
   </StyledContainer>
-);
+)
 
-export default ArticlesList;
+export default ArticlesList

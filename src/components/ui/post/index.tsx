@@ -1,25 +1,25 @@
-import Image from 'next/image';
-import { useRouter } from 'next/router';
-import { StyledTitle, StyledSubtitle } from '../../../styles/global';
-import { StyledArticle, StyledImageContainer, StyledLine } from './styled';
+import Image from 'next/image'
+import { useRouter } from 'next/router'
+import { StyledTitle, StyledSubtitle } from '../../../styles/global'
+import { StyledArticle, StyledImageContainer, StyledLine } from './styled'
 
 interface IPost {
   post: {
-    slug: string;
-    title: string;
-    subtitle: string;
+    slug: string
+    title: string
+    subtitle: string
     image: {
-      url: string;
-    };
-    updatedAt: string;
-  };
+      url: string
+    }
+    updatedAt: string
+  }
 }
 
 const Post = ({ post: { image, slug, subtitle, title, updatedAt } }: IPost) => {
-  const { push } = useRouter();
+  const { push } = useRouter()
   const handleClick = () => {
-    push(`/posts/${slug}`);
-  };
+    push(`/posts/${slug}`)
+  }
 
   return (
     <StyledArticle>
@@ -47,7 +47,7 @@ const Post = ({ post: { image, slug, subtitle, title, updatedAt } }: IPost) => {
       <time>{updatedAt}</time>
       <StyledLine />
     </StyledArticle>
-  );
-};
+  )
+}
 
-export default Post;
+export default Post

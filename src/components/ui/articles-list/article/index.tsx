@@ -1,29 +1,24 @@
-import { useRouter } from 'next/router';
-import Image from 'next/image';
-import { StyledContainer } from './styled';
-import { StyledSubtitle } from '../../../../styles/global';
+import { useRouter } from 'next/router'
+import Image from 'next/image'
+import { StyledContainer } from './styled'
+import { StyledSubtitle } from '../../../../styles/global'
 
 interface IArticle {
-  title: string;
-  slug: string;
+  title: string
+  slug: string
   image: {
-    url: string;
-  };
-  fromCategory?: boolean;
+    url: string
+  }
+  fromCategory?: boolean
 }
 
-const Article = ({ title, image, slug, fromCategory }: IArticle) => {
-  const { push } = useRouter();
+const Article = ({ title, image, slug }: IArticle) => {
+  const { push } = useRouter()
   const handleClick = (event: any) => {
-    event.preventDefault();
+    event.preventDefault()
 
-    if (fromCategory) {
-      push(`${slug}`);
-      return;
-    }
-
-    push(`posts/${slug}`);
-  };
+    push({ pathname: '/posts/[slug]', query: { slug } })
+  }
 
   return (
     <StyledContainer>
@@ -41,7 +36,7 @@ const Article = ({ title, image, slug, fromCategory }: IArticle) => {
         {title}
       </StyledSubtitle>
     </StyledContainer>
-  );
-};
+  )
+}
 
-export default Article;
+export default Article

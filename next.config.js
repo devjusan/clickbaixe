@@ -4,6 +4,6 @@ const nextConfig = {
   images: {
     domains: ['images.prismic.io'],
   },
-};
+}
 
-module.exports = nextConfig;
+module.exports = nextConfig

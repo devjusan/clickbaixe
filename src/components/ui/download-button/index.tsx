@@ -1,29 +1,29 @@
-import { useEffect, useState } from 'react';
-import Button from '../button';
-import { StyledContainer } from './styled';
+import { useEffect, useState } from 'react'
+import Button from '../button'
+import { StyledContainer } from './styled'
 
 interface IDownloadButton {
-  href: string;
-  registerHref: string | null;
+  href: string
+  registerHref: string | null
 }
 
 const DownloadButton = ({ href, registerHref }: IDownloadButton) => {
-  const [timer, setTimer] = useState(0);
+  const [timer, setTimer] = useState(0)
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setTimer((state) => state - 1000);
-    }, 1000);
+      setTimer((state) => state - 1000)
+    }, 1000)
 
     if (timer === 0) {
-      clearInterval(interval);
+      clearInterval(interval)
     }
 
     return () => {
-      setTimer(0);
-      clearInterval(interval);
-    };
-  }, [timer]);
+      setTimer(0)
+      clearInterval(interval)
+    }
+  }, [timer])
 
   return (
     <StyledContainer>
@@ -45,7 +45,7 @@ const DownloadButton = ({ href, registerHref }: IDownloadButton) => {
         </p>
       )}
     </StyledContainer>
-  );
-};
+  )
+}
 
-export default DownloadButton;
+export default DownloadButton

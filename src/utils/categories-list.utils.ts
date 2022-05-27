@@ -4,4 +4,4 @@ export const categoriesList = [
   `Tutoriais`,
   `Novidades`,
   `softwares`,
-];
+]

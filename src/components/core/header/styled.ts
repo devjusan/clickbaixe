@@ -1,4 +1,4 @@
-import { styled } from '../../../styles';
+import { styled } from '../../../styles'
 
 const StyledHeader = styled(`header`, {
   width: `100%`,
@@ -10,7 +10,7 @@ const StyledHeader = styled(`header`, {
   background: `$backgroundYellow`,
   px: `$52`,
   boxShadow: `0px 1px 0px rgba(0, 0, 0, 0.22);`,
-});
+})
 
 const StyledNav = styled(`nav`, {
   display: `flex`,
@@ -42,13 +42,13 @@ const StyledNav = styled(`nav`, {
     left: `0`,
     background: `rgba(0, 0, 0, 0.9)`,
   },
-});
+})
 
 const StyledA = styled(`a`, {
   fontSize: `$24`,
   fontFamily: `Benne`,
   fontWeight: `300`,
   listStyle: `none`,
-});
+})
 
-export { StyledHeader, StyledNav, StyledA };
+export { StyledHeader, StyledNav, StyledA }

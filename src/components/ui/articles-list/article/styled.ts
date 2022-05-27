@@ -1,4 +1,4 @@
-import { styled } from '../../../../styles';
+import { styled } from '../../../../styles'
 
 const StyledContainer = styled(`div`, {
   display: `flex`,
@@ -13,6 +13,6 @@ const StyledContainer = styled(`div`, {
       transform: `scale(1.2)`,
     },
   },
-});
+})
 
-export { StyledContainer };
+export { StyledContainer }

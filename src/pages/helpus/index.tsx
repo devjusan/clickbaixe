@@ -1,7 +1,7 @@
-import Image from 'next/image';
-import { StyledContainer } from '../../pages-styles/hepup-styled';
-import { StyledTitle } from '../../styles/global';
-import img from '../../assets/hunter.png';
+import Image from 'next/image'
+import { StyledContainer } from '../../pages-styles/hepup-styled'
+import { StyledTitle } from '../../styles/global'
+import img from '../../assets/hunter.png'
 
 const HelpUs = () => (
   <StyledContainer>
@@ -16,6 +16,6 @@ const HelpUs = () => (
       <strong>PIX: jnrplay@hotmail.com</strong>
     </p>
   </StyledContainer>
-);
+)
 
-export default HelpUs;
+export default HelpUs

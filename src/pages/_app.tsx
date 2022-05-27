@@ -1,15 +1,15 @@
-import { PrismicProvider } from '@prismicio/react';
-import { PrismicPreview } from '@prismicio/next';
-import Head from 'next/head';
-import Script from 'next/script';
-import type { AppProps } from 'next/app';
-import Link from 'next/link';
-import { globalStyles } from '../styles/global';
-import { linkResolver, repositoryName } from '../../prismic.config';
-import Header from '../components/core/header';
-import Footer from '../components/core/footer';
+import { PrismicProvider } from '@prismicio/react'
+import { PrismicPreview } from '@prismicio/next'
+import Head from 'next/head'
+import Script from 'next/script'
+import type { AppProps } from 'next/app'
+import Link from 'next/link'
+import { globalStyles } from '../styles/global'
+import { linkResolver, repositoryName } from '../../prismic.config'
+import Header from '../components/core/header'
+import Footer from '../components/core/footer'
 
-globalStyles();
+globalStyles()
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
@@ -39,7 +39,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         </PrismicPreview>
       </PrismicProvider>
     </>
-  );
+  )
 }
 
-export default MyApp;
+export default MyApp

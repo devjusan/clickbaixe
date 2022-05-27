@@ -1,4 +1,4 @@
-import { styled } from '../../../styles';
+import { styled } from '../../../styles'
 
 const StyledFooter = styled(`footer`, {
   position: `relative`,
@@ -11,7 +11,7 @@ const StyledFooter = styled(`footer`, {
   textAlign: `center`,
   color: `$white`,
   height: `$100%`,
-});
+})
 
 const StyledAbout = styled(`div`, {
   all: `unset`,
@@ -23,12 +23,12 @@ const StyledAbout = styled(`div`, {
       fontWeight: `500`,
     },
   },
-});
+})
 
 const StyledContent = styled(`div`, {
   all: `unset`,
   maxWidth: `60%`,
-});
+})
 
 const StyledMedia = styled(`div`, {
   display: `flex`,
@@ -43,14 +43,14 @@ const StyledMedia = styled(`div`, {
     },
     transition: `fill .2s`,
   },
-});
+})
 
 const StyledRights = styled(`span`, {
   position: `absolute`,
   bottom: `$16`,
   fontSize: `$16`,
   fontFamily: `$subtitle`,
-});
+})
 
 const StyledInformation = styled(`div`, {
   width: '100%',
@@ -60,7 +60,7 @@ const StyledInformation = styled(`div`, {
     textAlign: 'center',
     color: '#999',
   },
-});
+})
 
 export {
   StyledFooter,
@@ -69,4 +69,4 @@ export {
   StyledMedia,
   StyledRights,
   StyledInformation,
-};
+}

@@ -1,4 +1,4 @@
-import { styled } from '../../../styles';
+import { styled } from '../../../styles'
 
 const StyledContainer = styled('form', {
   position: 'relative',
@@ -6,7 +6,7 @@ const StyledContainer = styled('form', {
   flexFlow: 'row nowrap',
   justifyContent: 'space-around',
   alignItems: 'center',
-});
+})
 
 const StyledInput = styled('input', {
   display: 'block',
@@ -25,12 +25,12 @@ const StyledInput = styled('input', {
     color: '#999',
     fontSize: '.9rem',
   },
-});
+})
 
 const StyledImageContainer = styled('div', {
   position: 'absolute',
   right: '$20',
   top: '$16',
-});
+})
 
-export { StyledContainer, StyledInput, StyledImageContainer };
+export { StyledContainer, StyledInput, StyledImageContainer }

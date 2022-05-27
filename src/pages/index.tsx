@@ -1,33 +1,33 @@
-import { GetStaticProps } from 'next';
-import { RichText } from 'prismic-dom';
-import Head from 'next/head';
-import { StyledMain } from '../styles/global';
-import { formatPrismicPosts } from '../utils/prismic.utils';
-import ArticleList from '../components/ui/articles-list';
-import Post from '../components/ui/post';
-import { FAVORITE_SLUG } from '../constants/favorite-slug';
-import { formatDate } from '../utils/formatter.utils';
-import { createClient } from '../../prismic.config';
+import { GetStaticProps } from 'next'
+import { RichText } from 'prismic-dom'
+import Head from 'next/head'
+import { StyledMain } from '../styles/global'
+import { formatPrismicPosts } from '../utils/prismic.utils'
+import ArticleList from '../components/ui/articles-list'
+import Post from '../components/ui/post'
+import { FAVORITE_SLUG } from '../constants/favorite-slug'
+import { formatDate } from '../utils/formatter.utils'
+import { createClient } from '../../prismic.config'
 
 interface IPost {
   post: {
-    slug: string;
-    title: string;
-    subtitle: string;
+    slug: string
+    title: string
+    subtitle: string
     image: {
-      url: string;
-    };
-    updatedAt: string;
-  };
+      url: string
+    }
+    updatedAt: string
+  }
   posts: {
-    title: string;
-    subtitle: string;
-    slug: string;
+    title: string
+    subtitle: string
+    slug: string
     image: {
-      url: string;
-    };
-    updatedAt: string;
-  }[];
+      url: string
+    }
+    updatedAt: string
+  }[]
 }
 
 const Home = ({ post, posts }: IPost) => (
@@ -45,22 +45,22 @@ const Home = ({ post, posts }: IPost) => (
       <ArticleList hideTitle posts={posts} />
     </StyledMain>
   </>
-);
+)
 
-export default Home;
+export default Home
 
 export const getStaticProps: GetStaticProps = async ({ previewData }) => {
-  const ONE_HOUR = 60 * 30;
-  const prismiClient = createClient({ previewData });
-  const { results } = await prismiClient.getByType(`favorite-slug`);
-  const { uid: slug } = results[0];
+  const ONE_HOUR = 60 * 30
+  const prismiClient = createClient({ previewData })
+  const { results } = await prismiClient.getByType(`favorite-slug`)
+  const { uid: slug } = results[0]
 
   const prismicData = await prismiClient.getByUID(
     `posts`,
-    slug?.toString() ?? FAVORITE_SLUG,
-  );
-  const posts = await prismiClient.getAllByType(`posts`, { limit: 12 });
-  const mapPosts = formatPrismicPosts(posts);
+    slug?.toString() ?? FAVORITE_SLUG
+  )
+  const posts = await prismiClient.getAllByType(`posts`, { limit: 12 })
+  const mapPosts = formatPrismicPosts(posts)
 
   const post = {
     slug: slug ?? FAVORITE_SLUG,
@@ -70,7 +70,7 @@ export const getStaticProps: GetStaticProps = async ({ previewData }) => {
       url: prismicData.data.image.url,
     },
     updatedAt: formatDate(prismicData.last_publication_date),
-  };
+  }
 
-  return { props: { post, posts: mapPosts }, revalidate: ONE_HOUR };
-};
+  return { props: { post, posts: mapPosts }, revalidate: ONE_HOUR }
+}

@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
-import { NextComponentType } from 'next';
-import { FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
-import Link from 'next/link';
+import { NextComponentType } from 'next'
+import { FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa'
+import Link from 'next/link'
 import {
   StyledFooter,
   StyledAbout,
@@ -9,11 +9,11 @@ import {
   StyledMedia,
   StyledRights,
   StyledInformation,
-} from './styled';
-import { StyledTitle } from '../../../styles/global';
+} from './styled'
+import { StyledTitle } from '../../../styles/global'
 
 const Footer: NextComponentType = () => {
-  const year = new Date().getFullYear();
+  const year = new Date().getFullYear()
 
   return (
     <StyledFooter>
@@ -72,7 +72,7 @@ const Footer: NextComponentType = () => {
         </p>
       </StyledInformation>
     </StyledFooter>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

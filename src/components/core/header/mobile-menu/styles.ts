@@ -1,5 +1,5 @@
-import { keyframes } from '@stitches/react';
-import { styled } from '../../../../styles';
+import { keyframes } from '@stitches/react'
+import { styled } from '../../../../styles'
 
 const StyledMenu = styled(`div`, {
   position: `relative`,
@@ -26,12 +26,12 @@ const StyledMenu = styled(`div`, {
     '-webkit-transform': `rotate(45deg) translate(-8px, -8px)`,
     transform: `rotate(45deg) translate(-8px, -8px)`,
   },
-});
+})
 
 const showUp = keyframes({
   from: { maxHeight: 0, opacity: `0` },
   to: { maxHeight: `300px`, opacity: `1` },
-});
+})
 
 const StyledNav = styled(`nav`, {
   overflow: `hidden`,
@@ -62,7 +62,7 @@ const StyledNav = styled(`nav`, {
       },
     },
   },
-});
+})
 
 const StyledA = styled(`a`, {
   color: `$white`,
@@ -70,6 +70,6 @@ const StyledA = styled(`a`, {
   '&:hover': {
     color: `$backgroundYellow`,
   },
-});
+})
 
-export { StyledMenu, StyledNav, StyledA };
+export { StyledMenu, StyledNav, StyledA }

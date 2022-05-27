@@ -1,34 +1,34 @@
-import { useRouter } from 'next/router';
-import { useCallback } from 'react';
-import Head from 'next/head';
-import { GetServerSideProps } from 'next';
+import { useRouter } from 'next/router'
+import { useCallback } from 'react'
+import Head from 'next/head'
+import { GetServerSideProps, GetStaticPaths, GetStaticProps } from 'next'
 import {
   StyledContainer,
   StyledCategory,
   StyledLeftContainer,
   StyledRightContainer,
-} from '../../pages-styles/category-styled';
-import { split, getSlugFromParam } from '../../utils/formatter.utils';
-import { StyledSubtitle } from '../../styles/global';
-import ArticlesList from '../../components/ui/articles-list';
-import SocialMedias from '../../components/ui/social-medias';
-import { createClient } from '../../../prismic.config';
-import { formatPrismicPosts } from '../../utils/prismic.utils';
+} from '../../pages-styles/category-styled'
+import { split, getSlugFromParam } from '../../utils/formatter.utils'
+import { StyledSubtitle } from '../../styles/global'
+import ArticlesList from '../../components/ui/articles-list'
+import SocialMedias from '../../components/ui/social-medias'
+import { createClient } from '../../../prismic.config'
+import { formatPrismicPosts } from '../../utils/prismic.utils'
 
 interface ICategories {
   posts: {
-    title: string;
-    subtitle: string;
-    slug: string;
+    title: string
+    subtitle: string
+    slug: string
     image: {
-      url: string;
-    };
-  }[];
+      url: string
+    }
+  }[]
 }
 
 const Categories = ({ posts }: ICategories) => {
-  const { asPath } = useRouter();
-  const category = useCallback(() => split(asPath), [asPath]);
+  const { asPath } = useRouter()
+  const category = useCallback(() => split(asPath), [asPath])
 
   return (
     <>
@@ -64,19 +64,24 @@ const Categories = ({ posts }: ICategories) => {
         </StyledRightContainer>
       </StyledContainer>
     </>
-  );
-};
+  )
+}
 
-export default Categories;
+export default Categories
 
-export const getServerSideProps: GetServerSideProps = async ({
+export const getStaticPaths: GetStaticPaths = () => ({
+  paths: [],
+  fallback: true,
+})
+
+export const getStaticProps: GetStaticProps = async ({
   previewData,
   params,
 }) => {
-  const slug = getSlugFromParam(params);
-  const prismicClient = createClient({ previewData });
-  const prismicData = await prismicClient.getAllBySomeTags([slug]);
-  const posts = formatPrismicPosts(prismicData);
+  const slug = getSlugFromParam(params)
+  const prismicClient = createClient({ previewData })
+  const prismicData = await prismicClient.getAllBySomeTags([slug])
+  const posts = formatPrismicPosts(prismicData)
 
-  return { props: { posts } };
-};
+  return { props: { posts } }
+}
