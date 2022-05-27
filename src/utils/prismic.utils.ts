@@ -6,7 +6,7 @@ import { formatDate } from './formatter.utils'
 export const formatPrismicPosts = (
   posts: prismicT.PrismicDocument<Record<string, any>, string, string>[]
 ) =>
-  posts.map((post) => ({
+  [...posts].map((post) => ({
     slug: post.uid,
     title: RichText.asText(post.data.title),
     subtitle: RichText.asText(post.data.subtitle),
@@ -19,7 +19,7 @@ export const formatPrismicPosts = (
 export const formatPrismicArticles = (
   posts: prismicT.PrismicDocument<Record<string, any>, string, string>[]
 ) =>
-  posts.map((post) => ({
+  [...posts].map((post) => ({
     slug: post.uid,
     title: RichText.asText(post.data.title),
     content: RichText.asHtml(post.data.content),

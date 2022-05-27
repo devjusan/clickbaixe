@@ -38,11 +38,20 @@ export const getStaticPaths: GetStaticPaths = () => ({
   fallback: true,
 })
 
-export const getStaticProps: GetStaticProps = async ({ previewData }) => {
+export const getStaticProps: GetStaticProps = async ({
+  previewData,
+  params,
+}) => {
+  const slug = params?.slug as string
   const prismicClient = createClient({ previewData })
-  const posts = await prismicClient.getAllByType(`posts`)
+  const posts = await prismicClient.getAllByType('posts')
   const mapPosts = formatPrismicPosts(posts)
-  const sortedPosts = mapPosts.sort(() => 0.5 - Math.random()).splice(0, 12)
+  const sortedPosts = [...mapPosts]
+    .sort(() => 0.5 - Math.random())
+    .splice(0, 12)
+  const slugPosts = [...mapPosts].filter((post) =>
+    post.title.toLowerCase()?.includes(slug.toLowerCase())
+  )
 
-  return { props: { posts: [], sortedPosts } }
+  return { props: { posts: slugPosts, sortedPosts } }
 }

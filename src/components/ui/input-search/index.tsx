@@ -19,6 +19,8 @@ const InputSearch = () => {
 
   const handleSubmit = (event: React.SyntheticEvent) => {
     event.preventDefault()
+    if (!inputValue || !inputValue.length) return
+
     push({ pathname: '/search/[slug]', query: { slug: inputValue } })
     setInputValue('')
   }
