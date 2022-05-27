@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { NextComponentType } from 'next';
 import { FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import Link from 'next/link';
@@ -7,6 +8,7 @@ import {
   StyledContent,
   StyledMedia,
   StyledRights,
+  StyledInformation,
 } from './styled';
 import { StyledTitle } from '../../../styles/global';
 
@@ -55,6 +57,20 @@ const Footer: NextComponentType = () => {
         </StyledAbout>
       </StyledContent>
       <StyledRights>© {year} CLICKBAIXE Co.</StyledRights>
+      <StyledInformation>
+        <p>
+          <strong>Importante:</strong> Os arquivos disponíveis nesse site não
+          são hospedados por nós, os links são retirados de sites terceiros
+          confiáveis, apenas indexamos. Qualquer denúncia deve ser encaminhada
+          diretamente aos sites responsáveis por hospedar os arquivos em seus
+          servidores, ou realizar um pedido de remoção do conteúdo diretamente
+          com o buscador (via DMCA).
+        </p>
+        <p>
+          O intuito do CLICKBAIXE é apenas organizar os links com imagens e
+          textos através de "scraping" para fins de busca do usuário.
+        </p>
+      </StyledInformation>
     </StyledFooter>
   );
 };

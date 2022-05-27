@@ -10,7 +10,7 @@ const StyledFooter = styled(`footer`, {
   background: `$black`,
   textAlign: `center`,
   color: `$white`,
-  height: `$400`,
+  height: `$100%`,
 });
 
 const StyledAbout = styled(`div`, {
@@ -52,4 +52,21 @@ const StyledRights = styled(`span`, {
   fontFamily: `$subtitle`,
 });
 
-export { StyledFooter, StyledAbout, StyledContent, StyledMedia, StyledRights };
+const StyledInformation = styled(`div`, {
+  width: '100%',
+  maxWidth: '700px',
+  marginBottom: '$16',
+  p: {
+    textAlign: 'center',
+    color: '#999',
+  },
+});
+
+export {
+  StyledFooter,
+  StyledAbout,
+  StyledContent,
+  StyledMedia,
+  StyledRights,
+  StyledInformation,
+};
