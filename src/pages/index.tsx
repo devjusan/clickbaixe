@@ -8,6 +8,7 @@ import Post from '../components/ui/post'
 import { FAVORITE_SLUG } from '../constants/favorite-slug'
 import { formatDate } from '../utils/formatter.utils'
 import { createClient } from '../../prismic.config'
+import Loading from '../components/ui/loading'
 
 interface IPost {
   post: {
@@ -40,6 +41,7 @@ const Home = ({ post, posts }: IPost) => (
       />
       <link rel="icon" href="/favicon.ico" />
     </Head>
+    <Loading />
     <StyledMain>
       <Post post={post} />
       <ArticleList hideTitle posts={posts} />

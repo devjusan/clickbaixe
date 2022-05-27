@@ -10,6 +10,9 @@ const StyledHeader = styled(`header`, {
   background: `$backgroundYellow`,
   px: `$52`,
   boxShadow: `0px 1px 0px rgba(0, 0, 0, 0.22);`,
+  '@sm': {
+    px: '$16',
+  },
 })
 
 const StyledNav = styled(`nav`, {

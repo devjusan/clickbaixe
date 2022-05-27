@@ -27,7 +27,7 @@ interface ISearch {
 
 const SearchPost = ({ posts, sortedPosts }: ISearch) => {
   if (!posts || !sortedPosts) {
-    return <Loading />
+    return <Loading force />
   }
 
   return (

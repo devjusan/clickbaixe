@@ -43,7 +43,7 @@ interface IPost {
 
 const Post = ({ post, posts }: IPost) => {
   if (!posts || !post) {
-    return <Loading />
+    return <Loading force />
   }
 
   const sanitizedContent = useCallback(

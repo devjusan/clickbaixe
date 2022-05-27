@@ -94,4 +94,9 @@ const hoverSolidOut = keyframes({
   },
 })
 
-export { hoverSolidIn, hoverSolidOut }
+const spin = keyframes({
+  '0%': { transform: 'rotate(0deg)' },
+  '100%': { transform: 'rotate(360deg)' },
+})
+
+export { hoverSolidIn, hoverSolidOut, spin }

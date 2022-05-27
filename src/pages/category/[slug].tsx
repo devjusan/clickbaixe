@@ -32,7 +32,7 @@ const Categories = ({ posts }: ICategories) => {
   const category = useCallback(() => split(asPath), [asPath])
 
   if (!posts) {
-    return <Loading />
+    return <Loading force />
   }
 
   return (
