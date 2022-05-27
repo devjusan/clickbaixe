@@ -6,7 +6,7 @@ import searchImg from '../../../assets/search.svg'
 
 const InputSearch = () => {
   const { push } = useRouter()
-  const [inputValue, setValue] = useState('')
+  const [inputValue, setInputValue] = useState('')
 
   const handleInputChange = (event: any) => {
     event.preventDefault?.()
@@ -14,18 +14,21 @@ const InputSearch = () => {
     if (!value) {
       value = ''
     }
-    setValue(value)
+    setInputValue(value)
   }
 
   const handleSubmit = (event: React.SyntheticEvent) => {
     event.preventDefault()
     push({ pathname: '/search/[slug]', query: { slug: inputValue } })
+    setInputValue('')
   }
+
   return (
     <StyledContainer onSubmit={handleSubmit}>
       <StyledInput
         type="text"
         onChange={handleInputChange}
+        value={inputValue}
         placeholder="Busque em nosso site"
       />
       <StyledImageContainer>

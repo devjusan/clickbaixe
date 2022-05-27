@@ -36,7 +36,7 @@ const ArticlesList = ({ posts, hideTitle, isSearch }: IArticlesList) => (
         ))
       ) : isSearch ? (
         <StyledSubtitle>
-          Não foram encontrados resultados referente a pesquisa
+          Não foi encontrado nenhum resultado referente à pesquisa
         </StyledSubtitle>
       ) : (
         <StyledSubtitle>

@@ -13,7 +13,7 @@ const HelpUs = () => (
       Qualquer quantia é bem-vinda.
     </p>
     <p>
-      <strong>PIX: jnrplay@hotmail.com</strong>
+      <strong>PIX: devjusan@hotmail.com</strong>
     </p>
   </StyledContainer>
 )
