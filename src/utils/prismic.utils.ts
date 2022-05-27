@@ -1,10 +1,10 @@
 import { RichText } from 'prismic-dom'
 // eslint-disable-next-line import/no-extraneous-dependencies
-import * as prismicT from '@prismicio/types'
+import { PrismicDocument } from '@prismicio/types'
 import { formatDate } from './formatter.utils'
 
 export const formatPrismicPosts = (
-  posts: prismicT.PrismicDocument<Record<string, any>, string, string>[]
+  posts: PrismicDocument<Record<string, any>, string, string>[]
 ) =>
   [...posts].map((post) => ({
     slug: post.uid,
@@ -17,7 +17,7 @@ export const formatPrismicPosts = (
   }))
 
 export const formatPrismicArticles = (
-  posts: prismicT.PrismicDocument<Record<string, any>, string, string>[]
+  posts: PrismicDocument<Record<string, any>, string, string>[]
 ) =>
   [...posts].map((post) => ({
     slug: post.uid,

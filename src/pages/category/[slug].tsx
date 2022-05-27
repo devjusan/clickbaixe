@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 import { useCallback } from 'react'
 import Head from 'next/head'
-import { GetServerSideProps, GetStaticPaths, GetStaticProps } from 'next'
+import { GetStaticPaths, GetStaticProps } from 'next'
 import {
   StyledContainer,
   StyledCategory,
@@ -14,6 +14,7 @@ import ArticlesList from '../../components/ui/articles-list'
 import SocialMedias from '../../components/ui/social-medias'
 import { createClient } from '../../../prismic.config'
 import { formatPrismicPosts } from '../../utils/prismic.utils'
+import Loading from '../../components/ui/loading'
 
 interface ICategories {
   posts: {
@@ -29,6 +30,10 @@ interface ICategories {
 const Categories = ({ posts }: ICategories) => {
   const { asPath } = useRouter()
   const category = useCallback(() => split(asPath), [asPath])
+
+  if (!posts) {
+    return <Loading />
+  }
 
   return (
     <>

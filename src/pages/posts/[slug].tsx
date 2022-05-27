@@ -16,6 +16,7 @@ import { createClient } from '../../../prismic.config'
 import { formatPrismicPosts } from '../../utils/prismic.utils'
 import DownloadButton from '../../components/ui/download-button'
 import Contribute from '../../components/ui/contribute'
+import Loading from '../../components/ui/loading'
 
 interface IPost {
   post: {
@@ -40,43 +41,44 @@ interface IPost {
   }[]
 }
 
-const Post = ({
-  post: { title, subtitle, image, content, updatedAt, href, register },
-  posts,
-}: IPost) => {
+const Post = ({ post, posts }: IPost) => {
+  if (!posts || !post) {
+    return <Loading />
+  }
+
   const sanitizedContent = useCallback(
-    () => DOMPurify.sanitize(content),
-    [content]
+    () => DOMPurify.sanitize(post.content),
+    [post.content]
   )
 
   return (
     <>
       <Head>
-        <title>{title} / CLICKBAIXE</title>
+        <title>{post.title} / CLICKBAIXE</title>
       </Head>
       <StyledContainer>
         <StyledTitle
           css={{ marginBottom: `$44` }}
           type={{ '@initial': `title`, '@sm': `mobile` }}
         >
-          {title}
+          {post.title}
         </StyledTitle>
         <StyledSubtitle css={{ position: `relative` }} type="articleTitle">
-          {subtitle}
+          {post.subtitle}
         </StyledSubtitle>
-        <time>{updatedAt}</time>
+        <time>{post.updatedAt}</time>
         <Image
           style={{ borderRadius: `10px` }}
           priority={false}
           width={700}
           height={350}
-          src={image.url}
+          src={post.image.url}
           alt="Imagem do post"
         />
         <StyledContent
           dangerouslySetInnerHTML={{ __html: sanitizedContent() }}
         />
-        <DownloadButton registerHref={register} href={href} />
+        <DownloadButton registerHref={post.register} href={post.href} />
         <StyledSubtitle css={{ textAlign: 'start' }}>
           Apoie o desenvolvedor. Compre o programa!
         </StyledSubtitle>
@@ -105,7 +107,9 @@ export const getStaticProps: GetStaticProps = async ({
   const prismicData = await prismiClient.getByUID(`posts`, slug)
   const posts = await prismiClient.getAllByType(`posts`)
   const mapPosts = formatPrismicPosts(posts)
-  const sortedPosts = mapPosts.sort().splice(0, 12)
+  const sortedPosts = [...mapPosts]
+    .sort(() => 0.5 - Math.random())
+    .splice(0, 12)
 
   const post = {
     slug,

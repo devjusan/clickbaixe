@@ -1,6 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { createClient } from '../../../prismic.config'
 import ArticlesList from '../../components/ui/articles-list'
+import Loading from '../../components/ui/loading'
 import NextBelow from '../../components/ui/next-bellow'
 import { formatPrismicPosts } from '../../utils/prismic.utils'
 
@@ -24,12 +25,18 @@ interface ISearch {
   hideTitle?: boolean
 }
 
-const SearchPost = ({ posts, sortedPosts }: ISearch) => (
-  <>
-    <ArticlesList isSearch posts={posts} />
-    <NextBelow posts={sortedPosts} />
-  </>
-)
+const SearchPost = ({ posts, sortedPosts }: ISearch) => {
+  if (!posts || !sortedPosts) {
+    return <Loading />
+  }
+
+  return (
+    <>
+      <ArticlesList isSearch posts={posts} />
+      <NextBelow posts={sortedPosts} />
+    </>
+  )
+}
 
 export default SearchPost
 
