@@ -16,12 +16,14 @@
     "@prismicio/react": "^2.3.0",
     "@prismicio/slice-simulator-react": "^0.2.2",
     "@stitches/react": "^1.2.8",
+    "adblock-detect-react": "^1.0.5",
     "isomorphic-dompurify": "^0.19.0",
     "next": "12.1.6",
     "prismic-dom": "^2.2.7",
     "react": "18.1.0",
     "react-dom": "18.1.0",
-    "react-icons": "^4.3.1"
+    "react-icons": "^4.3.1",
+    "react-toastify": "^9.0.1"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^12.1.6",

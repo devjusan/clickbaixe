@@ -9,6 +9,7 @@ import { FAVORITE_SLUG } from '../constants/favorite-slug'
 import { formatDate } from '../utils/formatter.utils'
 import { createClient } from '../../prismic.config'
 import Loading from '../components/ui/loading'
+import DetectAdBlock from '../components/ui/detect-adblock'
 
 interface IPost {
   post: {
@@ -34,7 +35,7 @@ interface IPost {
 const Home = ({ post, posts }: IPost) => (
   <>
     <Head>
-      <title>Clickbaixe </title>
+      <title>CLICKBAIXE | Download de Jogos, Programas e Apps </title>
       <meta
         name="description"
         content="CLICKBAIXE | Download de Jogos, Programas e Apps"
@@ -45,6 +46,7 @@ const Home = ({ post, posts }: IPost) => (
     <StyledMain>
       <Post post={post} />
       <ArticleList hideTitle posts={posts} />
+      <DetectAdBlock />
     </StyledMain>
   </>
 )
