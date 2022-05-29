@@ -61,4 +61,10 @@ const StyledLine = styled(`div`, {
   height: `2px`,
 })
 
-export { StyledContainer, StyledContent, StyledLine }
+const StyledDisqusContainer = styled(`div`, {
+  display: 'block',
+  width: '100%',
+  padding: '$32',
+})
+
+export { StyledContainer, StyledContent, StyledLine, StyledDisqusContainer }

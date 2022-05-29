@@ -53,6 +53,11 @@ const Home = ({ post, posts }: IPost) => (
         custom-element="amp-ad"
         src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"
       />
+      <script
+        id="dsq-count-scr"
+        src="//https-clickbaixe-vercel-app.disqus.com/count.js"
+        async
+      />
 
       <link rel="icon" href="/favicon.ico" />
     </Head>

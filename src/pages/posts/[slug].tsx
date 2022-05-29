@@ -4,10 +4,12 @@ import { useCallback } from 'react'
 import DOMPurify from 'isomorphic-dompurify'
 import Head from 'next/head'
 import Image from 'next/image'
+import Script from 'next/script'
 import {
   StyledContainer,
   StyledContent,
   StyledLine,
+  StyledDisqusContainer,
 } from '../../pages-styles/posts-styled'
 import { StyledSubtitle, StyledTitle } from '../../styles/global'
 import NextBelow from '../../components/ui/next-bellow'
@@ -57,6 +59,20 @@ const Post = ({ post, posts }: IPost) => {
       <Head>
         <title>{post.title} / CLICKBAIXE</title>
       </Head>
+      <Script>
+        {`
+            var disqus_config = function () {
+            this.page.url = document.location.href;  
+            this.page.identifier = document.location.href.split('posts')[1];
+            };
+            
+            (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://https-clickbaixe-vercel-app.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+            })();`}
+      </Script>
       <StyledContainer>
         <GoogleAdsenseContainer />
         <StyledTitle
@@ -87,6 +103,9 @@ const Post = ({ post, posts }: IPost) => {
         </StyledSubtitle>
         <Contribute />
         <StyledLine />
+        <StyledDisqusContainer id="disqus_thread" />
+        <StyledLine />
+
         <NextBelow posts={posts} />
       </StyledContainer>
     </>

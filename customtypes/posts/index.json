@@ -64,6 +64,18 @@
           "allowTargetBlank": true,
           "single": "embed"
         }
+      },
+      "allowComments": {
+        "type": "Select",
+        "fieldset" : "Adicionar comentários?",
+        "config": {
+          "label": "Comments",
+          "placeholder": "Select...",
+          "options": [
+            "1",
+            "2"
+          ]
+        }
       }
     }
   }
