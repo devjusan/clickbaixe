@@ -17,6 +17,7 @@ import { formatPrismicPosts } from '../../utils/prismic.utils'
 import DownloadButton from '../../components/ui/download-button'
 import Contribute from '../../components/ui/contribute'
 import Loading from '../../components/ui/loading'
+import GoogleAdsenseContainer from '../../components/core/adsense-container'
 
 interface IPost {
   post: {
@@ -57,6 +58,7 @@ const Post = ({ post, posts }: IPost) => {
         <title>{post.title} / CLICKBAIXE</title>
       </Head>
       <StyledContainer>
+        <GoogleAdsenseContainer />
         <StyledTitle
           css={{ marginBottom: `$44` }}
           type={{ '@initial': `title`, '@sm': `mobile` }}
@@ -78,6 +80,7 @@ const Post = ({ post, posts }: IPost) => {
         <StyledContent
           dangerouslySetInnerHTML={{ __html: sanitizedContent() }}
         />
+        <GoogleAdsenseContainer />
         <DownloadButton registerHref={post.register} href={post.href} />
         <StyledSubtitle css={{ textAlign: 'start' }}>
           Apoie o desenvolvedor. Compre o programa!

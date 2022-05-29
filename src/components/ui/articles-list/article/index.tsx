@@ -30,7 +30,6 @@ const Article = ({ title, image, slug }: IArticle) => {
         alt="Uma postagem"
         onClick={handleClick}
         style={{ cursor: `pointer` }}
-        className="img-zoom"
       />
       <StyledSubtitle type="articleTitle" css={{ fontWeight: `bold` }}>
         {title}

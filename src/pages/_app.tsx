@@ -1,7 +1,5 @@
 import { PrismicProvider } from '@prismicio/react'
 import { PrismicPreview } from '@prismicio/next'
-import Head from 'next/head'
-import Script from 'next/script'
 import type { AppProps } from 'next/app'
 import Link from 'next/link'
 import { globalStyles } from '../styles/global'
@@ -13,17 +11,6 @@ globalStyles()
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-      <Head>
-        <Script
-          id="Adsense-id"
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8216675107406005"
-          async
-          strategy="afterInteractive"
-          // eslint-disable-next-line no-console
-          onError={(err) => console.log('Scripfailed to load: ', err)}
-          crossOrigin="anonymous"
-        />
-      </Head>
       <PrismicProvider
         linkResolver={linkResolver}
         internalLinkComponent={({ href, children, ...props }) => (

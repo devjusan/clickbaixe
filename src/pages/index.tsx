@@ -1,6 +1,7 @@
 import { GetStaticProps } from 'next'
 import { RichText } from 'prismic-dom'
 import Head from 'next/head'
+import Script from 'next/script'
 import { StyledMain } from '../styles/global'
 import { formatPrismicPosts } from '../utils/prismic.utils'
 import ArticleList from '../components/ui/articles-list'
@@ -39,6 +40,13 @@ const Home = ({ post, posts }: IPost) => (
       <meta
         name="description"
         content="CLICKBAIXE | Download de Jogos, Programas e Apps"
+      />
+      <script
+        type="text/javascript"
+        async
+        id="Adsense-id"
+        src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_ADSENSE_ID}`}
+        crossOrigin="anonymous"
       />
       <link rel="icon" href="/favicon.ico" />
     </Head>

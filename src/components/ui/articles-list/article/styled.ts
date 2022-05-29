@@ -6,11 +6,15 @@ const StyledContainer = styled(`div`, {
   justifyContent: `flex-start`,
   flexFlow: `column wrap`,
   gap: `$28`,
+  width: '100%',
+  maxWidth: '300px',
 
   img: {
-    transition: `transform .2s`,
+    borderRadius: '$default',
+    transition: `transform .2s ease`,
+
     '&:hover': {
-      transform: `scale(1.2)`,
+      transform: `scale(1.1)`,
     },
   },
 })
