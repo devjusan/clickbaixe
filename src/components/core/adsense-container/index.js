@@ -13,15 +13,17 @@ const GoogleAdsenseContainer = () => {
   return (
     <Container style={{ textAlign: 'left', overflow: 'hidden' }}>
       <AdLabel>Anúncio</AdLabel>
-      <ins
-        className="adsbygoogle"
-        style={{ display: 'block' }}
-        data-ad-client={process.env.NEXT_PUBLIC_ADSENSE_ID}
-        data-ad-layout="in-article"
-        data-ad-slot="8331951788"
-        data-ad-format="auto"
-        data-full-width-responsive="true"
-      />
+      <amp-ad
+        width="100vw"
+        height="320"
+        type="adsense"
+        data-ad-client="ca-pub-8216675107406005"
+        data-ad-slot="7516729417"
+        data-auto-format="rspv"
+        data-full-width=""
+      >
+        <div overflow=""> </div>
+      </amp-ad>
     </Container>
   )
 }
