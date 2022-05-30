@@ -41,19 +41,19 @@ const Home = ({ post, posts }: IPost) => (
         name="description"
         content="CLICKBAIXE | Download de Jogos, Programas e Apps"
       />
-      <script
+      <Script
         type="text/javascript"
         async
         id="Adsense-id"
         src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_ADSENSE_ID}`}
         crossOrigin="anonymous"
       />
-      <script
+      <Script
         async
         custom-element="amp-ad"
         src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"
       />
-      <script
+      <Script
         id="dsq-count-scr"
         src="//https-clickbaixe-vercel-app.disqus.com/count.js"
         async

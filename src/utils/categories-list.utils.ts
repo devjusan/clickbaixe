@@ -4,5 +4,6 @@ export const categoriesList = [
   `Tutoriais`,
   `Novidades`,
   `Softwares`,
-  'Filmes/séries',
+  'Filmes',
+  'séries',
 ]

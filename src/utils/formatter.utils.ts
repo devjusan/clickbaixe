@@ -8,7 +8,10 @@ export const formatDate = (date: string) => {
   })
 }
 
-export const split = (url: string) => url.split(`/`).slice(-1)[0].toUpperCase()
+export const split = (url: string) => {
+  const newUrl = url.split(`/`).slice(-1)[0]
+  return decodeURI(newUrl).toUpperCase()
+}
 
 export const getSlugFromParam = (params: any) => {
   if (Array.isArray(params?.slug)) {
