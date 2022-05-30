@@ -3,5 +3,6 @@ export const categoriesList = [
   `Games`,
   `Tutoriais`,
   `Novidades`,
-  `softwares`,
+  `Softwares`,
+  'Filmes/séries',
 ]
