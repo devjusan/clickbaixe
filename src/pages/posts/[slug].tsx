@@ -10,6 +10,7 @@ import {
   StyledContent,
   StyledLine,
   StyledDisqusContainer,
+  StyledTrailerContainer,
 } from '../../pages-styles/posts-styled'
 import { StyledSubtitle, StyledTitle } from '../../styles/global'
 import NextBelow from '../../components/ui/next-bellow'
@@ -33,6 +34,7 @@ interface IPost {
     image: {
       url: string
     }
+    video: string
   }
   posts: {
     title: string
@@ -96,6 +98,13 @@ const Post = ({ post, posts }: IPost) => {
         <StyledContent
           dangerouslySetInnerHTML={{ __html: sanitizedContent() }}
         />
+        {post.video && (
+          <StyledTrailerContainer
+            dangerouslySetInnerHTML={{
+              __html: post.video,
+            }}
+          />
+        )}
         <GoogleAdsenseContainer />
         <DownloadButton registerHref={post.register} href={post.href} />
         <StyledSubtitle css={{ textAlign: 'start' }}>
@@ -144,6 +153,7 @@ export const getStaticProps: GetStaticProps = async ({
     image: {
       url: prismicData.data.image.url,
     },
+    video: prismicData.data.video?.html ?? null,
   }
 
   return { props: { post, posts: sortedPosts }, revalidate: TWELVE }

@@ -67,4 +67,21 @@ const StyledDisqusContainer = styled(`div`, {
   padding: '$32',
 })
 
-export { StyledContainer, StyledContent, StyledLine, StyledDisqusContainer }
+const StyledTrailerContainer = styled('div', {
+  px: '$28',
+  width: '100%',
+  maxWidth: '800px',
+  iframe: {
+    display: 'block',
+    height: '500px',
+    width: '100%',
+  },
+})
+
+export {
+  StyledContainer,
+  StyledContent,
+  StyledLine,
+  StyledDisqusContainer,
+  StyledTrailerContainer,
+}
