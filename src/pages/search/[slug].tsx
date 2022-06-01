@@ -1,5 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { createClient } from '../../../prismic.config'
+import GoogleAdsenseContainer from '../../components/core/adsense-container'
 import ArticlesList from '../../components/ui/articles-list'
 import Loading from '../../components/ui/loading'
 import NextBelow from '../../components/ui/next-bellow'
@@ -32,8 +33,10 @@ const SearchPost = ({ posts, sortedPosts }: ISearch) => {
 
   return (
     <>
+      <GoogleAdsenseContainer />
       <ArticlesList isSearch posts={posts} />
       <NextBelow posts={sortedPosts} />
+      <GoogleAdsenseContainer />
     </>
   )
 }

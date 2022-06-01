@@ -15,6 +15,7 @@ import SocialMedias from '../../components/ui/social-medias'
 import { createClient } from '../../../prismic.config'
 import { formatPrismicPosts } from '../../utils/prismic.utils'
 import Loading from '../../components/ui/loading'
+import GoogleAdsenseContainer from '../../components/core/adsense-container'
 
 interface ICategories {
   posts: {
@@ -46,6 +47,7 @@ const Categories = ({ posts }: ICategories) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <StyledContainer>
+        <GoogleAdsenseContainer />
         <StyledLeftContainer>
           {` `}
           <StyledCategory>

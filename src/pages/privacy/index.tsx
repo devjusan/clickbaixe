@@ -2,6 +2,7 @@
 import { NextPage } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
+import GoogleAdsenseContainer from '../../components/core/adsense-container'
 import { StyledContainer, StyledPost } from '../../pages-styles/privacy-styled'
 import { StyledSubtitle } from '../../styles/global'
 
@@ -16,6 +17,8 @@ const Privacy: NextPage = () => (
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <StyledContainer>
+      <GoogleAdsenseContainer />
+
       <StyledPost>
         <StyledSubtitle type="h2">Política de Privacidade</StyledSubtitle>
         <p>
@@ -91,6 +94,8 @@ const Privacy: NextPage = () => (
           determinadas funcionalidades e recursos deste site. Portanto, é
           recomendável que você não desative os cookies.
         </p>
+        <GoogleAdsenseContainer />
+
         <StyledSubtitle css={{ textAlign: `start` }} type="articleTitle">
           Cookies que definimos
         </StyledSubtitle>

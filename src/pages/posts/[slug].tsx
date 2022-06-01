@@ -116,6 +116,7 @@ const Post = ({ post, posts }: IPost) => {
         <StyledLine />
 
         <NextBelow posts={posts} />
+        <GoogleAdsenseContainer />
       </StyledContainer>
     </>
   )
