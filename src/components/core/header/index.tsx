@@ -1,6 +1,6 @@
 import { NextComponentType } from 'next'
 import { useRouter } from 'next/router'
-import { StyledHeader, StyledNav, StyledA } from './styled'
+import { StyledHeader, StyledNav, StyledA, StyledContainer } from './styled'
 import ActiveLink from '../../ui/active-link'
 import MobileMenu from './mobile-menu'
 import Categories from '../../ui/categories'
@@ -14,7 +14,7 @@ const Header: NextComponentType = () => {
   }
 
   return (
-    <>
+    <StyledContainer>
       {` `}
       <StyledHeader>
         <StyledTitle
@@ -37,7 +37,8 @@ const Header: NextComponentType = () => {
         <MobileMenu />
       </StyledHeader>
       <Categories />
-    </>
+      <InputSearch isMobile />
+    </StyledContainer>
   )
 }
 

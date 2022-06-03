@@ -1,5 +1,13 @@
 import { styled } from '../../../styles'
 
+const StyledContainer = styled('div', {
+  display: 'flex',
+  flexDirection: 'column',
+  '& .is-mobile': {
+    display: `none`,
+  },
+})
+
 const StyledHeader = styled(`header`, {
   width: `100%`,
   height: `$132`,
@@ -54,4 +62,4 @@ const StyledA = styled(`a`, {
   listStyle: `none`,
 })
 
-export { StyledHeader, StyledNav, StyledA }
+export { StyledHeader, StyledNav, StyledA, StyledContainer }

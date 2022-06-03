@@ -6,6 +6,15 @@ const StyledContainer = styled('form', {
   flexFlow: 'row nowrap',
   justifyContent: 'space-around',
   alignItems: 'center',
+
+  '@md': {
+    display: 'flex !important',
+    alignContent: 'center',
+    justifyContent: 'flex-start',
+    paddingLeft: '$28',
+    py: '$20',
+    boxShadow: 'rgb(0 0 0 / 22%) 0px 1px 0px',
+  },
 })
 
 const StyledInput = styled('input', {
@@ -16,6 +25,10 @@ const StyledInput = styled('input', {
   padding: '$12',
   fontFamily: '$logo',
   fontSize: '$16',
+
+  '@md': {
+    border: '1px solid black',
+  },
 
   '&:hover': {
     outline: '1px solid black',
@@ -31,6 +44,11 @@ const StyledImageContainer = styled('div', {
   position: 'absolute',
   right: '$20',
   top: '$16',
+
+  '@md': {
+    left: '225px',
+    top: '43%',
+  },
 })
 
 export { StyledContainer, StyledInput, StyledImageContainer }

@@ -4,7 +4,11 @@ import Image from 'next/image'
 import { StyledContainer, StyledInput, StyledImageContainer } from './styled'
 import searchImg from '../../../assets/search.svg'
 
-const InputSearch = () => {
+interface IInputProps {
+  isMobile?: boolean
+}
+
+const InputSearch = ({ isMobile }: IInputProps) => {
   const { push } = useRouter()
   const [inputValue, setInputValue] = useState('')
 
@@ -26,7 +30,10 @@ const InputSearch = () => {
   }
 
   return (
-    <StyledContainer onSubmit={handleSubmit}>
+    <StyledContainer
+      className={isMobile ? 'is-mobile' : ''}
+      onSubmit={handleSubmit}
+    >
       <StyledInput
         type="text"
         onChange={handleInputChange}
