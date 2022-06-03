@@ -74,6 +74,16 @@ const StyledDisqusContainer = styled(`div`, {
   padding: '$32',
 })
 
+const StyledSteamContainer = styled('div', {
+  px: '$28',
+  width: '100%',
+  maxWidth: '800px',
+  iframe: {
+    display: 'block',
+    width: '100%',
+  },
+})
+
 const StyledTrailerContainer = styled('div', {
   px: '$28',
   width: '100%',
@@ -91,4 +101,5 @@ export {
   StyledLine,
   StyledDisqusContainer,
   StyledTrailerContainer,
+  StyledSteamContainer,
 }

@@ -11,6 +11,7 @@ import {
   StyledLine,
   StyledDisqusContainer,
   StyledTrailerContainer,
+  StyledSteamContainer,
 } from '../../pages-styles/posts-styled'
 import { StyledSubtitle, StyledTitle } from '../../styles/global'
 import NextBelow from '../../components/ui/next-bellow'
@@ -35,6 +36,7 @@ interface IPost {
       url: string
     }
     video: string
+    steam: string
   }
   posts: {
     title: string
@@ -98,6 +100,13 @@ const Post = ({ post, posts }: IPost) => {
         <StyledContent
           dangerouslySetInnerHTML={{ __html: sanitizedContent() }}
         />
+        {post.steam && (
+          <StyledSteamContainer
+            dangerouslySetInnerHTML={{
+              __html: post.steam,
+            }}
+          />
+        )}
         {post.video && (
           <StyledTrailerContainer
             dangerouslySetInnerHTML={{
@@ -155,6 +164,7 @@ export const getStaticProps: GetStaticProps = async ({
       url: prismicData.data.image.url,
     },
     video: prismicData.data.video?.html ?? null,
+    steam: RichText.asText(prismicData.data.steam) ?? null,
   }
 
   return { props: { post, posts: sortedPosts }, revalidate: TWELVE }
