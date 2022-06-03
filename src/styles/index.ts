@@ -2,6 +2,7 @@ import { createStitches, ScaleValue } from '@stitches/react'
 
 export const { styled, getCssText, globalCss } = createStitches({
   media: {
+    mobile: `(max-width: 460px)`,
     sm: `(max-width: 640px)`,
     md: `(max-width: 840px)`,
     lg: `(max-width: 1024px)`,

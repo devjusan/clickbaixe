@@ -52,6 +52,13 @@ const StyledContent = styled(`article`, {
   li: {
     cursor: `initial !important`,
   },
+  '.block-img': {
+    img: {
+      width: `100%`,
+      height: 'auto',
+      minHeight: '100%',
+    },
+  },
 })
 
 const StyledLine = styled(`div`, {

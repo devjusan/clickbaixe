@@ -47,6 +47,7 @@ export const globalStyles = globalCss({
     fontFamily: `$subtitle`,
     transition: `color .2s`,
     color: `$black`,
+    wordBreak: 'break-word',
     '&:hover': {
       color: `$backgroundYellow !important`,
     },
