@@ -6,6 +6,8 @@ import { globalStyles } from '../styles/global'
 import { linkResolver, repositoryName } from '../../prismic.config'
 import Header from '../components/core/header'
 import Footer from '../components/core/footer'
+import AdSocialBar from '../components/core/adsense-social-bar'
+import GoogleAdsenseContainer from '../components/core/adsense-container'
 
 globalStyles()
 function MyApp({ Component, pageProps }: AppProps) {
@@ -21,6 +23,8 @@ function MyApp({ Component, pageProps }: AppProps) {
       >
         <PrismicPreview repositoryName={repositoryName}>
           <Header />
+          <GoogleAdsenseContainer />
+          <AdSocialBar />
           <Component {...pageProps} />
           <Footer />
         </PrismicPreview>

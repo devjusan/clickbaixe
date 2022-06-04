@@ -21,6 +21,8 @@ import { formatPrismicPosts } from '../../utils/prismic.utils'
 import DownloadButton from '../../components/ui/download-button'
 import Contribute from '../../components/ui/contribute'
 import Loading from '../../components/ui/loading'
+import AdSocialBar from '../../components/core/adsense-social-bar'
+import AdBanner from '../../components/core/adsense-banner'
 import GoogleAdsenseContainer from '../../components/core/adsense-container'
 
 interface IPost {
@@ -78,7 +80,7 @@ const Post = ({ post, posts }: IPost) => {
             })();`}
       </Script>
       <StyledContainer>
-        <GoogleAdsenseContainer />
+        <AdSocialBar />
         <StyledTitle
           css={{ marginBottom: `$44` }}
           type={{ '@initial': `title`, '@sm': `mobile` }}
@@ -125,7 +127,7 @@ const Post = ({ post, posts }: IPost) => {
         <StyledLine />
 
         <NextBelow posts={posts} />
-        <GoogleAdsenseContainer />
+        <AdBanner />
       </StyledContainer>
     </>
   )

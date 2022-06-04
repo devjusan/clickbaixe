@@ -1,23 +1,15 @@
 import { useEffect, useRef } from 'react'
 import { styled } from '../../../styles'
 
-const GoogleAdsenseContainer = () => {
-  const StyledContainer = styled('div', {
-    display: 'flex',
-    flexFlow: 'column wrap',
-    alignContent: 'center',
-    justifyContent: 'center',
-    overflow: 'hidden',
-    textAlign: 'center',
-  })
+const AdBanner = () => {
   // eslint-disable-next-line prettier/prettier
   const bannerRef = useRef(null)
   const AdLabel = styled('span', { fontSize: '$12' })
   const atOptions = {
-    key: '455ac575aebe25a9e60e2e8a032c6abe',
+    key: 'bee98093389fb0354bfeed745bfd216a',
     format: 'iframe',
-    height: 250,
-    width: 300,
+    height: 90,
+    width: 728,
     params: {},
   }
 
@@ -37,12 +29,21 @@ const GoogleAdsenseContainer = () => {
   }, [])
 
   return (
-    <StyledContainer>
+    <>
       {' '}
       <AdLabel>Anúncio</AdLabel>
-      <div ref={bannerRef} style={{ textAlign: 'left', overflow: 'hidden' }} />
-    </StyledContainer>
+      <div
+        ref={bannerRef}
+        style={{
+          width: '100%',
+          display: 'flex',
+          alignContent: 'center',
+          justifyContent: 'center',
+          overflow: 'hidden',
+        }}
+      />
+    </>
   )
 }
 
-export default GoogleAdsenseContainer
+export default AdBanner
