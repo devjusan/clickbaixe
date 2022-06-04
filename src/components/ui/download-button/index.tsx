@@ -8,7 +8,7 @@ interface IDownloadButton {
 }
 
 const DownloadButton = ({ href, registerHref }: IDownloadButton) => {
-  const [timer, setTimer] = useState(0)
+  const [timer, setTimer] = useState(30 * 1000)
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -20,7 +20,6 @@ const DownloadButton = ({ href, registerHref }: IDownloadButton) => {
     }
 
     return () => {
-      setTimer(0)
       clearInterval(interval)
     }
   }, [timer])
@@ -41,7 +40,8 @@ const DownloadButton = ({ href, registerHref }: IDownloadButton) => {
       ) : (
         <p>
           Aguarde <strong>{timer / 1000}</strong>{' '}
-          {timer === 1 ? 'segundo' : 'segundos'} para o seu download
+          {timer === 1 ? 'segundo' : 'segundos'} para o seu download ou clique
+          em um anúncio para baixar agora.
         </p>
       )}
     </StyledContainer>
