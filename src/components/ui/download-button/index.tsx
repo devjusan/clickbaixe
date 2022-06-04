@@ -6,14 +6,16 @@ interface IDownloadButton {
   href: string
   registerHref: string | null
   hasClickInAd: boolean
+  remount: string
 }
 
 const DownloadButton = ({
   href,
   registerHref,
   hasClickInAd,
+  remount,
 }: IDownloadButton) => {
-  const [timer, setTimer] = useState(45 * 1000)
+  const [timer, setTimer] = useState(50 * 1000)
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -29,10 +31,13 @@ const DownloadButton = ({
     }
 
     return () => {
-      setTimer(45 * 1000)
       clearInterval(interval)
     }
-  }, [timer, hasClickInAd])
+  }, [timer, hasClickInAd, remount])
+
+  useEffect(() => {
+    setTimer(() => 50 * 1000)
+  }, [remount])
 
   return (
     <StyledContainer>

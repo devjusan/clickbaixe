@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { RichText } from 'prismic-dom'
-import { useCallback, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import DOMPurify from 'isomorphic-dompurify'
 import Head from 'next/head'
 import Image from 'next/image'
@@ -61,6 +61,11 @@ const Post = ({ post, posts }: IPost) => {
     [post.content]
   )
   const [hasClickInAd, setHasClickInAd] = useState(false)
+  const [remount, setRemount] = useState(post.slug)
+
+  useEffect(() => {
+    setRemount(post.slug)
+  }, [post.slug])
 
   return (
     <>
@@ -120,6 +125,7 @@ const Post = ({ post, posts }: IPost) => {
         )}
         <AdNative onClick={() => setHasClickInAd(true)} />
         <DownloadButton
+          remount={remount}
           hasClickInAd={hasClickInAd}
           registerHref={post.register}
           href={post.href}
