@@ -25,6 +25,7 @@ interface ICategories {
     image: {
       url: string
     }
+    updatedAt: string
   }[]
 }
 
@@ -47,7 +48,7 @@ const Categories = ({ posts }: ICategories) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <StyledContainer>
-        <GoogleAdsenseContainer onClick={() => 0} />
+        <GoogleAdsenseContainer />
         <StyledLeftContainer>
           {` `}
           <StyledCategory>

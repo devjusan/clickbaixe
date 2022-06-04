@@ -10,6 +10,7 @@ interface IArticlesList {
     image: {
       url: string
     }
+    updatedAt: string
   }[]
 }
 
@@ -24,6 +25,7 @@ const NextBelow = ({ posts }: IArticlesList) => (
           image={post.image}
           title={post.title}
           key={post.slug}
+          updatedAt={post.updatedAt}
         />
       ))}
     </StyledContainerList>

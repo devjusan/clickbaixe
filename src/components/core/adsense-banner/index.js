@@ -5,6 +5,7 @@ const AdBanner = () => {
   // eslint-disable-next-line prettier/prettier
   const bannerRef = useRef(null)
   const AdLabel = styled('span', { fontSize: '$12' })
+  const StyledContainer = styled('div', {})
   const atOptions = {
     key: 'bee98093389fb0354bfeed745bfd216a',
     format: 'iframe',
@@ -32,7 +33,7 @@ const AdBanner = () => {
     <>
       {' '}
       <AdLabel>Anúncio</AdLabel>
-      <div
+      <StyledContainer
         ref={bannerRef}
         style={{
           width: '100%',

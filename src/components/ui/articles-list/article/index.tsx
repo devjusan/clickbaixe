@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { StyledContainer, StyledDate } from './styled'
 import { StyledSubtitle } from '../../../../styles/global'
+import { styled } from '../../../../styles'
 
 interface IArticle {
   title: string
@@ -9,23 +10,27 @@ interface IArticle {
   image: {
     url: string
   }
-  date: string
+  updatedAt: string
   fromCategory?: boolean
 }
 
-const Article = ({ title, image, slug, date }: IArticle) => (
-  <StyledContainer css={{ position: 'relative' }}>
+const StyledLinkContainer = styled('div', {})
+
+const Article = ({ title, image, slug, updatedAt }: IArticle) => (
+  <StyledContainer>
     <Link href={`/posts/${slug}`}>
-      <Image
-        src={image.url}
-        width={300}
-        height={176}
-        priority
-        alt="Uma postagem"
-        style={{ cursor: `pointer` }}
-      />
+      <StyledLinkContainer style={{ position: 'relative' }}>
+        <Image
+          src={image.url}
+          width={300}
+          height={176}
+          priority
+          alt="Uma postagem"
+          style={{ cursor: `pointer` }}
+        />
+        <StyledDate>{updatedAt}</StyledDate>
+      </StyledLinkContainer>
     </Link>
-    <StyledDate>{date}</StyledDate>
 
     <StyledSubtitle type="articleTitle" css={{ fontWeight: `bold` }}>
       {title}

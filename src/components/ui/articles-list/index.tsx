@@ -11,6 +11,7 @@ interface IArticlesList {
     image: {
       url: string
     }
+    updatedAt: string
   }[]
   isSearch?: boolean
   hideTitle?: boolean
@@ -32,6 +33,7 @@ const ArticlesList = ({ posts, hideTitle, isSearch }: IArticlesList) => (
             image={post.image}
             title={post.title}
             key={post.slug}
+            updatedAt={post.updatedAt}
           />
         ))
       ) : isSearch ? (

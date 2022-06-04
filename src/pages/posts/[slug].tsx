@@ -47,6 +47,7 @@ interface IPost {
     image: {
       url: string
     }
+    updatedAt: string
   }[]
 }
 

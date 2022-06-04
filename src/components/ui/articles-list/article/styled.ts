@@ -1,6 +1,6 @@
 import { styled } from '../../../../styles'
 
-const StyledContainer = styled(`div`, {
+const StyledContainer = styled('div', {
   display: `flex`,
   alignContent: `center`,
   justifyContent: `flex-start`,
@@ -19,6 +19,14 @@ const StyledContainer = styled(`div`, {
   },
 })
 
-const StyledDate = styled('span', {})
+const StyledDate = styled('span', {
+  position: `absolute`,
+  right: '5px',
+  bottom: '-1rem',
+  fontWeight: '800',
+  fontSize: '15px',
+  fontFamily: '$articleTitle',
+  color: 'gray',
+})
 
 export { StyledContainer, StyledDate }

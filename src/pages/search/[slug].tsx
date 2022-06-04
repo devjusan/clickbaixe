@@ -14,6 +14,7 @@ interface ISearch {
     image: {
       url: string
     }
+    updatedAt: string
   }[]
   sortedPosts: {
     title: string
@@ -22,6 +23,7 @@ interface ISearch {
     image: {
       url: string
     }
+    updatedAt: string
   }[]
   hideTitle?: boolean
 }
@@ -33,11 +35,10 @@ const SearchPost = ({ posts, sortedPosts }: ISearch) => {
 
   return (
     <>
-      <GoogleAdsenseContainer onClick={() => console.log('');
-      } />
+      <GoogleAdsenseContainer />
       <ArticlesList isSearch posts={posts} />
       <NextBelow posts={sortedPosts} />
-      <GoogleAdsenseContainer onClick={() => 0} />
+      <GoogleAdsenseContainer />
     </>
   )
 }
