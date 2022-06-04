@@ -19,7 +19,7 @@
 
 O projeto tem como objetivo a criação de um blog para postagens sobre tecnologia, filmes, séries e etc.
 
-A aplicação foi desenvolvida utilizando o framework NextJS aplicando conceitos como consumo de API externas, API Root, Server Side Rendering (SSR), Static Site Generation (SSG) e Prismic CMS para adição e gerenciamento do conteúdo dos posts.
+A aplicação foi desenvolvida utilizando o framework NextJS aplicando conceitos como consumo de API externas, API Root, Server Side Rendering (SSR), Static Site Generation (SSG), Stiches para o SYSTEM UI e Prismic CMS para adição e gerenciamento do conteúdo dos posts.
 
 ---
 
@@ -56,7 +56,7 @@ _Configurações dos serviços estão localizadas no arquivo servicesConfig.md n
 # Execute o comando git clone para realizar o clone do repositório
 $ git clone https://github.com/devjusan/clickbaixe.git
 # Entre na pasta do repositório clonado
-$ cd ignews
+$ cd clickbaixe
 ```
 
 ### **Iniciando o projeto**
