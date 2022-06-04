@@ -116,7 +116,7 @@ const Post = ({ post, posts }: IPost) => {
             }}
           />
         )}
-        <GoogleAdsenseContainer />
+        <AdBanner />
         <DownloadButton registerHref={post.register} href={post.href} />
         <StyledSubtitle css={{ textAlign: 'start' }}>
           Apoie o desenvolvedor. Compre o programa!
@@ -127,7 +127,7 @@ const Post = ({ post, posts }: IPost) => {
         <StyledLine />
 
         <NextBelow posts={posts} />
-        <AdBanner />
+        <GoogleAdsenseContainer />
       </StyledContainer>
     </>
   )
