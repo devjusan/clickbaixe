@@ -1,33 +1,19 @@
 import { useEffect, useRef } from 'react'
 import { styled } from '../../../styles'
 
-const GoogleAdsenseContainer = () => {
-  const StyledContainer = styled('div', {
-    display: 'flex',
-    flexFlow: 'column wrap',
-    alignContent: 'center',
-    justifyContent: 'center',
-    overflow: 'hidden',
-    textAlign: 'center',
-  })
+const AdNative = () => {
   // eslint-disable-next-line prettier/prettier
   const bannerRef = useRef(null)
   const AdLabel = styled('span', { fontSize: '$12' })
-  const atOptions = {
-    key: '455ac575aebe25a9e60e2e8a032c6abe',
-    format: 'iframe',
-    height: 250,
-    width: 300,
-    params: {},
-  }
 
   useEffect(() => {
     if (!bannerRef.current.firstChild) {
       const conf = document.createElement('script')
       const script = document.createElement('script')
+      script.setAttribute('async', 'async')
+      script.setAttribute('data-cfasync', 'false')
       script.type = 'text/javascript'
-      script.src = `//www.highperformancedformats.com/${atOptions.key}/invoke.js`
-      conf.innerHTML = `atOptions = ${JSON.stringify(atOptions)}`
+      script.src = `//pl17338568.profitablecpmgate.com/a501430b60b5943ba9ff91187ce1c9ec/invoke.js`
 
       if (bannerRef.current) {
         bannerRef.current.append(conf)
@@ -37,20 +23,22 @@ const GoogleAdsenseContainer = () => {
   }, [])
 
   return (
-    <StyledContainer>
+    <>
       {' '}
       <AdLabel>Anúncio</AdLabel>
       <div
         ref={bannerRef}
+        id="container-a501430b60b5943ba9ff91187ce1c9ec"
         style={{
+          width: '100%',
           display: 'flex',
           alignContent: 'center',
           justifyContent: 'center',
           overflow: 'hidden',
         }}
       />
-    </StyledContainer>
+    </>
   )
 }
 
-export default GoogleAdsenseContainer
+export default AdNative

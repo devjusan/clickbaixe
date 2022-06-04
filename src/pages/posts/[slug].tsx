@@ -22,7 +22,7 @@ import DownloadButton from '../../components/ui/download-button'
 import Contribute from '../../components/ui/contribute'
 import Loading from '../../components/ui/loading'
 import AdSocialBar from '../../components/core/adsense-social-bar'
-import AdBanner from '../../components/core/adsense-banner'
+import AdNative from '../../components/core/adsense-native'
 import GoogleAdsenseContainer from '../../components/core/adsense-container'
 
 interface IPost {
@@ -116,7 +116,7 @@ const Post = ({ post, posts }: IPost) => {
             }}
           />
         )}
-        <AdBanner />
+        <AdNative />
         <DownloadButton registerHref={post.register} href={post.href} />
         <StyledSubtitle css={{ textAlign: 'start' }}>
           Apoie o desenvolvedor. Compre o programa!
