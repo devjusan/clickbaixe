@@ -29,6 +29,7 @@ const DownloadButton = ({
     }
 
     return () => {
+      setTimer(45 * 1000)
       clearInterval(interval)
     }
   }, [timer, hasClickInAd])
