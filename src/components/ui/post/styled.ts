@@ -24,6 +24,4 @@ const StyledLine = styled(`div`, {
   height: `2px`,
 })
 
-const StyledImageContainer = styled(`div`, { cursor: `pointer` })
-
-export { StyledArticle, StyledImageContainer, StyledLine }
+export { StyledArticle, StyledLine }

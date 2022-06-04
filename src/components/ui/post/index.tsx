@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { StyledTitle, StyledSubtitle } from '../../../styles/global'
-import { StyledArticle, StyledImageContainer, StyledLine } from './styled'
+import { StyledArticle, StyledLine } from './styled'
 
 interface IPost {
   post: {
@@ -17,19 +17,17 @@ interface IPost {
 
 const Post = ({ post: { image, slug, subtitle, title, updatedAt } }: IPost) => (
   <StyledArticle>
-    <StyledImageContainer>
-      <Link href={`/posts/${slug}`}>
-        <Image
-          style={{ borderRadius: `10px` }}
-          priority={false}
-          width={700}
-          height={350}
-          src={image.url}
-          alt="Imagem do post"
-          className="img-zoom"
-        />
-      </Link>
-    </StyledImageContainer>
+    <Link href={`/posts/${slug}`}>
+      <Image
+        style={{ borderRadius: `10px` }}
+        priority
+        width={700}
+        height={350}
+        src={image.url}
+        alt="Imagem do post"
+        className="img-zoom"
+      />
+    </Link>
     <StyledTitle
       css={{ marginBottom: `$44` }}
       type={{ '@initial': `title`, '@sm': `mobile` }}
