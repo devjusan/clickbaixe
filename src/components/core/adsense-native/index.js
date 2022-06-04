@@ -1,10 +1,11 @@
 import { useEffect, useRef } from 'react'
 import { styled } from '../../../styles'
 
-const AdNative = () => {
+const AdNative = ({ onClick }) => {
   // eslint-disable-next-line prettier/prettier
   const bannerRef = useRef(null)
   const AdLabel = styled('span', { fontSize: '$12' })
+  const AdContainer = styled('div', {})
 
   useEffect(() => {
     if (!bannerRef.current.firstChild) {
@@ -26,7 +27,8 @@ const AdNative = () => {
     <>
       {' '}
       <AdLabel>Anúncio</AdLabel>
-      <div
+      <AdContainer
+        onClick={onClick}
         ref={bannerRef}
         id="container-a501430b60b5943ba9ff91187ce1c9ec"
         style={{

@@ -29,15 +29,11 @@ const StyledContainer = styled(`div`, {
     flexFlow: `row wrap`,
     justifyContent: `center`,
     alignItems: `center`,
-    gap: `$44`,
+    gap: `$16`,
     px: '$12',
     listStyle: `none`,
     transition: 'all .2s',
     overflowX: 'auto',
-
-    '@lg': {
-      gap: `$20`,
-    },
   },
 })
 

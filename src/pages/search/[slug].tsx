@@ -33,10 +33,11 @@ const SearchPost = ({ posts, sortedPosts }: ISearch) => {
 
   return (
     <>
-      <GoogleAdsenseContainer />
+      <GoogleAdsenseContainer onClick={() => console.log('');
+      } />
       <ArticlesList isSearch posts={posts} />
       <NextBelow posts={sortedPosts} />
-      <GoogleAdsenseContainer />
+      <GoogleAdsenseContainer onClick={() => 0} />
     </>
   )
 }

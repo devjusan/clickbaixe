@@ -47,7 +47,7 @@ const Categories = ({ posts }: ICategories) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <StyledContainer>
-        <GoogleAdsenseContainer />
+        <GoogleAdsenseContainer onClick={() => 0} />
         <StyledLeftContainer>
           {` `}
           <StyledCategory>

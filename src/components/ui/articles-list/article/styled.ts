@@ -19,4 +19,6 @@ const StyledContainer = styled(`div`, {
   },
 })
 
-export { StyledContainer }
+const StyledDate = styled('span', {})
+
+export { StyledContainer, StyledDate }

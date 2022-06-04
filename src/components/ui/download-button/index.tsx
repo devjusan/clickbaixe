@@ -5,15 +5,24 @@ import { StyledContainer } from './styled'
 interface IDownloadButton {
   href: string
   registerHref: string | null
+  hasClickInAd: boolean
 }
 
-const DownloadButton = ({ href, registerHref }: IDownloadButton) => {
-  const [timer, setTimer] = useState(30 * 1000)
+const DownloadButton = ({
+  href,
+  registerHref,
+  hasClickInAd,
+}: IDownloadButton) => {
+  const [timer, setTimer] = useState(45 * 1000)
 
   useEffect(() => {
     const interval = setInterval(() => {
       setTimer((state) => state - 1000)
     }, 1000)
+
+    if (hasClickInAd) {
+      setTimer(0)
+    }
 
     if (timer === 0) {
       clearInterval(interval)
@@ -22,7 +31,7 @@ const DownloadButton = ({ href, registerHref }: IDownloadButton) => {
     return () => {
       clearInterval(interval)
     }
-  }, [timer])
+  }, [timer, hasClickInAd])
 
   return (
     <StyledContainer>

@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { RichText } from 'prismic-dom'
-import { useCallback } from 'react'
+import { useCallback, useState } from 'react'
 import DOMPurify from 'isomorphic-dompurify'
 import Head from 'next/head'
 import Image from 'next/image'
@@ -59,6 +59,7 @@ const Post = ({ post, posts }: IPost) => {
     () => DOMPurify.sanitize(post.content),
     [post.content]
   )
+  const [hasClickInAd, setHasClickInAd] = useState(false)
 
   return (
     <>
@@ -116,8 +117,12 @@ const Post = ({ post, posts }: IPost) => {
             }}
           />
         )}
-        <AdNative />
-        <DownloadButton registerHref={post.register} href={post.href} />
+        <AdNative onClick={() => setHasClickInAd(true)} />
+        <DownloadButton
+          hasClickInAd={hasClickInAd}
+          registerHref={post.register}
+          href={post.href}
+        />
         <StyledSubtitle css={{ textAlign: 'start' }}>
           Apoie o desenvolvedor. Compre o programa!
         </StyledSubtitle>
@@ -125,6 +130,7 @@ const Post = ({ post, posts }: IPost) => {
         <StyledLine />
         <StyledDisqusContainer id="disqus_thread" />
         <StyledLine />
+        <GoogleAdsenseContainer />
 
         <NextBelow posts={posts} />
         <GoogleAdsenseContainer />

@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { StyledContainer } from './styled'
+import { StyledContainer, StyledDate } from './styled'
 import { StyledSubtitle } from '../../../../styles/global'
 
 interface IArticle {
@@ -9,11 +9,12 @@ interface IArticle {
   image: {
     url: string
   }
+  date: string
   fromCategory?: boolean
 }
 
-const Article = ({ title, image, slug }: IArticle) => (
-  <StyledContainer>
+const Article = ({ title, image, slug, date }: IArticle) => (
+  <StyledContainer css={{ position: 'relative' }}>
     <Link href={`/posts/${slug}`}>
       <Image
         src={image.url}
@@ -24,6 +25,8 @@ const Article = ({ title, image, slug }: IArticle) => (
         style={{ cursor: `pointer` }}
       />
     </Link>
+    <StyledDate>{date}</StyledDate>
+
     <StyledSubtitle type="articleTitle" css={{ fontWeight: `bold` }}>
       {title}
     </StyledSubtitle>

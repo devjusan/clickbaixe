@@ -10,6 +10,7 @@ const GoogleAdsenseContainer = () => {
     overflow: 'hidden',
     textAlign: 'center',
   })
+
   // eslint-disable-next-line prettier/prettier
   const bannerRef = useRef(null)
   const AdLabel = styled('span', { fontSize: '$12' })
@@ -37,19 +38,11 @@ const GoogleAdsenseContainer = () => {
   }, [])
 
   return (
-    <StyledContainer>
+    <>
       {' '}
       <AdLabel>Anúncio</AdLabel>
-      <div
-        ref={bannerRef}
-        style={{
-          display: 'flex',
-          alignContent: 'center',
-          justifyContent: 'center',
-          overflow: 'hidden',
-        }}
-      />
-    </StyledContainer>
+      <StyledContainer ref={bannerRef} />
+    </>
   )
 }
 
