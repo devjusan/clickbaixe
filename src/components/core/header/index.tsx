@@ -19,7 +19,7 @@ const Header: NextComponentType = () => {
       <StyledHeader>
         <StyledTitle
           onClick={handleClick}
-          css={{ cursor: `pointer` }}
+          css={{ cursor: `pointer`, fontWeight: 800 }}
           type="logo"
         >
           CLICKBAIXE
